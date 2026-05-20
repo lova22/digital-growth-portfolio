@@ -69,7 +69,7 @@ function ValueItem({ item, index }: { item: { num: string; title: string; desc: 
 
 export default function ValuesSection() {
   return (
-    <section id="values" className="section py-0 bg-[#050505] overflow-hidden">
+    <section id="values" className="section py-0 bg-[#111111] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col">
           {values.map((item, index) => (

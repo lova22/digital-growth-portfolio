@@ -13,7 +13,12 @@
     "title3": "& Consultant Tech",
     "subtitle": "Je conçois, développe et scale des expériences digitales premium — des interfaces pixel-perfect aux systèmes intelligents propulsés par l'IA.",
     "cta": "Démarrer un Projet",
-    "scroll": "Défiler pour explorer"
+    "scroll": "Défiler pour explorer",
+    "stats": {
+      "projects": "Projets livrés",
+      "clients": "Clients satisfaits",
+      "availability": "Disponible pour missions"
+    }
   },
   "services": {
     "heading": "Ce que je construis",
@@ -44,6 +49,17 @@
         "desc": "Conseil en stratégie, développement d'idées et feuilles de route pour la croissance."
       }
     ]
+  },
+  "skills": {
+    "heading": "Maîtrise &",
+    "headingSub": "Exécution",
+    "desc": "Ingénierie de précision associée à une exécution esthétique haut de gamme. Des performances de pointe enveloppées dans un luxe sans compromis.",
+    "stats": {
+      "tech": "Technologies",
+      "pixel": "Pixel-Perfect",
+      "exp": "Ans d'expérience",
+      "response": "Réponse sous 24h"
+    }
   },
   "portfolio": {
     "heading": "Travaux Sélectionnés",

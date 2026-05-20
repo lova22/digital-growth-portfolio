@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, Globe, ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const locales = [
@@ -22,11 +22,43 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = ["services", "portfolio", "contact"];
+    const observerOptions = {
+      root: null,
+      rootMargin: "-40% 0px -50% 0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   // Close dropdowns on route change
@@ -52,11 +84,15 @@ export default function Navbar() {
 
   return (
     <>
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[3px] bg-[var(--color-accent-red)] origin-left z-[100]"
+        style={{ scaleX }}
+      />
       <header
         className={cn(
           "fixed top-0 inset-x-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
           scrolled || mobileOpen
-            ? "glass-navbar"
+            ? "backdrop-blur-[12px] bg-black/70 border-b border-white/5"
             : "bg-transparent border-b border-transparent"
         )}
       >
@@ -77,15 +113,23 @@ export default function Navbar() {
 
           {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-xs uppercase tracking-[0.2em] font-medium text-[var(--color-text-secondary)] hover:text-[var(--color-accent-gold)] transition-all duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-px after:bg-[var(--color-accent-gold)] hover:after:w-full after:transition-all after:duration-500"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = `#${activeSection}` === link.href;
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "text-xs uppercase tracking-[0.2em] font-medium transition-all duration-300 relative after:absolute after:bottom-[-4px] after:left-0 after:h-px after:transition-all after:duration-500",
+                    isActive
+                      ? "text-[var(--color-accent-red)] after:w-full after:bg-[var(--color-accent-red)]"
+                      : "text-[var(--color-text-secondary)] hover:text-white after:w-0 after:bg-[var(--color-accent-gold)] hover:after:w-full"
+                  )}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </div>
 
           {/* Right side: lang switcher + CTA */}
@@ -164,23 +208,31 @@ export default function Navbar() {
             className="fixed inset-0 z-40 bg-[#050505]/95 backdrop-blur-2xl flex flex-col justify-center px-6 sm:px-12"
           >
             <div className="max-w-7xl mx-auto w-full flex flex-col gap-8 md:gap-12">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden"
-                >
-                  <a
-                    href={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter text-white hover:text-[var(--color-accent-gold)] transition-colors duration-500"
+              {navLinks.map((link, i) => {
+                const isActive = `#${activeSection}` === link.href;
+                return (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
                   >
-                    {link.label}
-                  </a>
-                </motion.div>
-              ))}
+                    <a
+                      href={link.href}
+                      onClick={() => setMobileOpen(false)}
+                      className={cn(
+                        "text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter transition-colors duration-500",
+                        isActive
+                          ? "text-[var(--color-accent-red)]"
+                          : "text-white hover:text-[var(--color-accent-gold)]"
+                      )}
+                    >
+                      {link.label}
+                    </a>
+                  </motion.div>
+                );
+              })}
 
               <motion.div
                 initial={{ opacity: 0, y: 40 }}

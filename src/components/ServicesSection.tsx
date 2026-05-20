@@ -23,11 +23,11 @@ const icons = [
 ];
 
 const accentColors = [
-  "var(--color-accent-gold)",
+  "var(--color-accent-red)",
   "#ffffff",
-  "var(--color-accent-gold)",
+  "var(--color-accent-red)",
   "#ffffff",
-  "var(--color-accent-gold)",
+  "var(--color-accent-red)",
   "#ffffff",
 ];
 
@@ -57,10 +57,12 @@ function ServiceCard({
   title,
   desc,
   index,
+  locale,
 }: {
   title: string;
   desc: string;
   index: number;
+  locale: string;
 }) {
   const Icon = icons[index];
   const color = accentColors[index];
@@ -109,7 +111,7 @@ function ServiceCard({
         </h3>
 
         {/* Desc */}
-        <p className="text-sm md:text-base text-white/80 leading-loose mb-8">
+        <p className="text-sm md:text-base text-white/80 leading-loose mb-8 line-clamp-2 min-h-[3rem]">
           {desc}
         </p>
       </div>
@@ -120,7 +122,7 @@ function ServiceCard({
         className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-200 group-hover:gap-2.5 mt-auto"
         style={{ color }}
       >
-        Learn more
+        {locale === "en" ? "Learn more" : locale === "fr" ? "En savoir plus" : "اقرأ المزيد"}
         <ArrowRight size={14} />
       </a>
     </motion.div>
@@ -136,7 +138,7 @@ export default function ServicesSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="section">
+    <section id="services" className="section bg-[#0F0F0F]">
       <div className="section-inner mb-20">
         {/* Heading */}
         <motion.div
@@ -177,6 +179,7 @@ export default function ServicesSection() {
               index={i}
               title={item.title}
               desc={item.desc}
+              locale={locale}
             />
           ))}
         </div>

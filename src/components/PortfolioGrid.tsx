@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import { ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { supabase, type Project } from "@/lib/supabase";
 
 // Fallback demo projects shown when Supabase isn't configured
@@ -77,7 +78,6 @@ function PortfolioCard({ project, index }: { project: Project; index: number }) 
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const title = project.title[locale] ?? project.title["en"];
-  const catColor = categoryColors[project.category] ?? "var(--color-accent-violet)";
 
   return (
     <motion.div
@@ -89,10 +89,10 @@ function PortfolioCard({ project, index }: { project: Project; index: number }) 
         duration: 0.6,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="portfolio-card masonry-item group rounded-2xl overflow-hidden"
+      className="portfolio-card masonry-item group rounded-none overflow-hidden border border-white/5 bg-[#050505] relative cursor-pointer"
     >
-      {/* Image */}
-      <div className="relative overflow-hidden aspect-[4/3] rounded-t-2xl">
+      <a href="#contact" className="block w-full h-full relative aspect-[4/3] overflow-hidden">
+        {/* Image */}
         <img
           src={project.image_url}
           alt={title}
@@ -100,53 +100,60 @@ function PortfolioCard({ project, index }: { project: Project; index: number }) 
           className="w-full h-full object-cover transition-transform duration-1000 ease-in-out group-hover:scale-105"
         />
 
-        {/* Hover overlay */}
-        <div className="overlay" />
-
-        {/* Overlay content */}
-        <div className="absolute inset-0 flex flex-col justify-end p-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-4 group-hover:translate-y-0">
-          <div className="flex flex-wrap gap-1.5 mb-3">
-            {project.tech_stack.slice(0, 3).map((tech) => (
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-black/85 backdrop-blur-[4px] flex flex-col justify-end p-8 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] translate-y-4 group-hover:translate-y-0">
+          <span className="text-[10px] font-black tracking-[0.2em] uppercase text-[var(--color-accent-red)] mb-2 block">
+            {project.category}
+          </span>
+          <h3 className="text-2xl font-black text-white leading-tight mb-4 tracking-tight">
+            {title}
+          </h3>
+          
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.tech_stack.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-0.5 rounded-md text-[10px] font-semibold bg-black/50 text-white/80 backdrop-blur-sm"
+                className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-none text-[9px] font-bold text-white/80 tracking-wider uppercase"
               >
                 {tech}
               </span>
             ))}
           </div>
-          <a
-            href={`#`}
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-white hover:text-[var(--color-accent-violet)] transition-colors"
-          >
-            {t("viewProject")}
-            <ExternalLink size={13} />
-          </a>
-        </div>
-      </div>
 
-      {/* Card footer */}
-      <div className="p-5">
-        <span
-          className="text-[11px] font-bold tracking-wider uppercase mb-2 block"
-          style={{ color: catColor }}
-        >
-          {project.category}
-        </span>
-        <h3 className="font-bold text-[var(--color-text-primary)] leading-snug">
-          {title}
-        </h3>
-      </div>
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-white group-hover:text-[var(--color-accent-red)] transition-colors mt-auto">
+            {locale === "en" ? "View project" : locale === "fr" ? "Voir le projet" : "عرض المشروع"}
+            <ExternalLink size={14} />
+          </div>
+        </div>
+      </a>
     </motion.div>
   );
 }
 
 export default function PortfolioGrid() {
   const t = useTranslations("portfolio");
+  const locale = useLocale();
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("all");
+  
   const headingRef = useRef<HTMLDivElement>(null);
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
+
+  const tabs = [
+    { id: "all", label: locale === "en" ? "All" : locale === "fr" ? "Tous" : "الكل" },
+    { id: "web", label: locale === "en" ? "Web & Mobile" : locale === "fr" ? "Web & Mobile" : "الويب والهاتف" },
+    { id: "ai", label: locale === "en" ? "AI" : locale === "fr" ? "IA" : "الذكاء الاصطناعي" },
+    { id: "identity", label: locale === "en" ? "Identity" : locale === "fr" ? "Identité" : "الهوية البصرية" },
+  ];
+
+  const filteredProjects = projects.filter((p) => {
+    if (activeTab === "all") return true;
+    if (activeTab === "web") return p.category === "Web Development" || p.category === "Data Insights";
+    if (activeTab === "ai") return p.category === "AI Engineering";
+    if (activeTab === "identity") return p.category === "Motion Design";
+    return true;
+  });
 
   useEffect(() => {
     async function fetchProjects() {
@@ -172,7 +179,7 @@ export default function PortfolioGrid() {
   }, []);
 
   return (
-    <section id="portfolio" className="section">
+    <section id="portfolio" className="section bg-[#0A0A0A]">
       <div className="section-inner">
         {/* Heading */}
         <motion.div
@@ -193,6 +200,24 @@ export default function PortfolioGrid() {
           </p>
         </motion.div>
 
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap justify-center items-center gap-4 mb-16">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={cn(
+                "px-6 py-3 text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 border",
+                activeTab === tab.id
+                  ? "border-[var(--color-accent-red)] text-white bg-[var(--color-accent-red)]/10"
+                  : "border-white/5 text-white/60 hover:text-white hover:border-white/15"
+              )}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
         {/* Masonry grid */}
         {loading ? (
           <div className="masonry-grid">
@@ -211,7 +236,7 @@ export default function PortfolioGrid() {
           </div>
         ) : (
           <div className="masonry-grid">
-            {projects.map((project, i) => (
+            {filteredProjects.map((project, i) => (
               <PortfolioCard key={project.id} project={project} index={i} />
             ))}
           </div>

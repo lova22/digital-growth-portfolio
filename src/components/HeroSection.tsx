@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, useInView, useScroll, useTransform, animate } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ArrowRight, Sparkles, Code2, Brain, TrendingUp } from "lucide-react";
 
@@ -78,6 +78,60 @@ function AnimatedText({
   );
 }
 
+// Animated Stat Counter Component
+function AnimatedStat({
+  value,
+  suffix = "",
+  label,
+  delay = 0,
+}: {
+  value: number;
+  suffix?: string;
+  label: string;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    if (inView && !started) {
+      setStarted(true);
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) {
+        if (ref.current) ref.current.textContent = String(value);
+        return;
+      }
+
+      const node = ref.current;
+      if (!node) return;
+
+      const controls = animate(0, value, {
+        duration: 2.0,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+        onUpdate(value) {
+          node.textContent = Math.round(value).toString();
+        },
+      });
+
+      return () => controls.stop();
+    }
+  }, [inView, value, delay, started]);
+
+  return (
+    <div className="flex flex-col items-center text-center px-4">
+      <div className="text-4xl md:text-5xl font-black text-white tracking-tight flex items-baseline justify-center">
+        <span ref={ref}>0</span>
+        <span className="text-[var(--color-accent-red)]">{suffix}</span>
+      </div>
+      <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/50 mt-2 font-medium">
+        {label}
+      </div>
+    </div>
+  );
+}
+
 export default function HeroSection() {
   const t = useTranslations("hero");
   const ref = useRef<HTMLElement>(null);
@@ -114,7 +168,7 @@ export default function HeroSection() {
     <section
       ref={ref}
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0A0A]"
     >
       {/* Grid lines overlay */}
       <div
@@ -176,7 +230,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="flex flex-wrap items-center justify-center gap-4 mb-28"
+          className="flex flex-wrap items-center justify-center gap-4 mb-16"
         >
           <a
             ref={btnRef}
@@ -198,6 +252,35 @@ export default function HeroSection() {
           >
             View Portfolio
           </a>
+        </motion.div>
+
+        {/* Stats Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.4, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          className="flex items-center justify-center gap-6 md:gap-12 max-w-4xl mx-auto mb-20 py-8 border-y border-white/5 bg-white/[0.01] backdrop-blur-sm"
+        >
+          <AnimatedStat value={12} suffix="+" label={t("stats.projects")} delay={1.5} />
+          
+          <div className="w-px h-8 bg-white/10 self-center" />
+          
+          <AnimatedStat value={8} label={t("stats.clients")} delay={1.7} />
+          
+          <div className="w-px h-8 bg-white/10 self-center" />
+          
+          <div className="flex flex-col items-center text-center px-4">
+            <div className="text-lg md:text-xl font-bold text-emerald-400 tracking-tight flex items-center justify-center gap-2 md:h-[48px] h-[40px]">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span className="text-xl md:text-2xl font-black text-emerald-400 uppercase tracking-wide">Dispo</span>
+            </div>
+            <div className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-white/50 mt-2 font-medium">
+              {t("stats.availability")}
+            </div>
+          </div>
         </motion.div>
 
         {/* Floating tech badges */}

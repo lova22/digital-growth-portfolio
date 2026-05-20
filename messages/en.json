@@ -13,7 +13,12 @@
     "title3": "& Tech Consultant",
     "subtitle": "I design, build, and scale premium digital experiences — from pixel-perfect interfaces to intelligent AI-powered systems.",
     "cta": "Start Your Project",
-    "scroll": "Scroll to explore"
+    "scroll": "Scroll to explore",
+    "stats": {
+      "projects": "Projects delivered",
+      "clients": "Satisfied clients",
+      "availability": "Available for missions"
+    }
   },
   "services": {
     "heading": "What I Build",
@@ -44,6 +49,17 @@
         "desc": "Strategy consulting, idea development, and project scaling roadmaps."
       }
     ]
+  },
+  "skills": {
+    "heading": "Mastery &",
+    "headingSub": "Execution",
+    "desc": "Precision engineering paired with high-end aesthetic execution. Delivering bleeding-edge performance wrapped in uncompromising luxury.",
+    "stats": {
+      "tech": "Technologies",
+      "pixel": "Pixel-Perfect",
+      "exp": "Years of experience",
+      "response": "24h Response Time"
+    }
   },
   "portfolio": {
     "heading": "Selected Work",

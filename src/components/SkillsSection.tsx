@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, useAnimation, useSpring, useTransform } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const skills = [
   { name: "Generative AI Integration", level: 95 },
@@ -29,6 +30,55 @@ function AnimatedCounter({ value, inView }: { value: number; inView: boolean }) 
   }, [springValue]);
 
   return <span>{displayValue}%</span>;
+}
+
+// Scroll-triggered Animated Counter Component
+function ScrollCounter({ value, suffix = "", label }: { value: number; suffix?: string; label: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    if (inView && !started) {
+      setStarted(true);
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) {
+        if (ref.current) ref.current.textContent = String(value);
+        return;
+      }
+      const node = ref.current;
+      if (!node) return;
+
+      let start = 0;
+      const duration = 2000;
+      const startTime = performance.now();
+
+      const animate = (now: number) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = progress * (2 - progress);
+        const current = Math.round(ease * value);
+        node.textContent = String(current);
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      };
+      requestAnimationFrame(animate);
+    }
+  }, [inView, value, started]);
+
+  return (
+    <div className="flex flex-col p-6 bg-white/[0.02] border border-white/5 backdrop-blur-sm">
+      <div className="text-4xl md:text-5xl font-black text-[var(--color-accent-red)] tracking-tight">
+        <span ref={ref}>0</span>
+        {suffix}
+      </div>
+      <div className="text-xs uppercase tracking-[0.25em] text-white/50 mt-3 font-semibold">
+        {label}
+      </div>
+    </div>
+  );
 }
 
 function SkillItem({ skill, index }: { skill: { name: string; level: number }; index: number }) {
@@ -70,35 +120,48 @@ function SkillItem({ skill, index }: { skill: { name: string; level: number }; i
 }
 
 export default function SkillsSection() {
+  const t = useTranslations("skills");
   const headingRef = useRef(null);
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="section py-40 bg-[#050505]">
-      <div className="section-inner max-w-4xl mx-auto">
-        {/* Heading */}
-        <motion.div
-          ref={headingRef}
-          initial={{ opacity: 0, y: 30 }}
-          animate={headingInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-20"
-        >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter">
-            Mastery &<br />
-            <span className="font-light text-white/60">Execution</span>
-          </h2>
-          <p className="text-lg text-white/80 font-light max-w-lg leading-loose">
-            Precision engineering paired with high-end aesthetic execution. 
-            Delivering bleeding-edge performance wrapped in uncompromising luxury.
-          </p>
-        </motion.div>
+    <section id="skills" className="section py-40 bg-[#111111] relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+          
+          {/* Left Column: Heading and 2x2 counters */}
+          <div className="flex flex-col gap-12 lg:sticky lg:top-32">
+            <motion.div
+              ref={headingRef}
+              initial={{ opacity: 0, y: 30 }}
+              animate={headingInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter">
+                {t("heading")}<br />
+                <span className="font-light text-white/60">{t("headingSub")}</span>
+              </h2>
+              <p className="text-lg text-white/80 font-light max-w-lg leading-loose">
+                {t("desc")}
+              </p>
+            </motion.div>
 
-        {/* Skills List - doubled vertical spacing */}
-        <div className="flex flex-col gap-12">
-          {skills.map((skill, index) => (
-            <SkillItem key={skill.name} skill={skill} index={index} />
-          ))}
+            {/* 2x2 Counters Grid */}
+            <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-4">
+              <ScrollCounter value={30} suffix="+" label={t("stats.tech")} />
+              <ScrollCounter value={100} suffix="%" label={t("stats.pixel")} />
+              <ScrollCounter value={4} suffix="+" label={t("stats.exp")} />
+              <ScrollCounter value={24} suffix="h" label={t("stats.response")} />
+            </div>
+          </div>
+
+          {/* Right Column: Skills Progress bars */}
+          <div className="flex flex-col gap-8 lg:mt-8">
+            {skills.map((skill, index) => (
+              <SkillItem key={skill.name} skill={skill} index={index} />
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
