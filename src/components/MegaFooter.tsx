@@ -142,39 +142,42 @@ export default function MegaFooter() {
             )}
           </motion.div>
 
-          {/* Socials & Info */}
+          {/* Categorized Footer Links */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="flex flex-col justify-between lg:items-end text-left lg:text-right"
+            className="flex flex-col justify-between text-left"
           >
-            <div className="w-full lg:w-auto">
-              <h3 className="text-sm tracking-widest uppercase text-white/40 mb-12">
-                Connect
-              </h3>
-              <ul className="flex flex-col gap-6 lg:items-end">
-                {socials.map((social) => (
-                  <li key={social.name}>
-                    <a
-                      href={social.href}
-                      className="text-2xl sm:text-3xl md:text-4xl font-light text-white hover:text-[var(--color-accent-gold)] transition-colors duration-500 flex items-center lg:justify-end group"
-                    >
-                      <span className="relative overflow-hidden">
-                        <span className="inline-block transition-transform duration-500 group-hover:-translate-y-full">
-                          {social.name}
-                        </span>
-                        <span className="absolute inset-0 inline-block translate-y-full transition-transform duration-500 group-hover:translate-y-0 text-[var(--color-accent-gold)]">
-                          {social.name}
-                        </span>
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 lg:gap-16 w-full">
+              <div>
+                <h4 className="text-xs tracking-[0.25em] uppercase text-white/40 mb-6 font-semibold">Navigation</h4>
+                <ul className="space-y-4 text-sm font-light tracking-wide">
+                  <li><a href="#services" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">Services</a></li>
+                  <li><a href="#portfolio" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">Portfolio</a></li>
+                  <li><a href="#skills" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">Expertise</a></li>
+                  <li><a href="#contact" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">Contact</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xs tracking-[0.25em] uppercase text-white/40 mb-6 font-semibold">Connect</h4>
+                <ul className="space-y-4 text-sm font-light tracking-wide">
+                  <li><a href="#" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">LinkedIn</a></li>
+                  <li><a href="#" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">GitHub</a></li>
+                  <li><a href="#" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">X / Twitter</a></li>
+                  <li><a href="#" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">Behance</a></li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-xs tracking-[0.25em] uppercase text-white/40 mb-6 font-semibold">Legal</h4>
+                <ul className="space-y-4 text-sm font-light tracking-wide">
+                  <li><a href="#" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">Privacy Policy</a></li>
+                  <li><a href="#" className="text-white/70 hover:text-[var(--color-accent-gold)] transition-colors duration-300">Terms of Service</a></li>
+                </ul>
+              </div>
             </div>
 
-            <div className="mt-24 lg:mt-0 text-sm tracking-widest uppercase text-white/20 w-full lg:text-right">
+            <div className="mt-20 text-xs tracking-[0.25em] uppercase text-white/30 font-light">
               © {new Date().getFullYear()} Digital Growth. All rights reserved.
             </div>
           </motion.div>

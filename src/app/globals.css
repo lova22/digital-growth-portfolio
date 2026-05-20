@@ -128,7 +128,7 @@ body::before {
 /* ─── Masonry grid ───────────────────────────────────── */
 .masonry-grid {
   columns: 1;
-  column-gap: 2rem;
+  column-gap: 4rem;
 }
 @media (min-width: 640px) {
   .masonry-grid {
@@ -142,7 +142,7 @@ body::before {
 }
 .masonry-item {
   break-inside: avoid;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 /* ─── Magnetic button ────────────────────────────────── */
@@ -189,7 +189,7 @@ body::before {
 
 /* ─── Section spacing ────────────────────────────────── */
 .section {
-  padding-block: 8rem;
+  padding-block: 10rem;
   padding-inline: 1.5rem;
 }
 @media (min-width: 768px) {

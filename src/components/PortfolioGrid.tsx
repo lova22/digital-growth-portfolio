@@ -85,7 +85,7 @@ function PortfolioCard({ project, index }: { project: Project; index: number }) 
       initial={{ opacity: 0, y: 50, scale: 0.97 }}
       animate={inView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{
-        delay: (index % 3) * 0.1,
+        delay: (index % 3) * 0.2,
         duration: 0.6,
         ease: [0.22, 1, 0.36, 1],
       }}
@@ -188,7 +188,7 @@ export default function PortfolioGrid() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[var(--color-text-primary)] mb-6 uppercase tracking-tight">
             {t("heading")}
           </h2>
-          <p className="text-[var(--color-text-secondary)] text-lg md:text-xl font-light max-w-xl mx-auto leading-relaxed mt-4">
+          <p className="text-white/80 text-lg md:text-xl font-light max-w-xl mx-auto leading-loose mt-4">
             {t("subheading")}
           </p>
         </motion.div>

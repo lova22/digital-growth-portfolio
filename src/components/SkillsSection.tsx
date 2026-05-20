@@ -41,7 +41,7 @@ function SkillItem({ skill, index }: { skill: { name: string; level: number }; i
         <motion.h4
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.2, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 1.2, delay: index * 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="text-lg md:text-xl font-light text-white tracking-wide group-hover:text-[var(--color-accent-gold)] transition-colors duration-500"
         >
           {skill.name}
@@ -49,7 +49,7 @@ function SkillItem({ skill, index }: { skill: { name: string; level: number }; i
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 1.2, delay: index * 0.1 + 0.5 }}
+          transition={{ duration: 1.2, delay: index * 0.2 + 0.5 }}
           className="text-sm font-medium text-white/40 tracking-widest"
         >
           <AnimatedCounter value={skill.level} inView={inView} />
@@ -61,7 +61,7 @@ function SkillItem({ skill, index }: { skill: { name: string; level: number }; i
         <motion.div
           initial={{ scaleX: 0 }}
           animate={inView ? { scaleX: skill.level / 100 } : {}}
-          transition={{ duration: 2.5, delay: index * 0.1 + 0.2, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 2.5, delay: index * 0.2 + 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0 bg-white/20 origin-left"
         />
       </div>
@@ -74,7 +74,7 @@ export default function SkillsSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="section py-32 bg-[#050505]">
+    <section id="skills" className="section py-40 bg-[#050505]">
       <div className="section-inner max-w-4xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -88,7 +88,7 @@ export default function SkillsSection() {
             Mastery &<br />
             <span className="font-light text-white/60">Execution</span>
           </h2>
-          <p className="text-lg text-white/40 font-light max-w-lg leading-loose">
+          <p className="text-lg text-white/80 font-light max-w-lg leading-loose">
             Precision engineering paired with high-end aesthetic execution. 
             Delivering bleeding-edge performance wrapped in uncompromising luxury.
           </p>

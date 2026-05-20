@@ -109,7 +109,7 @@ function ServiceCard({
         </h3>
 
         {/* Desc */}
-        <p className="text-sm md:text-base text-[var(--color-text-secondary)] leading-relaxed mb-8">
+        <p className="text-sm md:text-base text-white/80 leading-loose mb-8">
           {desc}
         </p>
       </div>
@@ -152,7 +152,7 @@ export default function ServicesSection() {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[var(--color-text-primary)] mb-8 uppercase tracking-tight">
             {t("heading")}
           </h2>
-          <p className="text-[var(--color-text-secondary)] text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed tracking-wide mt-6">
+          <p className="text-white/80 text-lg md:text-xl font-light max-w-2xl mx-auto leading-loose tracking-wide mt-6">
             {locale === "en" ? (
               <>
                 End-to-end digital solutions <span className="text-[var(--color-accent-gold)] font-medium">crafted with precision</span>.
@@ -170,7 +170,7 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 xl:gap-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {items.map((item, i) => (
             <ServiceCard
               key={i}

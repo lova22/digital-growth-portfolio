@@ -149,7 +149,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Main headline */}
-        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tight mb-6 overflow-hidden">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] tracking-tighter mb-6 overflow-hidden">
           <span className="block text-[var(--color-text-primary)] font-light">
             <AnimatedText text={t("title1")} delay={0.15} />
           </span>
@@ -166,7 +166,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-[var(--color-text-secondary)] leading-loose mb-16 tracking-[0.2em] uppercase font-light"
+          className="max-w-2xl mx-auto text-lg md:text-xl text-white/80 leading-loose mb-16 tracking-[0.2em] uppercase font-light"
         >
           {t("subtitle")}
         </motion.p>

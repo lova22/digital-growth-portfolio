@@ -26,7 +26,7 @@ function ValueItem({ item, index }: { item: { num: string; title: string; desc: 
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div ref={ref} className="relative py-24 sm:py-32 border-b border-white/5 last:border-0 group cursor-default">
+    <div ref={ref} className="relative py-32 sm:py-40 border-b border-white/5 last:border-0 group cursor-default">
       {/* Giant Watermark Number */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
@@ -58,7 +58,7 @@ function ValueItem({ item, index }: { item: { num: string; title: string; desc: 
           transition={{ duration: 1.2, delay: index * 0.2 + 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="md:w-2/3"
         >
-          <p className="text-xl md:text-2xl text-white/50 font-light leading-relaxed group-hover:text-white/80 transition-colors duration-700">
+          <p className="text-xl md:text-2xl text-white/80 font-light leading-loose transition-colors duration-700">
             {item.desc}
           </p>
         </motion.div>

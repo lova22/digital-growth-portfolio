@@ -55,7 +55,7 @@ export default function ContactSection() {
             <h2 className="text-4xl md:text-5xl font-black text-[var(--color-text-primary)] mb-4">
               {t("heading")}
             </h2>
-            <p className="text-[var(--color-text-secondary)] text-lg">
+            <p className="text-white/80 text-lg leading-loose">
               {t("subheading")}
             </p>
           </div>
