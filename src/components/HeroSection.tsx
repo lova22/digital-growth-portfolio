@@ -38,7 +38,7 @@ function TechBadge({
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-      className="glass flex items-center gap-2 px-4 py-2 rounded-none border border-[var(--color-border)] text-xs tracking-widest uppercase font-medium text-[var(--color-text-secondary)] select-none"
+      className="glass flex items-center gap-2 px-4 py-2 rounded-none border border-[var(--color-border)] text-xs tracking-[0.25em] uppercase font-medium text-[var(--color-text-secondary)] select-none"
     >
       <Icon size={14} className="text-[var(--color-accent-gold)]" />
       {label}
@@ -114,21 +114,11 @@ export default function HeroSection() {
     <section
       ref={ref}
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
-      {/* Background ambient glows */}
-      <AmbientGlow
-        className="w-[800px] h-[800px] top-[-20%] left-[-20%] bg-[var(--color-accent-gold)]"
-        delay={0}
-      />
-      <AmbientGlow
-        className="w-[600px] h-[600px] bottom-[-10%] right-[-10%] bg-white"
-        delay={2}
-      />
-
       {/* Grid lines overlay */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        className="absolute inset-0 pointer-events-none opacity-[0.02]"
         style={{
           backgroundImage:
             "linear-gradient(var(--color-text-primary) 1px, transparent 1px), linear-gradient(90deg, var(--color-text-primary) 1px, transparent 1px)",
@@ -148,7 +138,7 @@ export default function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex justify-center mb-8"
         >
-          <span className="badge">
+          <span className="badge" style={{ letterSpacing: "0.25em" }}>
             <motion.span
               animate={{ scale: [1, 1.4, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -176,7 +166,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.0, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-2xl mx-auto text-lg md:text-xl text-[var(--color-text-secondary)] leading-loose mb-16 tracking-widest uppercase font-light"
+          className="max-w-2xl mx-auto text-lg md:text-xl text-[var(--color-text-secondary)] leading-loose mb-16 tracking-[0.2em] uppercase font-light"
         >
           {t("subtitle")}
         </motion.p>
@@ -195,16 +185,16 @@ export default function HeroSection() {
             className="btn-magnetic text-base px-8 py-4 transition-all duration-200"
             style={{ transitionProperty: "transform, box-shadow" }}
           >
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 uppercase tracking-[0.2em] text-xs font-semibold">
               {t("cta")}
-              <ArrowRight size={18} />
+              <ArrowRight size={14} />
             </span>
           </a>
 
           <a
             href="#portfolio"
             id="hero-cta-secondary"
-            className="flex items-center gap-2 px-8 py-4 rounded-[var(--radius-btn)] text-base font-semibold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-all duration-300 hover:bg-white/5"
+            className="flex items-center gap-2 px-8 py-4 rounded-[var(--radius-btn)] text-xs font-semibold text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] border border-[var(--color-border)] hover:border-[var(--color-border-hover)] transition-all duration-300 hover:bg-white/5 uppercase tracking-[0.2em]"
           >
             View Portfolio
           </a>
@@ -228,7 +218,7 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
-          className="mt-16 flex flex-col items-center gap-2 text-[var(--color-text-muted)] text-xs tracking-widest uppercase"
+          className="mt-16 flex flex-col items-center gap-2 text-[var(--color-text-muted)] text-xs tracking-[0.3em] uppercase"
         >
           <span>{t("scroll")}</span>
           <motion.div

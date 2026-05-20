@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="w-full flex flex-col items-center justify-center text-center"
             >
-              <p className="text-xl sm:text-2xl md:text-3xl font-light text-white/95 leading-relaxed tracking-wide italic mb-10 max-w-4xl">
+              <p className="text-xl sm:text-2xl md:text-3xl font-serif font-light text-white/95 leading-relaxed tracking-wide italic mb-10 max-w-4xl">
                 &ldquo;{testimonials[index].quote}&rdquo;
               </p>
               

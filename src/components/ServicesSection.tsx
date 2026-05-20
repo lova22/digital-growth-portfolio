@@ -44,6 +44,15 @@ const cardVariants = {
   }),
 };
 
+const bentoClasses = [
+  "lg:col-span-2",
+  "lg:col-span-1",
+  "lg:col-span-1",
+  "lg:col-span-2",
+  "lg:col-span-2",
+  "lg:col-span-1",
+];
+
 function ServiceCard({
   title,
   desc,
@@ -65,7 +74,7 @@ function ServiceCard({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={cardVariants}
-      className="service-card group mb-12"
+      className={`service-card group p-8 sm:p-10 md:p-14 lg:p-16 flex flex-col justify-between h-full ${bentoClasses[index]}`}
       onMouseMove={(e) => {
         const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -74,39 +83,41 @@ function ServiceCard({
         (e.currentTarget as HTMLDivElement).style.setProperty("--my", `${y}%`);
       }}
     >
-      {/* Icon */}
-      <div
-        className="w-12 h-12 rounded-none flex items-center justify-center mb-5 border"
-        style={{
-          background: `rgba(255, 255, 255, 0.02)`,
-          borderColor: `rgba(255, 255, 255, 0.05)`,
-        }}
-      >
-        <Icon size={22} style={{ color }} />
+      <div>
+        {/* Icon */}
+        <div
+          className="w-12 h-12 rounded-none flex items-center justify-center mb-6 border"
+          style={{
+            background: `rgba(255, 255, 255, 0.02)`,
+            borderColor: `rgba(255, 255, 255, 0.05)`,
+          }}
+        >
+          <Icon size={22} style={{ color }} />
+        </div>
+
+        {/* Number */}
+        <span
+          className="text-[10px] font-bold tracking-[0.2em] uppercase mb-4 block"
+          style={{ color }}
+        >
+          {String(index + 1).padStart(2, "0")}
+        </span>
+
+        {/* Title */}
+        <h3 className="text-xl md:text-2xl font-bold text-[var(--color-text-primary)] mb-4 leading-snug">
+          {title}
+        </h3>
+
+        {/* Desc */}
+        <p className="text-sm md:text-base text-[var(--color-text-secondary)] leading-relaxed mb-8">
+          {desc}
+        </p>
       </div>
-
-      {/* Number */}
-      <span
-        className="text-[10px] font-bold tracking-[0.2em] uppercase mb-3 block"
-        style={{ color }}
-      >
-        {String(index + 1).padStart(2, "0")}
-      </span>
-
-      {/* Title */}
-      <h3 className="text-lg font-bold text-[var(--color-text-primary)] mb-3 leading-snug">
-        {title}
-      </h3>
-
-      {/* Desc */}
-      <p className="text-sm text-[var(--color-text-secondary)] leading-loose mb-5">
-        {desc}
-      </p>
 
       {/* Learn more */}
       <a
         href="#contact"
-        className="inline-flex items-center gap-1.5 text-sm font-medium transition-all duration-200 group-hover:gap-2.5 mb-8"
+        className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-200 group-hover:gap-2.5 mt-auto"
         style={{ color }}
       >
         Learn more
@@ -158,8 +169,8 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        {/* Grid updated to 3 columns on lg to accommodate 6 cards cleanly */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 xl:gap-16">
+        {/* Bento Box Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 xl:gap-16">
           {items.map((item, i) => (
             <ServiceCard
               key={i}

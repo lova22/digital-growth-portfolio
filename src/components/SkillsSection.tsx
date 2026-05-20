@@ -36,8 +36,8 @@ function SkillItem({ skill, index }: { skill: { name: string; level: number }; i
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div ref={ref} className="group cursor-default py-4">
-      <div className="flex items-end justify-between mb-3">
+    <div ref={ref} className="group cursor-default py-8">
+      <div className="flex items-end justify-between mb-5">
         <motion.h4
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -50,19 +50,19 @@ function SkillItem({ skill, index }: { skill: { name: string; level: number }; i
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 1.2, delay: index * 0.1 + 0.5 }}
-          className="text-sm font-medium text-white/60 tracking-widest"
+          className="text-sm font-medium text-white/40 tracking-widest"
         >
           <AnimatedCounter value={skill.level} inView={inView} />
         </motion.div>
       </div>
 
       {/* 1px Hairline Progress */}
-      <div className="h-px w-full bg-white/5 relative overflow-hidden">
+      <div className="h-px w-full bg-white/[0.03] relative overflow-hidden">
         <motion.div
           initial={{ scaleX: 0 }}
           animate={inView ? { scaleX: skill.level / 100 } : {}}
           transition={{ duration: 2.5, delay: index * 0.1 + 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 bg-white origin-left"
+          className="absolute inset-0 bg-white/20 origin-left"
         />
       </div>
     </div>
@@ -94,8 +94,8 @@ export default function SkillsSection() {
           </p>
         </motion.div>
 
-        {/* Skills List */}
-        <div className="flex flex-col gap-6">
+        {/* Skills List - doubled vertical spacing */}
+        <div className="flex flex-col gap-12">
           {skills.map((skill, index) => (
             <SkillItem key={skill.name} skill={skill} index={index} />
           ))}
