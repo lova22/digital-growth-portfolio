@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Start Your Project"
+  },
+  "hero": {
+    "badge": "Available for Projects",
+    "title1": "Digital Growth",
+    "title2": "Architect",
+    "title3": "& Tech Consultant",
+    "subtitle": "I design, build, and scale premium digital experiences — from pixel-perfect interfaces to intelligent AI-powered systems.",
+    "cta": "Start Your Project",
+    "scroll": "Scroll to explore"
+  },
+  "services": {
+    "heading": "What I Build",
+    "subheading": "End-to-end digital solutions crafted with precision",
+    "items": [
+      {
+        "title": "Web & Mobile Engineering",
+        "desc": "Custom Web Apps, Android Applications, and Premium UI/UX Design."
+      },
+      {
+        "title": "Search & Growth Strategy",
+        "desc": "Advanced SEO, GEO (Local Search Optimization), and Web Analytics."
+      },
+      {
+        "title": "Creative & Visual Arts",
+        "desc": "General Graphic Design, Motion Graphics, and Video Editing."
+      },
+      {
+        "title": "Content & Digital Management",
+        "desc": "Social Media Management, Webmastering, and Professional Editorial Copywriting."
+      },
+      {
+        "title": "AI & Tech Mentorship",
+        "desc": "AI Engineering, Prompt Automation, and Professional IT/Technology Training."
+      },
+      {
+        "title": "Project Incubation",
+        "desc": "Strategy consulting, idea development, and project scaling roadmaps."
+      }
+    ]
+  },
+  "portfolio": {
+    "heading": "Selected Work",
+    "subheading": "Projects that pushed boundaries and delivered results",
+    "viewAll": "View All Projects",
+    "viewProject": "View Project"
+  },
+  "contact": {
+    "heading": "Start Your Project",
+    "subheading": "Let's build something remarkable together",
+    "name": "Your Name",
+    "email": "Email Address",
+    "message": "Tell me about your project",
+    "send": "Send Message",
+    "success": "Message sent! I'll be in touch within 24 hours."
+  }
+}

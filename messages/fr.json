@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "services": "Services",
+    "portfolio": "Réalisations",
+    "about": "À propos",
+    "contact": "Contact",
+    "cta": "Démarrer un Projet"
+  },
+  "hero": {
+    "badge": "Disponible pour des Projets",
+    "title1": "Architecte de",
+    "title2": "Croissance Digitale",
+    "title3": "& Consultant Tech",
+    "subtitle": "Je conçois, développe et scale des expériences digitales premium — des interfaces pixel-perfect aux systèmes intelligents propulsés par l'IA.",
+    "cta": "Démarrer un Projet",
+    "scroll": "Défiler pour explorer"
+  },
+  "services": {
+    "heading": "Ce que je construis",
+    "subheading": "Solutions digitales de bout en bout, conçues avec précision",
+    "items": [
+      {
+        "title": "Ingénierie Web & Mobile",
+        "desc": "Applications Web sur mesure, Applications Android et Design UI/UX Premium."
+      },
+      {
+        "title": "Stratégie Search & Growth",
+        "desc": "SEO avancé, GEO (Optimisation de Recherche Locale) et Web Analytics."
+      },
+      {
+        "title": "Arts Créatifs & Visuels",
+        "desc": "Design Graphique Général, Motion Graphics et Montage Vidéo."
+      },
+      {
+        "title": "Gestion de Contenu & Digitale",
+        "desc": "Gestion des Réseaux Sociaux, Webmastering et Rédaction Éditoriale Professionnelle."
+      },
+      {
+        "title": "Mentorat IA & Tech",
+        "desc": "Ingénierie IA, Automatisation Prompt et Formation Professionnelle IT/Technologie."
+      },
+      {
+        "title": "Incubation de Projets",
+        "desc": "Conseil en stratégie, développement d'idées et feuilles de route pour la croissance."
+      }
+    ]
+  },
+  "portfolio": {
+    "heading": "Travaux Sélectionnés",
+    "subheading": "Des projets qui ont repoussé les limites et livré des résultats",
+    "viewAll": "Voir Tous les Projets",
+    "viewProject": "Voir le Projet"
+  },
+  "contact": {
+    "heading": "Démarrer un Projet",
+    "subheading": "Construisons quelque chose de remarquable ensemble",
+    "name": "Votre Nom",
+    "email": "Adresse Email",
+    "message": "Parlez-moi de votre projet",
+    "send": "Envoyer le Message",
+    "success": "Message envoyé ! Je vous répondrai dans les 24 heures."
+  }
+}
