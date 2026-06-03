@@ -42,8 +42,8 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="w-full bg-[#0A0A0A] py-36 md:py-48 lg:py-64 relative overflow-hidden flex flex-col items-center">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+    <section id="contact" className="section-container bg-[#0A0A0A]">
+      <div className="content-wrapper">
         <div className="max-w-2xl mx-auto w-full">
           <motion.div
             ref={ref}

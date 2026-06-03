@@ -146,11 +146,11 @@ export default function ServicesSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="w-full bg-[#050505] py-36 md:py-48 lg:py-64 relative overflow-hidden flex flex-col items-center">
+    <section id="services" className="section-container bg-[#050505]">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+      <div className="content-wrapper">
         {/* Heading */}
         <motion.div
           ref={headingRef}

@@ -48,11 +48,11 @@ export default function TestimonialsSection() {
   }, [items.length]);
 
   return (
-    <section className="w-full bg-[#050505] py-36 md:py-48 lg:py-64 relative overflow-hidden flex flex-col items-center justify-center">
+    <section className="section-container bg-[#050505]">
       {/* Background ambient light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 text-center relative z-10">
+      <div className="content-wrapper relative z-10 text-center">
         
         <span className="text-[var(--color-accent-red)] text-xs tracking-[0.3em] uppercase mb-8 block font-semibold">
           {t("badge")}

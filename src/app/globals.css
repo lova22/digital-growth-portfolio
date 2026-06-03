@@ -195,25 +195,68 @@ body::before {
   z-index: 1;
 }
 
-/* ─── Section spacing ────────────────────────────────── */
-.section {
-  padding-block: 10rem;
-  padding-inline: 1.5rem;
+/* ─── Premium Redesign Spacing & Center Layout (Bulletproof Custom CSS) ─── */
+.section-container {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+  padding-top: 10rem !important; /* 160px spacing */
+  padding-bottom: 10rem !important; /* 160px spacing */
 }
+
 @media (min-width: 768px) {
-  .section {
-    padding-inline: 3rem;
+  .section-container {
+    padding-top: 14rem !important; /* 224px spacing */
+    padding-bottom: 14rem !important; /* 224px spacing */
   }
 }
-@media (min-width: 1280px) {
-  .section {
-    padding-inline: 6rem;
+
+@media (min-width: 1024px) {
+  .section-container {
+    padding-top: 18rem !important; /* 288px spacing */
+    padding-bottom: 18rem !important; /* 288px spacing */
+  }
+}
+
+.content-wrapper {
+  width: 100% !important;
+  max-width: 1280px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important; /* 24px safe margin */
+  padding-right: 1.5rem !important; /* 24px safe margin */
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 640px) {
+  .content-wrapper {
+    padding-left: 3rem !important; /* 48px safe margin */
+    padding-right: 3rem !important; /* 48px safe margin */
+  }
+}
+
+@media (min-width: 768px) {
+  .content-wrapper {
+    padding-left: 4.5rem !important; /* 72px safe margin */
+    padding-right: 4.5rem !important; /* 72px safe margin */
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-wrapper {
+    padding-left: 6rem !important; /* 96px safe margin */
+    padding-right: 6rem !important; /* 96px safe margin */
   }
 }
 
 .section-inner {
-  max-width: 1280px;
-  margin-inline: auto;
+  max-width: 1280px !important;
+  margin-inline: auto !important;
 }
 
 /* ─── Service card ───────────────────────────────────── */

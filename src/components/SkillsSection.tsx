@@ -127,12 +127,12 @@ export default function SkillsSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="w-full bg-[#0A0A0A] py-36 md:py-48 lg:py-64 relative overflow-hidden flex flex-col items-center">
+    <section id="skills" className="section-container bg-[#0A0A0A]">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+      <div className="content-wrapper">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           <div className="flex flex-col gap-10 lg:sticky lg:top-32 items-center lg:items-start text-center lg:text-left">

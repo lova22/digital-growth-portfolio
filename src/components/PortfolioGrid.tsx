@@ -76,11 +76,11 @@ export default function PortfolioGrid() {
   }, [activeFilter]);
 
   return (
-    <section id="portfolio" className="w-full bg-[#0A0A0A] py-36 md:py-48 lg:py-64 relative overflow-hidden flex flex-col items-center">
+    <section id="portfolio" className="section-container bg-[#0A0A0A]">
       {/* Background ambient light */}
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
+      <div className="content-wrapper">
         
         {/* Heading */}
         <motion.div
