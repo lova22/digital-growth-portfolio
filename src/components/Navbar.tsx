@@ -96,7 +96,7 @@ export default function Navbar() {
             : "bg-transparent border-b border-transparent"
         )}
       >
-        <nav className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between gap-6">
+        <nav className="max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24 h-20 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link
             href={`/${locale}`}
@@ -205,7 +205,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 bg-[#050505]/95 backdrop-blur-2xl flex flex-col justify-center px-6 sm:px-12"
+            className="fixed inset-0 z-40 bg-[#050505]/95 backdrop-blur-2xl flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-24"
           >
             <div className="max-w-7xl mx-auto w-full flex flex-col gap-8 md:gap-12">
               {navLinks.map((link, i) => {

@@ -150,7 +150,7 @@ export default function ServicesSection() {
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
+      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24">
         {/* Heading */}
         <motion.div
           ref={headingRef}

@@ -132,7 +132,7 @@ export default function SkillsSection() {
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
+      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           {/* Left Column: Heading and 2x2 counters */}

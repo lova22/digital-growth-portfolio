@@ -82,7 +82,7 @@ export default function ValuesSection() {
       {/* Background radial highlight */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
+      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24">
         
         {/* Heading */}
         <motion.div

@@ -168,7 +168,7 @@ export default function HeroSection() {
       }} />
 
       {/* Parallax content */}
-      <motion.div style={{ y, opacity }} className="relative z-10 section-inner px-6 text-center max-w-5xl">
+      <motion.div style={{ y, opacity }} className="relative z-10 section-inner px-8 sm:px-12 md:px-16 lg:px-24 text-center max-w-5xl mx-auto">
         {/* Badge */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} className="flex justify-center mb-10">
           <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm ltr:tracking-[0.25em] rtl:tracking-normal">
