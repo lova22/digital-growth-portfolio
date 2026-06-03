@@ -45,7 +45,7 @@ export default function MegaFooter() {
 
   return (
     <footer id="contact" className="bg-[#0D0D0D] pt-32 pb-12 border-t border-white/5 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Urgency Badge with pulsing green dot above the main headline */}
         <motion.div

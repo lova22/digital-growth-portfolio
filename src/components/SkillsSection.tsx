@@ -127,12 +127,12 @@ export default function SkillsSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="section py-32 bg-[#050505] relative overflow-hidden">
+    <section id="skills" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           {/* Left Column: Heading and 2x2 counters */}

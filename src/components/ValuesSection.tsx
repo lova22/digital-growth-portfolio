@@ -22,7 +22,9 @@ function ValueCard({ item, index, locale }: { item: ValueItem; index: number; lo
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1.2, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      className="relative p-8 rounded-2xl border border-white/5 bg-white/[0.01] backdrop-blur-md overflow-hidden group hover:border-white/10 transition-all duration-500 flex flex-col justify-between min-h-[300px]"
+      className={`relative p-8 rounded-2xl border border-white/5 bg-white/[0.01] backdrop-blur-md overflow-hidden group hover:border-white/10 transition-all duration-500 flex flex-col justify-between min-h-[300px] ${
+        index === 2 ? "md:col-span-2 lg:col-span-1" : ""
+      }`}
     >
       {/* Subtle top red light */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -68,11 +70,11 @@ export default function ValuesSection() {
   const items = t.raw("items") as ValueItem[];
 
   return (
-    <section id="values" className="py-24 md:py-32 bg-[#050505] relative overflow-hidden px-6 md:px-12 xl:px-24">
+    <section id="values" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden">
       {/* Background radial highlight */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-0">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         
         {/* Heading */}
         <motion.div
@@ -80,7 +82,7 @@ export default function ValuesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16 md:mb-20 flex flex-col gap-6 items-center"
+          className="text-center mb-16 md:mb-20 flex flex-col gap-6 items-center w-full pt-16"
         >
           <div className="flex justify-center mb-2">
             <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
@@ -100,7 +102,7 @@ export default function ValuesSection() {
         </motion.div>
 
         {/* 3-Column Values Card Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-stretch max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 items-stretch w-full">
           {items.map((item, index) => (
             <ValueCard key={item.num} item={item} index={index} locale={locale} />
           ))}

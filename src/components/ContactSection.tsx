@@ -42,106 +42,108 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="section">
-      <div className="section-inner max-w-2xl mx-auto">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {/* Heading */}
-          <div className="text-center mb-12">
-            <span className="badge mb-5 inline-flex">{t("badge")}</span>
-            <h2 className="text-4xl md:text-5xl font-black text-[var(--color-text-primary)] mb-4">
-              {t("heading")}
-            </h2>
-            <p className="text-white/80 text-lg leading-loose">
-              {t("subheading")}
-            </p>
-          </div>
+    <section id="contact" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-2xl mx-auto w-full">
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 40 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+          >
+            {/* Heading */}
+            <div className="text-center mb-12">
+              <span className="badge mb-5 inline-flex">{t("badge")}</span>
+              <h2 className="text-4xl md:text-5xl font-black text-[var(--color-text-primary)] mb-4">
+                {t("heading")}
+              </h2>
+              <p className="text-white/80 text-lg leading-loose">
+                {t("subheading")}
+              </p>
+            </div>
 
-          {/* Form card */}
-          <div className="pt-8">
-            {status === "success" ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center gap-4 py-12 text-center"
-              >
-                <CheckCircle
-                  size={48}
-                  className="text-emerald-400"
-                />
-                <p className="text-lg font-semibold text-[var(--color-text-primary)]">
-                  {t("success")}
-                </p>
-              </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Name */}
-                <div>
-                  <input
-                    id="contact-name"
-                    type="text"
-                    required
-                    value={form.name}
-                    onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
-                    placeholder={t("name")}
-                    className="w-full p-4 rounded-none bg-transparent border-b border-white/20 text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-white transition-colors text-sm"
+            {/* Form card */}
+            <div className="pt-8">
+              {status === "success" ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col items-center gap-4 py-12 text-center"
+                >
+                  <CheckCircle
+                    size={48}
+                    className="text-emerald-400"
                   />
-                </div>
+                  <p className="text-lg font-semibold text-[var(--color-text-primary)]">
+                    {t("success")}
+                  </p>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Name */}
+                  <div>
+                    <input
+                      id="contact-name"
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                      placeholder={t("name")}
+                      className="w-full p-4 rounded-none bg-transparent border-b border-white/20 text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-white transition-colors text-sm"
+                    />
+                  </div>
 
-                {/* Email */}
-                <div>
-                  <input
-                    id="contact-email"
-                    type="email"
-                    required
-                    value={form.email}
-                    onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
-                    placeholder={t("email")}
-                    className="w-full p-4 rounded-none bg-transparent border-b border-white/20 text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-white transition-colors text-sm"
-                  />
-                </div>
+                  {/* Email */}
+                  <div>
+                    <input
+                      id="contact-email"
+                      type="email"
+                      required
+                      value={form.email}
+                      onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                      placeholder={t("email")}
+                      className="w-full p-4 rounded-none bg-transparent border-b border-white/20 text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-white transition-colors text-sm"
+                    />
+                  </div>
 
-                {/* Message */}
-                <div>
-                  <textarea
-                    id="contact-message"
-                    required
-                    rows={5}
-                    value={form.message}
-                    onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
-                    placeholder={t("message")}
-                    className="w-full p-4 rounded-none bg-transparent border-b border-white/20 text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-white transition-colors text-sm resize-none"
-                  />
-                </div>
+                  {/* Message */}
+                  <div>
+                    <textarea
+                      id="contact-message"
+                      required
+                      rows={5}
+                      value={form.message}
+                      onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                      placeholder={t("message")}
+                      className="w-full p-4 rounded-none bg-transparent border-b border-white/20 text-[var(--color-text-primary)] placeholder:text-[var(--color-text-muted)] focus:outline-none focus:border-white transition-colors text-sm resize-none"
+                    />
+                  </div>
 
-                {/* Error */}
-                {status === "error" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="flex items-center gap-2 text-red-400 text-sm"
-                  >
-                    <AlertCircle size={15} />
-                    {errorMsg}
-                  </motion.div>
-                )}
+                  {/* Error */}
+                  {status === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="flex items-center gap-2 text-red-400 text-sm"
+                    >
+                      <AlertCircle size={15} />
+                      {errorMsg}
+                    </motion.div>
+                  )}
 
-                {/* Submit */}
-                <div className="flex justify-center pt-16 mt-8">
-                  <OrbitingBadgeCTA
-                    type="submit"
-                    text={status === "loading" ? "Sending" : t("send")}
-                    disabled={status === "loading"}
-                  />
-                </div>
-              </form>
-            )}
-          </div>
-        </motion.div>
+                  {/* Submit */}
+                  <div className="flex justify-center pt-16 mt-8">
+                    <OrbitingBadgeCTA
+                      type="submit"
+                      text={status === "loading" ? "Sending" : t("send")}
+                      disabled={status === "loading"}
+                    />
+                  </div>
+                </form>
+              )}
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -146,18 +146,18 @@ export default function ServicesSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-[#0A0A0A] relative overflow-hidden px-6 md:px-12 xl:px-24">
+    <section id="services" className="w-full bg-[#0A0A0A] py-24 md:py-32 relative overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="section-inner">
+      <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         {/* Heading */}
         <motion.div
           ref={headingRef}
           initial={{ opacity: 0, y: 30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16 md:mb-20 flex flex-col gap-6 items-center"
+          className="text-center mb-16 md:mb-20 flex flex-col gap-6 items-center w-full pt-16"
         >
           <div className="flex justify-center mb-2">
             <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
@@ -189,7 +189,7 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 w-full">
           {items.map((item, i) => (
             <ServiceCard
               key={i}

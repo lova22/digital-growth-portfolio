@@ -96,7 +96,7 @@ export default function Navbar() {
             : "bg-transparent border-b border-transparent"
         )}
       >
-        <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
+        <nav className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between gap-6">
           {/* Logo */}
           <Link
             href={`/${locale}`}
