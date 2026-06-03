@@ -22,7 +22,7 @@ function ValueCard({ item, index, locale }: { item: ValueItem; index: number; lo
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1.2, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative p-10 rounded-2xl border border-white/5 bg-white/[0.01] backdrop-blur-md overflow-hidden group hover:border-white/10 transition-all duration-500 flex flex-col justify-between min-h-[350px] ${
+      className={`relative p-6 sm:p-8 md:p-10 rounded-2xl border border-white/5 bg-white/[0.01] backdrop-blur-md overflow-hidden group hover:border-white/10 transition-all duration-500 flex flex-col justify-between min-h-[320px] md:min-h-[350px] ${
         index === 2 ? "md:col-span-2 lg:col-span-1" : ""
       }`}
     >
@@ -82,7 +82,7 @@ export default function ValuesSection() {
       {/* Background radial highlight */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
         
         {/* Heading */}
         <motion.div

@@ -76,7 +76,7 @@ function ServiceCard({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={cardVariants}
-      className={`service-card group flex flex-col justify-between h-full p-8 md:p-10 ${bentoClasses[index]}`}
+      className={`service-card group flex flex-col justify-between h-full p-6 sm:p-8 md:p-10 ${bentoClasses[index]}`}
       onMouseMove={(e) => {
         const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -150,7 +150,7 @@ export default function ServicesSection() {
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
         {/* Heading */}
         <motion.div
           ref={headingRef}

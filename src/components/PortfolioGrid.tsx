@@ -80,7 +80,7 @@ export default function PortfolioGrid() {
       {/* Background ambient light */}
       <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
         
         {/* Heading */}
         <motion.div
@@ -105,14 +105,14 @@ export default function PortfolioGrid() {
         </motion.div>
 
         {/* Premium Pill-shaped Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mt-16 mb-24 max-w-3xl mx-auto relative z-20">
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-12 mb-16 max-w-3xl mx-auto relative z-20 px-2">
           {filterKeys.map((opt) => {
             const isActive = activeFilter === opt.value;
             return (
               <button
                 key={opt.key}
                 onClick={() => setActiveFilter(opt.value)}
-                className={`px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300 select-none cursor-pointer outline-none ${
+                className={`px-4 sm:px-6 py-1.5 sm:py-2 rounded-full border text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 select-none cursor-pointer outline-none ${
                   isActive
                     ? "bg-white text-black font-bold border-white"
                     : "border-white/10 text-white/50 hover:bg-white/10 hover:text-white"
@@ -159,7 +159,7 @@ export default function PortfolioGrid() {
                       </div>
 
                       {/* Textual content with nested flex gap layout */}
-                      <div className="mt-6 px-6 flex flex-col gap-4">
+                      <div className="mt-5 px-5 sm:px-6 flex flex-col gap-4">
                         <div>
                           <div className="text-[10px] font-mono tracking-widest text-[var(--color-accent-gold)] mb-2 uppercase">
                             {proj.category}
@@ -181,7 +181,7 @@ export default function PortfolioGrid() {
                     </div>
 
                     {/* Tech Pills Footer */}
-                    <div className="px-6 pt-4 pb-6 flex flex-wrap gap-2">
+                    <div className="px-5 sm:px-6 pt-3 pb-5 flex flex-wrap gap-2">
                       {proj.tech.map((t) => (
                         <span
                           key={t}

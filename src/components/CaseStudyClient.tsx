@@ -533,7 +533,7 @@ export default function CaseStudyClient({
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-[#050505] pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/40 via-transparent to-[#050505]/40 pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24 pb-20 md:pb-24 flex flex-col items-start gap-6">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 pb-20 md:pb-24 flex flex-col items-start gap-6">
           <Link
             href={`/${activeLocale}`}
             className="group inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors mb-4"
@@ -576,7 +576,7 @@ export default function CaseStudyClient({
 
       {/* 2. Project Metadata Grid */}
       <section className="relative z-20 bg-[#050505] border-y border-white/10 py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-start divide-y md:divide-y-0 md:divide-x divide-white/10 rtl:divide-x-reverse">
             
             <div className="flex flex-col gap-3 pt-6 md:pt-0">
@@ -614,7 +614,7 @@ export default function CaseStudyClient({
 
       {/* 3. Storytelling Section */}
       <section className="py-32 bg-[#050505]">
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24 flex flex-col gap-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 flex flex-col gap-24">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
             <div className="lg:col-span-4 lg:sticky lg:top-24">
@@ -679,7 +679,7 @@ export default function CaseStudyClient({
       <section className="py-32 bg-[#0A0A0A] border-t border-white/5 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-xs uppercase tracking-[0.25em] text-[var(--color-accent-gold)] font-bold mb-4">
               04 / {currentLabels.gallery}
@@ -710,7 +710,7 @@ export default function CaseStudyClient({
       <section className="relative bg-[#050505] border-t border-white/10 group cursor-pointer overflow-hidden">
         <Link
           href={`/${activeLocale}/portfolio/${data.nextSlug}`}
-          className="flex flex-col items-center justify-center py-32 px-8 sm:px-12 md:px-16 lg:px-24 w-full text-center relative z-10"
+          className="flex flex-col items-center justify-center py-32 px-4 sm:px-8 md:px-16 lg:px-24 w-full text-center relative z-10"
         >
           <div className="absolute inset-0 bg-white/[0.02] transform translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out -z-10" />
 

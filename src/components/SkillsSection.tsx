@@ -69,7 +69,7 @@ function ScrollCounter({ value, suffix = "", label }: { value: number; suffix?: 
   }, [inView, value, started]);
 
   return (
-    <div className="flex flex-col p-6 bg-white/[0.01] border border-white/5 rounded-2xl backdrop-blur-md shadow-lg hover:border-white/10 transition-colors duration-500">
+    <div className="flex flex-col p-5 sm:p-6 bg-white/[0.01] border border-white/5 rounded-2xl backdrop-blur-md shadow-lg hover:border-white/10 transition-colors duration-500">
       <div className="text-4xl md:text-5xl font-black text-[var(--color-accent-red)] tracking-tight">
         <span ref={ref}>0</span>
         {suffix}
@@ -87,7 +87,7 @@ function SkillItem({ skill, index }: { skill: { key: string; level: number }; in
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div ref={ref} className="group cursor-default py-8">
+    <div ref={ref} className="group cursor-default py-5 sm:py-8">
       <div className="flex items-end justify-between mb-5">
         <motion.h4
           initial={{ opacity: 0, y: 20 }}
@@ -132,18 +132,17 @@ export default function SkillsSection() {
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-16 lg:px-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
-          {/* Left Column: Heading and 2x2 counters */}
-          <div className="flex flex-col gap-10 lg:sticky lg:top-32">
+          <div className="flex flex-col gap-10 lg:sticky lg:top-32 items-center lg:items-start text-center lg:text-left">
             <motion.div
               ref={headingRef}
               initial={{ opacity: 0, y: 30 }}
               animate={headingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="flex mb-8">
+              <div className="flex mb-8 justify-center lg:justify-start">
                 <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
               </div>
               <h2 
@@ -154,13 +153,13 @@ export default function SkillsSection() {
                 <span className="font-light text-white/50">{t("headingSub")}</span>
               </h2>
               <p 
-                className="text-base text-white/60 max-w-2xl leading-relaxed"
+                className="text-base text-white/60 max-w-2xl leading-relaxed mx-auto lg:mx-0"
               >
                 {t("desc")}
               </p>
               {/* Tech Stack Mad Libs */}
               <p 
-                className="mt-6 text-sm text-[var(--color-accent-gold)]/70 border-l-2 border-[var(--color-accent-gold)] pl-4 italic max-w-2xl"
+                className="mt-6 text-sm text-[var(--color-accent-gold)]/70 border-t lg:border-t-0 border-l-0 lg:border-l-2 border-[var(--color-accent-gold)] pt-4 lg:pt-0 pl-0 lg:pl-4 italic max-w-2xl mx-auto lg:mx-0"
                 style={{ lineHeight: locale === "ar" ? "1.8" : "1.6" }}
               >
                 {t("techStack")}

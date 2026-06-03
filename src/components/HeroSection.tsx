@@ -168,7 +168,7 @@ export default function HeroSection() {
       }} />
 
       {/* Parallax content */}
-      <motion.div style={{ y, opacity }} className="relative z-10 section-inner px-8 sm:px-12 md:px-16 lg:px-24 text-center max-w-5xl mx-auto">
+      <motion.div style={{ y, opacity }} className="relative z-10 section-inner w-full max-w-5xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 text-center">
         {/* Badge */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} className="flex justify-center mb-10">
           <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm ltr:tracking-[0.25em] rtl:tracking-normal">
@@ -216,7 +216,7 @@ export default function HeroSection() {
           </motion.div>
 
           {/* Stats Row Capsule */}
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.4, duration: 1.2, ease: [0.22, 1, 0.36, 1] }} className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 max-w-4xl mx-auto p-8 md:py-8 md:px-14 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md shadow-2xl relative overflow-hidden group">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.4, duration: 1.2, ease: [0.22, 1, 0.36, 1] }} className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-16 w-full max-w-4xl mx-auto p-6 md:py-8 md:px-14 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md shadow-2xl relative overflow-hidden group">
             <AnimatedStat value={100} suffix="+" label={t("stats.projects")} delay={1.5} />
             <div className="hidden md:block w-px h-10 bg-white/10 self-center" />
             <AnimatedStat value={89} label={t("stats.clients")} delay={1.7} />
