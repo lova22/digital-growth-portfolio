@@ -88,9 +88,9 @@ export default function PortfolioGrid() {
           initial={{ opacity: 0, y: 30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16 md:mb-20 flex flex-col gap-6 items-center w-full pt-16"
+          className="text-center mb-24 md:mb-32 flex flex-col gap-6 items-center w-full pt-16"
         >
-          <div className="flex justify-center mb-2">
+          <div className="flex justify-center mt-32 mb-16">
             <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
           </div>
           <h2 
@@ -107,24 +107,20 @@ export default function PortfolioGrid() {
           </p>
         </motion.div>
 
-        {/* Sliding Premium Category Tabs */}
-        <div className="flex items-center justify-center p-1.5 bg-white/[0.02] border border-white/5 rounded-full mb-20 max-w-3xl mx-auto flex-wrap sm:flex-nowrap gap-1 backdrop-blur-md shadow-inner relative z-20">
+        {/* Premium Pill-shaped Category Filters */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-16 mb-24 max-w-3xl mx-auto relative z-20">
           {filterKeys.map((opt) => {
             const isActive = activeFilter === opt.value;
             return (
               <button
                 key={opt.key}
                 onClick={() => setActiveFilter(opt.value)}
-                className="relative px-6 py-3 text-xs font-black uppercase tracking-widest transition-colors duration-500 rounded-full z-10 select-none flex-1 text-center cursor-pointer outline-none"
-                style={{ color: isActive ? "#000000" : "rgba(255, 255, 255, 0.5)" }}
+                className={`px-6 py-2 rounded-full border text-sm tracking-widest uppercase transition-all duration-300 select-none cursor-pointer outline-none ${
+                  isActive
+                    ? "bg-white text-black font-bold border-white"
+                    : "border-white/10 text-white/50 hover:bg-white/10 hover:text-white"
+                }`}
               >
-                {isActive && (
-                  <motion.div
-                    layoutId="activeTab"
-                    className="absolute inset-0 bg-gradient-to-r from-[var(--color-accent-gold)] to-[var(--color-accent-gold-light)] rounded-full -z-10 shadow-lg glow-gold"
-                    transition={{ type: "spring", stiffness: 350, damping: 28 }}
-                  />
-                )}
                 {t(`categories.${opt.key}`)}
               </button>
             );
@@ -146,7 +142,7 @@ export default function PortfolioGrid() {
                   transition={{ duration: 0.5, ease: "easeOut" }}
                   className="group relative rounded-2xl overflow-hidden bg-white/[0.01] backdrop-blur-md border border-white/5 flex flex-col justify-between hover:border-white/10 transition-all duration-500 shadow-xl"
                 >
-                  <Link href={`/${locale}/portfolio/${projectSlug}`} className="block h-full cursor-pointer">
+                  <Link href={`/${locale}/portfolio/${projectSlug}`} className="flex flex-col justify-between h-full cursor-pointer">
                     <div>
                       {/* Image Container */}
                       <div className="relative h-56 overflow-hidden">
@@ -166,7 +162,7 @@ export default function PortfolioGrid() {
                       </div>
 
                       {/* Textual content with nested flex gap layout */}
-                      <div className="p-8 flex flex-col gap-4">
+                      <div className="mt-6 px-6 flex flex-col gap-4">
                         <div>
                           <div className="text-[10px] font-mono tracking-widest text-[var(--color-accent-gold)] mb-2 uppercase">
                             {proj.category}
@@ -188,7 +184,7 @@ export default function PortfolioGrid() {
                     </div>
 
                     {/* Tech Pills Footer */}
-                    <div className="px-8 pb-8 flex flex-wrap gap-2">
+                    <div className="px-6 pt-4 pb-6 flex flex-wrap gap-2">
                       {proj.tech.map((t) => (
                         <span
                           key={t}

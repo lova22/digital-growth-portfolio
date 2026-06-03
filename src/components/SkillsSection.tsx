@@ -143,7 +143,7 @@ export default function SkillsSection() {
               animate={headingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="flex mb-6">
+              <div className="flex mt-32 mb-16">
                 <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
               </div>
               <h2 

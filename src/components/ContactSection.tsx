@@ -51,9 +51,8 @@ export default function ContactSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Heading */}
             <div className="text-center mb-12">
-              <span className="badge mb-5 inline-flex">{t("badge")}</span>
+              <span className="badge mt-32 mb-16 inline-flex">{t("badge")}</span>
               <h2 className="text-4xl md:text-5xl font-black text-[var(--color-text-primary)] mb-4">
                 {t("heading")}
               </h2>

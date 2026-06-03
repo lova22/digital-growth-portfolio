@@ -157,9 +157,9 @@ export default function ServicesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16 md:mb-20 flex flex-col gap-6 items-center w-full pt-16"
+          className="text-center mb-24 md:mb-32 flex flex-col gap-6 items-center w-full pt-16"
         >
-          <div className="flex justify-center mb-2">
+          <div className="flex justify-center mt-32 mb-16">
             <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
           </div>
           <h2 

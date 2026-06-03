@@ -54,11 +54,11 @@ export default function TestimonialsSection() {
 
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
         
-        <span className="text-[var(--color-accent-red)] text-xs tracking-[0.3em] uppercase mb-12 block font-semibold">
+        <span className="text-[var(--color-accent-red)] text-xs tracking-[0.3em] uppercase mt-32 mb-16 block font-semibold">
           {t("badge")}
         </span>
 
-        <div className="min-h-[400px] sm:min-h-[340px] md:min-h-[300px] flex items-center justify-center relative w-full overflow-hidden">
+        <div className="min-h-[400px] sm:min-h-[340px] md:min-h-[300px] flex items-center justify-center relative w-full overflow-hidden mt-40">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
