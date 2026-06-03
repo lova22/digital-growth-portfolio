@@ -78,7 +78,7 @@ export default function ValuesSection() {
   const items = t.raw("items") as ValueItem[];
 
   return (
-    <section id="values" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden flex flex-col items-center">
+    <section id="values" className="w-full bg-[#050505] py-32 md:py-40 relative overflow-hidden flex flex-col items-center">
       {/* Background radial highlight */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 
@@ -90,20 +90,17 @@ export default function ValuesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-24 md:mb-32 flex flex-col gap-6 items-center w-full pt-16"
+          className="text-center mb-24 md:mb-32 flex flex-col items-center w-full"
         >
-          <div className="flex justify-center mt-32 mb-16">
-            <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
-          </div>
+          <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm mb-8">{t("badge")}</span>
           <h2 
-            className="text-4xl md:text-5xl font-black text-[var(--color-text-primary)] mb-2 uppercase tracking-tight"
+            className="text-4xl md:text-5xl font-black text-[var(--color-text-primary)] mb-6 uppercase tracking-tight"
             style={{ lineHeight: "1.25" }}
           >
             {t("heading")}
           </h2>
           <p 
-            className="text-white/60 text-base md:text-lg font-light max-w-2xl mx-auto"
-            style={{ lineHeight: locale === "ar" ? "1.9" : "1.65" }}
+            className="text-white/60 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed"
           >
             {t("subheading")}
           </p>

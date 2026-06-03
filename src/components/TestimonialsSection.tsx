@@ -48,17 +48,17 @@ export default function TestimonialsSection() {
   }, [items.length]);
 
   return (
-    <section className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden flex flex-col items-center justify-center">
+    <section className="w-full bg-[#050505] py-32 md:py-40 relative overflow-hidden flex flex-col items-center justify-center">
       {/* Background ambient light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
         
-        <span className="text-[var(--color-accent-red)] text-xs tracking-[0.3em] uppercase mt-32 mb-16 block font-semibold">
+        <span className="text-[var(--color-accent-red)] text-xs tracking-[0.3em] uppercase mb-8 block font-semibold">
           {t("badge")}
         </span>
 
-        <div className="min-h-[400px] sm:min-h-[340px] md:min-h-[300px] flex items-center justify-center relative w-full overflow-hidden mt-40">
+        <div className="min-h-[400px] sm:min-h-[340px] md:min-h-[300px] flex items-center justify-center relative w-full overflow-hidden mt-24 md:mt-32">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}

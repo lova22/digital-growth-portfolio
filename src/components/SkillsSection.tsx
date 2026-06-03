@@ -127,7 +127,7 @@ export default function SkillsSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden flex flex-col items-center">
+    <section id="skills" className="w-full bg-[#050505] py-32 md:py-40 relative overflow-hidden flex flex-col items-center">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
@@ -143,7 +143,7 @@ export default function SkillsSection() {
               animate={headingInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="flex mt-32 mb-16">
+              <div className="flex mb-8">
                 <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
               </div>
               <h2 
@@ -154,8 +154,7 @@ export default function SkillsSection() {
                 <span className="font-light text-white/50">{t("headingSub")}</span>
               </h2>
               <p 
-                className="text-base text-white/60 max-w-2xl"
-                style={{ lineHeight: locale === "ar" ? "1.9" : "1.65" }}
+                className="text-base text-white/60 max-w-2xl leading-relaxed"
               >
                 {t("desc")}
               </p>
