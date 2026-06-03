@@ -127,7 +127,7 @@ export default function SkillsSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden">
+    <section id="skills" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden flex flex-col items-center">
       {/* Ambient background glows */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />

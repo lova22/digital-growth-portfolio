@@ -48,7 +48,7 @@ export default function TestimonialsSection() {
   }, [items.length]);
 
   return (
-    <section className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden flex items-center justify-center">
+    <section className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden flex flex-col items-center justify-center">
       {/* Background ambient light */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 

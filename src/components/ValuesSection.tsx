@@ -70,7 +70,7 @@ export default function ValuesSection() {
   const items = t.raw("items") as ValueItem[];
 
   return (
-    <section id="values" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden">
+    <section id="values" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden flex flex-col items-center">
       {/* Background radial highlight */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-500/5 blur-[130px] rounded-full pointer-events-none" />
 

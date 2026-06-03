@@ -42,7 +42,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden">
+    <section id="contact" className="w-full bg-[#050505] py-24 md:py-32 relative overflow-hidden flex flex-col items-center">
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
         <div className="max-w-2xl mx-auto w-full">
           <motion.div
