@@ -16,13 +16,11 @@
   --color-text-secondary: rgba(255, 255, 255, 0.6);
   --color-text-muted: rgba(255, 255, 255, 0.4);
 
-  --font-inter: "Inter", sans-serif;
-  --font-tajawal: "Tajawal", sans-serif;
-
-  --radius-card: 0px;
-  --radius-btn: 0px;
+  --radius-card: 16px;
+  --radius-btn: 9999px;
 
   --shadow-glow-gold: 0 0 40px rgba(242, 227, 198, 0.15);
+  --shadow-glow-red: 0 0 40px rgba(255, 0, 0, 0.15);
 }
 
 /* ─── Base ───────────────────────────────────────────── */
@@ -55,15 +53,20 @@ body::before {
   mix-blend-mode: overlay;
 }
 
-/* RTL-aware font selection */
 [dir="ltr"] body,
 [dir="ltr"] * {
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), sans-serif;
+}
+[dir="ltr"] p {
+  line-height: 1.65;
 }
 [dir="rtl"] body,
 [dir="rtl"] * {
-  font-family: var(--font-tajawal);
+  font-family: var(--font-tajawal), sans-serif;
   letter-spacing: 0;
+}
+[dir="rtl"] p {
+  line-height: 1.85;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────── */
@@ -74,7 +77,7 @@ body::before {
   background: var(--color-bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-accent-violet);
+  background: var(--color-accent-red);
   border-radius: 999px;
 }
 
@@ -211,22 +214,22 @@ body::before {
 
 /* ─── Service card ───────────────────────────────────── */
 .service-card {
-  padding: 2.5rem;
-  border-radius: 0;
+  padding: 3rem;
+  border-radius: var(--radius-card);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-left: 2px solid var(--color-accent-red) !important;
-  background: #0a0a0a;
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: default;
   position: relative;
   overflow: hidden;
 }
 .service-card:hover {
-  border-color: rgba(255, 255, 255, 0.1);
-  border-left: 2px solid var(--color-accent-red) !important;
-  transform: translateY(-4px);
-  background: #1A1A1A;
-  box-shadow: 0 0 30px rgba(255, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-6px);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 255, 255, 0.02);
 }
 .service-card::before {
   content: "";

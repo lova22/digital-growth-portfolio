@@ -13,6 +13,7 @@
     "title3": "& Tech Consultant",
     "subtitle": "I design, build, and scale premium digital experiences — from pixel-perfect interfaces to intelligent AI-powered systems.",
     "cta": "Start Your Project",
+    "portfolio": "View Portfolio",
     "scroll": "Scroll to explore",
     "stats": {
       "projects": "Projects delivered",
@@ -21,6 +22,7 @@
     }
   },
   "services": {
+    "badge": "Services",
     "heading": "What I Build",
     "subheading": "End-to-end digital solutions crafted with precision",
     "items": [
@@ -51,23 +53,87 @@
     ]
   },
   "skills": {
+    "badge": "Expertise",
     "heading": "Mastery &",
     "headingSub": "Execution",
     "desc": "Precision engineering paired with high-end aesthetic execution. Delivering bleeding-edge performance wrapped in uncompromising luxury.",
+    "techStack": "Tech stack: Next.js, Vercel, Tailwind CSS, Framer Motion, Supabase.",
     "stats": {
       "tech": "Technologies",
       "pixel": "Pixel-Perfect",
       "exp": "Years of experience",
       "response": "24h Response Time"
+    },
+    "items": {
+      "ai": "Generative AI Integration",
+      "react": "Next.js & React Architecture",
+      "uiux": "UI/UX Architecture",
+      "database": "Supabase & Postgres",
+      "animations": "Framer Motion & Animations",
+      "seo": "Technical SEO & Performance"
     }
   },
+  "values": {
+    "badge": "Philosophy",
+    "heading": "CORE PHILOSOPHY",
+    "subheading": "Uncompromising standards, high-end technical execution, and tactical aesthetics that command absolute respect.",
+    "items": [
+      {
+        "num": "01",
+        "title": "Uncompromising Quality",
+        "desc": "We do not ship standard. Every pixel, every animation, and every line of code is heavily scrutinized to deliver a flawless, Awwwards-level experience."
+      },
+      {
+        "num": "02",
+        "title": "Cinematic Execution",
+        "desc": "Digital products should feel alive. We leverage heavy easing, microscopic hairlines, and tactical whitespace to craft experiences that command attention."
+      },
+      {
+        "num": "03",
+        "title": "Architectural Velocity",
+        "desc": "Speed without technical debt. By utilizing Next.js, Framer Motion, and scalable Postgres databases, we build foundations that are fast to deploy and ready to scale."
+      }
+    ]
+  },
   "portfolio": {
+    "badge": "Portfolio",
     "heading": "Selected Work",
     "subheading": "Projects that pushed boundaries and delivered results",
     "viewAll": "View All Projects",
-    "viewProject": "View Project"
+    "viewProject": "View Project",
+    "categories": {
+      "all": "All",
+      "web": "Web Dev",
+      "mobile": "Mobile Apps",
+      "ai": "AI Solutions",
+      "video": "UI/UX & Video"
+    }
+  },
+  "testimonials": {
+    "badge": "Client Authority",
+    "items": [
+      {
+        "quote": "Working with this agency fundamentally changed how we are perceived online. The attention to microscopic detail is unlike anything we've seen.",
+        "author": "Elena R.",
+        "role": "CEO, TechVentures",
+        "initials": "ER"
+      },
+      {
+        "quote": "A rare breed of talent. The intersection of highly technical engineering and an almost obsessive eye for luxury design.",
+        "author": "Marcus T.",
+        "role": "Founder, Apex Capital",
+        "initials": "MT"
+      },
+      {
+        "quote": "They don't just build websites, they engineer digital authority. The final product commanded absolute respect from our investors.",
+        "author": "Sarah L.",
+        "role": "VP Marketing, Lumina",
+        "initials": "SL"
+      }
+    ]
   },
   "contact": {
+    "badge": "Contact",
     "heading": "Start Your Project",
     "subheading": "Let's build something remarkable together",
     "name": "Your Name",
@@ -75,5 +141,8 @@
     "message": "Tell me about your project",
     "send": "Send Message",
     "success": "Message sent! I'll be in touch within 24 hours."
+  },
+  "guard": {
+    "blocked": "Developer options are disabled for this experience."
   }
 }

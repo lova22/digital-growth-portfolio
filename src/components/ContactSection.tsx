@@ -3,7 +3,8 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { CheckCircle, AlertCircle } from "lucide-react";
+import OrbitingBadgeCTA from "@/components/OrbitingBadgeCTA";
 
 export default function ContactSection() {
   const t = useTranslations("contact");
@@ -51,7 +52,7 @@ export default function ContactSection() {
         >
           {/* Heading */}
           <div className="text-center mb-12">
-            <span className="badge mb-5 inline-flex">Contact</span>
+            <span className="badge mb-5 inline-flex">{t("badge")}</span>
             <h2 className="text-4xl md:text-5xl font-black text-[var(--color-text-primary)] mb-4">
               {t("heading")}
             </h2>
@@ -130,26 +131,13 @@ export default function ContactSection() {
                 )}
 
                 {/* Submit */}
-                <button
-                  id="contact-submit"
-                  type="submit"
-                  disabled={status === "loading"}
-                  className="btn-magnetic w-full disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  <span className="flex items-center justify-center gap-2">
-                    {status === "loading" ? (
-                      <>
-                        <Loader2 size={16} className="animate-spin" />
-                        Sending…
-                      </>
-                    ) : (
-                      <>
-                        {t("send")}
-                        <Send size={15} />
-                      </>
-                    )}
-                  </span>
-                </button>
+                <div className="flex justify-center pt-16 mt-8">
+                  <OrbitingBadgeCTA
+                    type="submit"
+                    text={status === "loading" ? "Sending" : t("send")}
+                    disabled={status === "loading"}
+                  />
+                </div>
               </form>
             )}
           </div>

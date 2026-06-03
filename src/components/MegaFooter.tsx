@@ -4,10 +4,12 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Send, CheckCircle, AlertCircle, Loader2, Mail, MapPin, Link } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import OrbitingBadgeCTA from "@/components/OrbitingBadgeCTA";
 
 export default function MegaFooter() {
   const locale = useLocale();
   const t = useTranslations("contact");
+  const tNav = useTranslations("nav");
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -73,7 +75,7 @@ export default function MegaFooter() {
           transition={{ duration: 1.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="mb-32 text-center lg:text-left"
         >
-          <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[9rem] font-black text-white tracking-tighter leading-none uppercase">
+          <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] xl:text-[9rem] font-black text-white tracking-tighter leading-[1.15] uppercase">
             {locale === "en" ? (
               <>
                 Let&apos;s Build<br />
@@ -159,20 +161,17 @@ export default function MegaFooter() {
                   </motion.div>
                 )}
 
-                <div className="flex flex-col items-start gap-4">
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className="group relative inline-flex items-center gap-4 text-sm tracking-[0.2em] uppercase text-white hover:text-[var(--color-accent-red)] transition-colors disabled:opacity-50 mt-4"
-                  >
-                    <span className="relative z-10 font-bold">
-                      {status === "loading" ? (locale === "en" ? "Sending..." : locale === "fr" ? "Envoi..." : "جاري الإرسال...") : t("send")}
-                    </span>
-                    {(status === "idle" || status === "error") && <Send size={16} className="relative z-10 transition-transform group-hover:translate-x-2 text-[var(--color-accent-red)]" />}
-                  </button>
+                <div className="flex flex-col sm:flex-row items-center gap-8 mt-12 w-full">
+                  <div className="flex justify-center sm:justify-start">
+                    <OrbitingBadgeCTA
+                      type="submit"
+                      text={status === "loading" ? (locale === "en" ? "Sending" : locale === "fr" ? "Envoi" : "إرسال") : t("send")}
+                      disabled={status === "loading"}
+                    />
+                  </div>
                   
-                  {/* Urgency Subtext below form button */}
-                  <span className="text-xs text-white/40 tracking-[0.1em] font-medium">
+                  {/* Urgency Subtext beside circular form button */}
+                  <span className="text-xs text-white/40 tracking-[0.1em] font-medium max-w-[200px] leading-relaxed">
                     {locale === "en"
                       ? "Reply within 24h · No obligation"
                       : locale === "fr"
@@ -271,10 +270,10 @@ export default function MegaFooter() {
                 {locale === "en" ? "Navigation" : locale === "fr" ? "Navigation" : "التنقل"}
               </h4>
               <ul className="space-y-4 text-xs font-semibold uppercase tracking-wider">
-                <li><a href="#services" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">Services</a></li>
-                <li><a href="#portfolio" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">{locale === "en" ? "Work" : locale === "fr" ? "Réalisations" : "الأعمال"}</a></li>
-                <li><a href="#skills" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">{locale === "en" ? "Expertise" : locale === "fr" ? "À propos" : "الخبرة"}</a></li>
-                <li><a href="#contact" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">Contact</a></li>
+                <li><a href="#services" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">{tNav("services")}</a></li>
+                <li><a href="#portfolio" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">{tNav("portfolio")}</a></li>
+                <li><a href="#skills" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">{tNav("about")}</a></li>
+                <li><a href="#contact" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">{tNav("contact")}</a></li>
               </ul>
             </div>
 

@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import LocaleHtmlSetup from "@/components/LocaleHtmlSetup";
 
 import CustomCursor from "@/components/CustomCursor";
+import RightClickGuard from "@/components/RightClickGuard";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -56,9 +57,10 @@ export default async function LocaleLayout({
         <div
           dir={isRTL ? "rtl" : "ltr"}
           lang={locale}
-          className={`${fontClass} gradient-bg min-h-screen cursor-none`}
+          className={`${fontClass} gradient-bg min-h-screen`}
         >
           <CustomCursor />
+          <RightClickGuard />
           <Navbar />
           <main>{children}</main>
         </div>

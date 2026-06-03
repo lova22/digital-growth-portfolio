@@ -76,7 +76,7 @@ function ServiceCard({
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       variants={cardVariants}
-      className={`service-card group p-8 sm:p-10 md:p-14 lg:p-16 flex flex-col justify-between h-full ${bentoClasses[index]}`}
+      className={`service-card group flex flex-col justify-between h-full p-8 md:p-10 ${bentoClasses[index]}`}
       onMouseMove={(e) => {
         const rect = (e.currentTarget as HTMLDivElement).getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 100;
@@ -85,42 +85,50 @@ function ServiceCard({
         (e.currentTarget as HTMLDivElement).style.setProperty("--my", `${y}%`);
       }}
     >
-      <div>
+      <div className="flex flex-col gap-5">
         {/* Icon */}
         <div
-          className="w-12 h-12 rounded-none flex items-center justify-center mb-6 border"
+          className="w-12 h-12 rounded-xl flex items-center justify-center border"
           style={{
             background: `rgba(255, 255, 255, 0.02)`,
-            borderColor: `rgba(255, 255, 255, 0.05)`,
+            borderColor: `rgba(255, 255, 255, 0.06)`,
           }}
         >
-          <Icon size={22} style={{ color }} />
+          <Icon size={20} style={{ color }} />
         </div>
 
-        {/* Number */}
-        <span
-          className="text-[10px] font-bold tracking-[0.2em] uppercase mb-4 block"
-          style={{ color }}
-        >
-          {String(index + 1).padStart(2, "0")}
-        </span>
+        <div>
+          {/* Number */}
+          <span
+            className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2 block opacity-50"
+            style={{ color }}
+          >
+            {String(index + 1).padStart(2, "0")}
+          </span>
 
-        {/* Title */}
-        <h3 className="text-xl md:text-2xl font-bold text-[var(--color-text-primary)] mb-4 leading-snug">
-          {title}
-        </h3>
+          {/* Title */}
+          <h3 
+            className="text-xl md:text-2xl font-bold text-[var(--color-text-primary)]"
+            style={{ lineHeight: "1.4", marginBottom: "0.75rem" }}
+          >
+            {title}
+          </h3>
 
-        {/* Desc */}
-        <p className="text-sm md:text-base text-white/80 leading-loose mb-8 line-clamp-2 min-h-[3rem]">
-          {desc}
-        </p>
+          {/* Desc */}
+          <p 
+            className="text-sm text-white/60 font-light"
+            style={{ lineHeight: locale === "ar" ? "1.8" : "1.6", minHeight: "3.5rem" }}
+          >
+            {desc}
+          </p>
+        </div>
       </div>
 
       {/* Learn more */}
       <a
         href="#contact"
-        className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all duration-200 group-hover:gap-2.5 mt-auto"
-        style={{ color }}
+        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 group-hover:gap-2.5"
+        style={{ color, marginTop: "2rem" }}
       >
         {locale === "en" ? "Learn more" : locale === "fr" ? "En savoir plus" : "اقرأ المزيد"}
         <ArrowRight size={14} />
@@ -138,23 +146,32 @@ export default function ServicesSection() {
   const headingInView = useInView(headingRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="section bg-[#0F0F0F]">
-      <div className="section-inner mb-20">
+    <section id="services" className="py-24 md:py-32 bg-[#0A0A0A] relative overflow-hidden px-6 md:px-12 xl:px-24">
+      {/* Background Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-500/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="section-inner">
         {/* Heading */}
         <motion.div
           ref={headingRef}
           initial={{ opacity: 0, y: 30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-32"
+          className="text-center mb-16 md:mb-20 flex flex-col gap-6 items-center"
         >
-          <div className="flex justify-center mb-8">
-            <span className="badge">Services</span>
+          <div className="flex justify-center mb-2">
+            <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm">{t("badge")}</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[var(--color-text-primary)] mb-8 uppercase tracking-tight">
+          <h2 
+            className="text-4xl md:text-5xl font-black text-[var(--color-text-primary)] mb-2 uppercase tracking-tight"
+            style={{ lineHeight: "1.25" }}
+          >
             {t("heading")}
           </h2>
-          <p className="text-white/80 text-lg md:text-xl font-light max-w-2xl mx-auto leading-loose tracking-wide mt-6">
+          <p 
+            className="text-white/60 text-base md:text-lg font-light max-w-2xl mx-auto"
+            style={{ lineHeight: locale === "ar" ? "1.9" : "1.65" }}
+          >
             {locale === "en" ? (
               <>
                 End-to-end digital solutions <span className="text-[var(--color-accent-gold)] font-medium">crafted with precision</span>.
@@ -172,7 +189,7 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Bento Box Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 max-w-7xl mx-auto">
           {items.map((item, i) => (
             <ServiceCard
               key={i}
