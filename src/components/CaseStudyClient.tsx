@@ -13,10 +13,13 @@ interface StatItem {
 interface CaseStudyContent {
   title: string;
   subtitle: string;
-  client: string;
-  timeline: string;
+  client?: string;
+  timeline?: string;
   role: string;
   tech: string[];
+  deliverables?: string[];
+  liveUrl?: string;
+  hideLive?: boolean;
   challenge: string;
   solution: string;
   impact: StatItem[];
@@ -25,6 +28,168 @@ interface CaseStudyContent {
 }
 
 const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
+  "meryem-youssoufi": {
+    en: {
+      title: "Dr. Meryem Youssoufi",
+      subtitle: "A trilingual academic platform showcasing research, books and international work.",
+      client: "Dr. Meryem Youssoufi, Ibn Zohr University",
+      role: "Web Designer & Developer",
+      tech: ["React", "RTL / i18n", "Vercel", "GitHub CI/CD"],
+      deliverables: ["Web Design", "SEO Audit", "Website Customization", "Responsive Design", "Web Development"],
+      liveUrl: "https://meryemyoussoufi.com",
+      challenge: "Dr. Meryem Youssoufi, a sociology professor at Ibn Zohr University, needed a professional platform to showcase her research, books, and international academic work in 3 languages.",
+      solution: "I built a modern React web application covering 5+ published books, research projects, supervised students, media appearances, and online courses, fully in Arabic (RTL), French, and English. The site is fast-loading, SEO-optimized, and auto-deployed to Vercel via GitHub CI/CD, with instant language switching and no page reload.",
+      impact: [
+        { value: "5+", label: "Published Books Showcased" },
+        { value: "3", label: "Languages (AR · FR · EN)" },
+        { value: "0", label: "Page Reloads on Language Switch" }
+      ],
+      nextTitle: "PDFPro",
+      nextSlug: "pdfpro"
+    },
+    fr: {
+      title: "Dr. Meryem Youssoufi",
+      subtitle: "Une plateforme académique trilingue valorisant recherches, ouvrages et travaux internationaux.",
+      client: "Dr. Meryem Youssoufi, Université Ibn Zohr",
+      role: "Web Designer & Développeur",
+      tech: ["React", "RTL / i18n", "Vercel", "GitHub CI/CD"],
+      deliverables: ["Web Design", "Audit SEO", "Personnalisation du site", "Design Responsive", "Développement Web"],
+      liveUrl: "https://meryemyoussoufi.com",
+      challenge: "Dr. Meryem Youssoufi, professeure de sociologie à l'Université Ibn Zohr, avait besoin d'une plateforme professionnelle pour présenter ses recherches, ses ouvrages et ses travaux académiques internationaux en 3 langues.",
+      solution: "J'ai développé une application web React moderne couvrant plus de 5 ouvrages publiés, des projets de recherche, les étudiants encadrés, les apparitions médiatiques et des cours en ligne, entièrement en arabe (RTL), français et anglais. Le site est rapide, optimisé pour le SEO et déployé automatiquement sur Vercel via GitHub CI/CD, avec un changement de langue instantané sans rechargement de page.",
+      impact: [
+        { value: "5+", label: "Ouvrages Présentés" },
+        { value: "3", label: "Langues (AR · FR · EN)" },
+        { value: "0", label: "Rechargement au Changement de Langue" }
+      ],
+      nextTitle: "PDFPro",
+      nextSlug: "pdfpro"
+    },
+    ar: {
+      title: "د. مريم يوسفي",
+      subtitle: "منصة أكاديمية بثلاث لغات تعرض الأبحاث والكتب والأعمال الدولية.",
+      client: "د. مريم يوسفي، جامعة ابن زهر",
+      role: "مصمم ومطور مواقع",
+      tech: ["React", "RTL / i18n", "Vercel", "GitHub CI/CD"],
+      deliverables: ["تصميم المواقع", "تدقيق SEO", "تخصيص الموقع", "تصميم متجاوب", "تطوير الويب"],
+      liveUrl: "https://meryemyoussoufi.com",
+      challenge: "احتاجت الدكتورة مريم يوسفي، أستاذة علم الاجتماع بجامعة ابن زهر، إلى منصة احترافية تعرض أبحاثها وكتبها وأعمالها الأكاديمية الدولية بثلاث لغات.",
+      solution: "قمت ببناء تطبيق ويب حديث بتقنية React يغطي أكثر من 5 كتب منشورة، والمشاريع البحثية، والطلبة المؤطَّرين، والظهور الإعلامي، والدورات عبر الإنترنت، وذلك بالكامل بالعربية (من اليمين إلى اليسار) والفرنسية والإنجليزية. الموقع سريع التحميل ومهيأ لمحركات البحث، ويُنشر تلقائياً على Vercel عبر GitHub CI/CD، مع تبديل فوري للغة دون إعادة تحميل الصفحة.",
+      impact: [
+        { value: "5+", label: "كتب منشورة معروضة" },
+        { value: "3", label: "لغات (عربية · فرنسية · إنجليزية)" },
+        { value: "0", label: "إعادة تحميل عند تغيير اللغة" }
+      ],
+      nextTitle: "PDFPro",
+      nextSlug: "pdfpro"
+    }
+  },
+  "pdfpro": {
+    en: {
+      title: "PDFPro",
+      subtitle: "A privacy-first PDF toolkit where every tool runs inside your browser.",
+      role: "Full-Stack Developer",
+      tech: ["Next.js 16", "React 19", "WebAssembly", "Supabase Auth", "Node.js"],
+      deliverables: ["Web Application", "Web Development", "JavaScript", "Full-Stack Development", "Next.js"],
+      hideLive: true,
+      challenge: "Most free PDF tools force users to upload sensitive documents, such as tax returns, contracts and medical records, to unknown servers. A serious privacy risk.",
+      solution: "PDFPro eliminates this: all 26 tools run 100% inside the browser via WebAssembly, so files never leave your device. Tools include merge, split, compress, watermark, sign, scan with webcam, convert Word/Excel/PowerPoint, encrypt, unlock, extract tables, repair, and more. Built with Next.js 16, React 19, Supabase authentication, and a Node.js backend for heavy operations. Supports 12 languages including Arabic RTL.",
+      impact: [
+        { value: "26", label: "Browser-Based PDF Tools" },
+        { value: "12", label: "Languages incl. Arabic RTL" },
+        { value: "100%", label: "Client-Side Processing" }
+      ],
+      nextTitle: "SahaTracker",
+      nextSlug: "sahatracker"
+    },
+    fr: {
+      title: "PDFPro",
+      subtitle: "Une boîte à outils PDF respectueuse de la vie privée, où chaque outil s'exécute dans votre navigateur.",
+      role: "Développeur Full-Stack",
+      tech: ["Next.js 16", "React 19", "WebAssembly", "Supabase Auth", "Node.js"],
+      deliverables: ["Application Web", "Développement Web", "JavaScript", "Développement Full-Stack", "Next.js"],
+      hideLive: true,
+      challenge: "La plupart des outils PDF gratuits obligent à envoyer des documents sensibles (déclarations fiscales, contrats, dossiers médicaux) vers des serveurs inconnus. Un risque sérieux pour la vie privée.",
+      solution: "PDFPro élimine ce risque : les 26 outils s'exécutent à 100 % dans le navigateur grâce à WebAssembly, les fichiers ne quittent donc jamais votre appareil. Fusion, découpage, compression, filigrane, signature, numérisation par webcam, conversion Word/Excel/PowerPoint, chiffrement, déverrouillage, extraction de tableaux, réparation et bien plus. Développé avec Next.js 16, React 19, l'authentification Supabase et un backend Node.js pour les opérations lourdes. Disponible en 12 langues, dont l'arabe (RTL).",
+      impact: [
+        { value: "26", label: "Outils PDF dans le Navigateur" },
+        { value: "12", label: "Langues dont l'Arabe RTL" },
+        { value: "100%", label: "Traitement Local" }
+      ],
+      nextTitle: "SahaTracker",
+      nextSlug: "sahatracker"
+    },
+    ar: {
+      title: "PDFPro",
+      subtitle: "مجموعة أدوات PDF تحترم الخصوصية، تعمل كل أداة فيها داخل متصفحك.",
+      role: "مطور شامل (Full-Stack)",
+      tech: ["Next.js 16", "React 19", "WebAssembly", "Supabase Auth", "Node.js"],
+      deliverables: ["تطبيق ويب", "تطوير الويب", "JavaScript", "تطوير Full-Stack", "Next.js"],
+      hideLive: true,
+      challenge: "تجبر معظم أدوات PDF المجانية المستخدمين على رفع وثائق حساسة، كالإقرارات الضريبية والعقود والسجلات الطبية، إلى خوادم مجهولة. وهو خطر حقيقي على الخصوصية.",
+      solution: "يعالج PDFPro هذه المشكلة: تعمل جميع الأدوات الـ26 بالكامل داخل المتصفح عبر WebAssembly، فلا تغادر الملفات جهازك أبداً. تشمل الأدوات الدمج والتقسيم والضغط والعلامة المائية والتوقيع والمسح عبر كاميرا الويب وتحويل Word وExcel وPowerPoint والتشفير وفك القفل واستخراج الجداول والإصلاح وغيرها. بُني باستخدام Next.js 16 وReact 19 ومصادقة Supabase وخادم Node.js للعمليات الثقيلة، ويدعم 12 لغة بما فيها العربية من اليمين إلى اليسار.",
+      impact: [
+        { value: "26", label: "أداة PDF تعمل في المتصفح" },
+        { value: "12", label: "لغة بما فيها العربية RTL" },
+        { value: "100%", label: "معالجة محلية على الجهاز" }
+      ],
+      nextTitle: "SahaTracker",
+      nextSlug: "sahatracker"
+    }
+  },
+  "sahatracker": {
+    en: {
+      title: "SahaTracker",
+      subtitle: "An AI health platform that connects what you eat to how you feel, built for Arabic and English users.",
+      role: "Developer & UI/UX Designer",
+      tech: ["React 18", "Tailwind CSS", "Anthropic Claude API", "Custom SVG Charts"],
+      deliverables: ["Web Application", "Game UI/UX Design", "Web Development", "AI App Development", "Multilingual Translation"],
+      hideLive: true,
+      challenge: "Most health apps track data but never connect it: your food log doesn't warn you which meal causes your headaches. Arabic-speaking users are almost entirely ignored by existing apps.",
+      solution: "SahaTracker is a full health platform with 7 screens: an AI chat health coach (Anthropic Claude API), a food and symptom correlation tracker, family health monitoring, a fasting timer, a medication log, an in-app store, and a business CRM dashboard. It is fully bilingual (English and Arabic RTL), with dark and light themes, hand-built SVG charts, and print-to-PDF health reports. Built with React 18 and Tailwind CSS.",
+      impact: [
+        { value: "7", label: "App Screens" },
+        { value: "2", label: "Languages (EN + AR RTL)" },
+        { value: "2", label: "Themes (Dark + Light)" }
+      ],
+      nextTitle: "Lumina AI Dashboard",
+      nextSlug: "lumina-ai-dashboard"
+    },
+    fr: {
+      title: "SahaTracker",
+      subtitle: "Une plateforme santé IA qui relie ce que vous mangez à ce que vous ressentez, pensée pour l'arabe et l'anglais.",
+      role: "Développeur & UI/UX Designer",
+      tech: ["React 18", "Tailwind CSS", "Anthropic Claude API", "Graphiques SVG sur mesure"],
+      deliverables: ["Application Web", "Design UI/UX de jeu", "Développement Web", "Développement d'Apps IA", "Traduction Multilingue"],
+      hideLive: true,
+      challenge: "La plupart des applications santé collectent des données sans jamais les relier : votre journal alimentaire ne vous dit pas quel repas provoque vos maux de tête. Les utilisateurs arabophones sont presque totalement ignorés.",
+      solution: "SahaTracker est une plateforme santé complète de 7 écrans : un coach santé IA conversationnel (API Anthropic Claude), un suivi des corrélations alimentation-symptômes, la surveillance de la santé familiale, un minuteur de jeûne, un journal de médicaments, une boutique intégrée et un tableau de bord CRM. Entièrement bilingue (anglais et arabe RTL), avec thèmes sombre et clair, graphiques SVG faits main et rapports de santé exportables en PDF. Développé avec React 18 et Tailwind CSS.",
+      impact: [
+        { value: "7", label: "Écrans" },
+        { value: "2", label: "Langues (EN + AR RTL)" },
+        { value: "2", label: "Thèmes (Sombre + Clair)" }
+      ],
+      nextTitle: "Lumina AI Dashboard",
+      nextSlug: "lumina-ai-dashboard"
+    },
+    ar: {
+      title: "SahaTracker",
+      subtitle: "منصة صحية ذكية تربط ما تأكله بما تشعر به، مصممة للمستخدمين بالعربية والإنجليزية.",
+      role: "مطور ومصمم واجهات وتجربة مستخدم",
+      tech: ["React 18", "Tailwind CSS", "Anthropic Claude API", "رسوم SVG مخصصة"],
+      deliverables: ["تطبيق ويب", "تصميم واجهات وتجربة مستخدم للألعاب", "تطوير الويب", "تطوير تطبيقات الذكاء الاصطناعي", "الترجمة متعددة اللغات"],
+      hideLive: true,
+      challenge: "تسجّل معظم تطبيقات الصحة البيانات دون أن تربط بينها، فسجل طعامك لا يخبرك أي وجبة تسبب لك الصداع. كما أن المستخدمين الناطقين بالعربية شبه مهمَلين في التطبيقات الحالية.",
+      solution: "SahaTracker منصة صحية متكاملة من 7 شاشات: مدرب صحي بالذكاء الاصطناعي عبر المحادثة (واجهة Anthropic Claude)، وتتبع العلاقة بين الطعام والأعراض، ومراقبة صحة العائلة، ومؤقت صيام، وسجل أدوية، ومتجر داخل التطبيق، ولوحة CRM للأعمال. ثنائية اللغة بالكامل (الإنجليزية والعربية من اليمين إلى اليسار)، مع وضعين داكن وفاتح، ورسوم بيانية SVG مبنية يدوياً، وتقارير صحية قابلة للطباعة بصيغة PDF. بُنيت باستخدام React 18 وTailwind CSS.",
+      impact: [
+        { value: "7", label: "شاشات" },
+        { value: "2", label: "لغتان (EN + AR RTL)" },
+        { value: "2", label: "وضعان (داكن + فاتح)" }
+      ],
+      nextTitle: "لوحة تحكم Lumina AI",
+      nextSlug: "lumina-ai-dashboard"
+    }
+  },
   "lumina-ai-dashboard": {
     en: {
       title: "Lumina AI Dashboard",
@@ -305,8 +470,8 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "0.1s", label: "Instant Search return" },
         { value: "500k+", label: "Citizens Reached" }
       ],
-      nextTitle: "Lumina AI Dashboard",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "Dr. Meryem Youssoufi",
+      nextSlug: "meryem-youssoufi"
     },
     fr: {
       title: "GovTech Analytics",
@@ -322,8 +487,8 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "0.1s", label: "Recherche Instantanée" },
         { value: "500k+", label: "Citoyens Touchés" }
       ],
-      nextTitle: "Lumina AI Dashboard",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "Dr. Meryem Youssoufi",
+      nextSlug: "meryem-youssoufi"
     },
     ar: {
       title: "GovTech Analytics",
@@ -339,13 +504,39 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "0.1ث", label: "زمن استرجاع البحث" },
         { value: "500k+", label: "مواطن مستفيد" }
       ],
-      nextTitle: "لوحة تحكم Lumina AI",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "د. مريم يوسفي",
+      nextSlug: "meryem-youssoufi"
     }
   }
 };
 
-const imageMap: Record<string, { hero: string; gallery: string[] }> = {
+const imageMap: Record<string, { hero: string; gallery: string[]; stack?: boolean; darkenHero?: boolean }> = {
+  "meryem-youssoufi": {
+    hero: "/projects/meryem-youssoufi-hero.jpg",
+    gallery: [
+      "/projects/meryem-youssoufi-about.jpg"
+    ],
+    stack: true,
+    darkenHero: true
+  },
+  "pdfpro": {
+    hero: "/projects/pdfpro-hero.jpg",
+    gallery: [
+      "/projects/pdfpro-showcase.jpg"
+    ],
+    stack: true,
+    darkenHero: true
+  },
+  "sahatracker": {
+    hero: "/projects/sahatracker-hero.jpg",
+    gallery: [
+      "/projects/sahatracker-today.jpg",
+      "/projects/sahatracker-insights.jpg",
+      "/projects/sahatracker-hub.jpg",
+      "/projects/sahatracker-store.jpg"
+    ],
+    stack: true
+  },
   "lumina-ai-dashboard": {
     hero: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80",
     gallery: [
@@ -457,6 +648,7 @@ export default function CaseStudyClient({
       timeline: "Timeline",
       role: "Role & Scope",
       tech: "Technologies",
+      deliverables: "Deliverables",
       liveBtn: "Launch Live Project",
       challenge: "The Challenge",
       solution: "The Solution",
@@ -470,6 +662,7 @@ export default function CaseStudyClient({
       timeline: "Durée",
       role: "Rôle & Scope",
       tech: "Technologies",
+      deliverables: "Livrables",
       liveBtn: "Visiter le Projet Live",
       challenge: "Le Défi",
       solution: "La Solution",
@@ -483,6 +676,7 @@ export default function CaseStudyClient({
       timeline: "مدة المشروع",
       role: "الدور والمسؤوليات",
       tech: "التقنيات المستخدمة",
+      deliverables: "المخرجات",
       liveBtn: "زيارة الموقع المباشر",
       challenge: "التحدي القائم",
       solution: "الحل الابتكاري",
@@ -530,6 +724,7 @@ export default function CaseStudyClient({
           />
         </motion.div>
 
+        {images.darkenHero && <div className="absolute inset-0 bg-black/55 pointer-events-none" />}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-[#050505] pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#050505]/40 via-transparent to-[#050505]/40 pointer-events-none" />
 
@@ -556,21 +751,24 @@ export default function CaseStudyClient({
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <a
-              ref={btnRef}
-              href="#contact"
-              className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full shadow-2xl hover:bg-[var(--color-accent-gold)] transition-colors duration-500"
-              style={{ transitionProperty: "transform, background-color" }}
+          {!data.hideLive && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
             >
-              <span>{currentLabels.liveBtn}</span>
-              <ExternalLink size={14} />
-            </a>
-          </motion.div>
+              <a
+                ref={btnRef}
+                href={data.liveUrl ?? "#contact"}
+                {...(data.liveUrl ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold uppercase tracking-widest text-xs rounded-full shadow-2xl hover:bg-[var(--color-accent-gold)] transition-colors duration-500"
+                style={{ transitionProperty: "transform, background-color" }}
+              >
+                <span>{currentLabels.liveBtn}</span>
+                <ExternalLink size={14} />
+              </a>
+            </motion.div>
+          )}
         </div>
       </div>
 
@@ -579,22 +777,37 @@ export default function CaseStudyClient({
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-start divide-y md:divide-y-0 md:divide-x divide-white/10 rtl:divide-x-reverse">
             
-            <div className="flex flex-col gap-3 pt-6 md:pt-0">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">{currentLabels.client}</span>
-              <span className="text-sm font-semibold text-white/90">{data.client}</span>
-            </div>
+            {data.client && (
+              <div className="flex flex-col gap-3 pt-6 md:pt-0">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">{currentLabels.client}</span>
+                <span className="text-sm font-semibold text-white/90">{data.client}</span>
+              </div>
+            )}
 
-            <div className="flex flex-col gap-3 pt-6 md:pt-0 md:pl-8 rtl:md:pl-0 rtl:md:pr-8">
-              <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">{currentLabels.timeline}</span>
-              <span className="text-sm font-semibold text-white/90">{data.timeline}</span>
-            </div>
+            {data.timeline && (
+              <div className="flex flex-col gap-3 pt-6 md:pt-0 md:pl-8 rtl:md:pl-0 rtl:md:pr-8 md:first:pl-0 rtl:md:first:pr-0">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">{currentLabels.timeline}</span>
+                <span className="text-sm font-semibold text-white/90">{data.timeline}</span>
+              </div>
+            )}
 
-            <div className="flex flex-col gap-3 pt-6 md:pt-0 md:pl-8 rtl:md:pl-0 rtl:md:pr-8">
+            {data.deliverables && (
+              <div className="flex flex-col gap-3 pt-6 md:pt-0 md:pl-8 rtl:md:pl-0 rtl:md:pr-8 md:first:pl-0 rtl:md:first:pr-0">
+                <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">{currentLabels.deliverables}</span>
+                <ul className="flex flex-col gap-1.5">
+                  {data.deliverables.map((item) => (
+                    <li key={item} className="text-sm font-semibold text-white/90">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="flex flex-col gap-3 pt-6 md:pt-0 md:pl-8 rtl:md:pl-0 rtl:md:pr-8 md:first:pl-0 rtl:md:first:pr-0">
               <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">{currentLabels.role}</span>
               <span className="text-sm font-semibold text-white/90">{data.role}</span>
             </div>
 
-            <div className="flex flex-col gap-3 pt-6 md:pt-0 md:pl-8 rtl:md:pl-0 rtl:md:pr-8">
+            <div className="flex flex-col gap-3 pt-6 md:pt-0 md:pl-8 rtl:md:pl-0 rtl:md:pr-8 md:first:pl-0 rtl:md:first:pr-0">
               <span className="text-[10px] uppercase tracking-[0.2em] text-white/40 font-bold">{currentLabels.tech}</span>
               <div className="flex flex-wrap gap-2">
                 {data.tech.map((tech) => (
@@ -686,7 +899,7 @@ export default function CaseStudyClient({
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto items-stretch">
+          <div className={images.stack ? (images.gallery.length > 2 ? "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto items-start" : "grid grid-cols-1 gap-8 md:gap-12 max-w-5xl mx-auto items-stretch") :"grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto items-stretch"}>
             {images.gallery.map((imgUrl, i) => (
               <motion.div
                 key={i}
@@ -698,7 +911,7 @@ export default function CaseStudyClient({
                 <img
                   src={imgUrl}
                   alt={`${data.title} Mockup ${i + 1}`}
-                  className="rounded-2xl object-cover w-full h-full border border-white/10 shadow-lg"
+                  className={images.stack ? "rounded-2xl w-full h-auto border border-white/10 shadow-lg" : "rounded-2xl object-cover w-full h-full border border-white/10 shadow-lg"}
                 />
               </motion.div>
             ))}

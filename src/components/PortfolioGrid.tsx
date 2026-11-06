@@ -10,7 +10,38 @@ import Link from "next/link";
 // -------------------------------------------------------------------
 // Premium Dummy Projects – stable high‑quality Unsplash images
 // -------------------------------------------------------------------
-const projects = [
+const projects: {
+  title: string;
+  slug?: string;
+  category: string;
+  desc: string;
+  tech: string[];
+  img: string;
+}[] = [
+  {
+    title: "Dr. Meryem Youssoufi",
+    slug: "meryem-youssoufi",
+    category: "Web Dev",
+    desc: "Trilingual (AR/FR/EN) academic platform for a sociology professor: books, research, supervision, media and courses.",
+    tech: ["React", "SEO", "RTL Support", "Vercel CI/CD"],
+    img: "/projects/meryem-youssoufi-card.jpg",
+  },
+  {
+    title: "PDFPro",
+    slug: "pdfpro",
+    category: "Web Dev",
+    desc: "Privacy-first PDF toolkit: 26 tools that run 100% in the browser via WebAssembly. Files never leave your device.",
+    tech: ["Next.js 16", "React 19", "WebAssembly", "Supabase"],
+    img: "/projects/pdfpro-card.jpg",
+  },
+  {
+    title: "SahaTracker",
+    slug: "sahatracker",
+    category: "AI Solutions",
+    desc: "AI health platform linking food to symptoms, with family monitoring, fasting timer and CRM. English + Arabic RTL.",
+    tech: ["React 18", "Tailwind CSS", "Claude API", "SVG Charts"],
+    img: "/projects/sahatracker-card.jpg",
+  },
   {
     title: "Lumina AI Dashboard",
     category: "AI Solutions",
@@ -128,7 +159,7 @@ export default function PortfolioGrid() {
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start w-full">
           <AnimatePresence mode="popLayout">
             {filtered.map((proj) => {
-              const projectSlug = proj.title.toLowerCase().replace(/ /g, "-");
+              const projectSlug = proj.slug ?? proj.title.toLowerCase().replace(/ /g, "-");
               return (
                 <motion.div
                   key={proj.title}

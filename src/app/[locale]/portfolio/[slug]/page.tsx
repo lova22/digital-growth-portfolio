@@ -6,6 +6,9 @@ interface PageProps {
 }
 
 const slugs = [
+  "meryem-youssoufi",
+  "pdfpro",
+  "sahatracker",
   "lumina-ai-dashboard",
   "riyadh-estates",
   "fintech-secureapp",
