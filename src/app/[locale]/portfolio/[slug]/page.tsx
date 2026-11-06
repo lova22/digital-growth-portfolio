@@ -11,6 +11,7 @@ const slugs = [
   "sahatracker",
   "azulamazigh",
   "ansae",
+  "crochetpatternsco",
   "lumina-ai-dashboard",
   "riyadh-estates",
   "fintech-secureapp",

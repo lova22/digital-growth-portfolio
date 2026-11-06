@@ -59,6 +59,14 @@ const projects: {
     img: "/projects/ansae-card.jpg",
   },
   {
+    title: "Crochet Patterns Co",
+    slug: "crochetpatternsco",
+    category: "Web Dev",
+    desc: "Fast free crochet-pattern library with a custom WordPress theme and plugin: skill levels, categories and one-click PDFs.",
+    tech: ["WordPress", "Custom Theme", "Custom Plugin", "Rank Math SEO"],
+    img: "/projects/crochetpatternsco-card.jpg",
+  },
+  {
     title: "Lumina AI Dashboard",
     category: "AI Solutions",
     desc: "Generative AI analytics platform for enterprise data.",

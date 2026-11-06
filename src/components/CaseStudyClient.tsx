@@ -258,8 +258,8 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "8", label: "National Gold Medals (2025–26)" },
         { value: "3", label: "Languages (FR · AR · EN)" }
       ],
-      nextTitle: "Lumina AI Dashboard",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "Crochet Patterns Co",
+      nextSlug: "crochetpatternsco"
     },
     fr: {
       title: "Najah Souss Échecs",
@@ -275,8 +275,8 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "8", label: "Médailles d'Or Nationales (2025–26)" },
         { value: "3", label: "Langues (FR · AR · EN)" }
       ],
-      nextTitle: "Lumina AI Dashboard",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "Crochet Patterns Co",
+      nextSlug: "crochetpatternsco"
     },
     ar: {
       title: "نجاح سوس للشطرنج",
@@ -291,6 +291,59 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "1987", label: "سنة التأسيس" },
         { value: "8", label: "ميداليات ذهبية وطنية (2025–26)" },
         { value: "3", label: "لغات (FR · AR · EN)" }
+      ],
+      nextTitle: "Crochet Patterns Co",
+      nextSlug: "crochetpatternsco"
+    }
+  },
+  "crochetpatternsco": {
+    en: {
+      title: "Crochet Patterns Co",
+      subtitle: "A fast, ad-ready library of free crochet patterns, powered by a WordPress theme and plugin I built from scratch.",
+      role: "Designer & WordPress Developer",
+      tech: ["WordPress", "Custom Theme", "Custom Plugin", "Rank Math SEO", "Cloudflare"],
+      deliverables: ["Custom WordPress Theme", "Custom Plugin Development", "Web Design", "Performance Optimization", "SEO Setup"],
+      liveUrl: "https://crochetpatternsco.com",
+      challenge: "Free pattern sites are often slow and bloated with page-builder code and plugins, which hurts both crocheters downloading a pattern on their phone and search rankings. The goal was a lightweight site where anyone can find a pattern by skill level or category and download a PDF in one click, with no account.",
+      solution: "I built a custom WordPress theme from scratch with a lean codebase, and wrote my own plugin to power the pattern library instead of stacking third-party ones. Patterns are a dedicated content type with their own categories (Baby & Kids, Toys & Plushies, Seasonal Decor and more) and skill levels (Beginner, Intermediate, Advanced). Each pattern page has a clear 'Pattern at a glance' card (hook size, yarn, finished size, format, file size), a free instant PDF download, a table of contents, step-by-step guidance, an FAQ and related patterns. The home page adds a search bar, most-downloaded and new-pattern rows, a newsletter signup and ready-made ad slots. Rank Math handles SEO, and the site sits behind Cloudflare.",
+      impact: [
+        { value: "5", label: "Free Patterns Live" },
+        { value: "9", label: "Pattern Categories" },
+        { value: "1-Click", label: "Free PDF Downloads" }
+      ],
+      nextTitle: "Lumina AI Dashboard",
+      nextSlug: "lumina-ai-dashboard"
+    },
+    fr: {
+      title: "Crochet Patterns Co",
+      subtitle: "Une bibliothèque rapide de patrons de crochet gratuits, propulsée par un thème et un plugin WordPress créés de zéro.",
+      role: "Designer & Développeur WordPress",
+      tech: ["WordPress", "Thème sur mesure", "Plugin sur mesure", "Rank Math SEO", "Cloudflare"],
+      deliverables: ["Thème WordPress sur mesure", "Développement de plugin", "Web Design", "Optimisation des performances", "Configuration SEO"],
+      liveUrl: "https://crochetpatternsco.com",
+      challenge: "Les sites de patrons gratuits sont souvent lents et alourdis par des page builders et des plugins, ce qui pénalise autant les crocheteuses qui téléchargent un patron sur mobile que le référencement. L'objectif était un site léger où chacun trouve un patron par niveau ou catégorie et télécharge un PDF en un clic, sans compte.",
+      solution: "J'ai conçu un thème WordPress sur mesure au code épuré, et écrit mon propre plugin pour gérer la bibliothèque de patrons plutôt que d'empiler des extensions tierces. Les patrons forment un type de contenu dédié, avec leurs catégories (Bébé & Enfants, Jouets & Peluches, Décoration saisonnière, etc.) et niveaux (Débutant, Intermédiaire, Avancé). Chaque page propose une fiche « Pattern at a glance » (taille de crochet, fil, dimensions finales, format, poids), un téléchargement PDF gratuit et instantané, un sommaire, des étapes guidées, une FAQ et des patrons associés. L'accueil ajoute une barre de recherche, les patrons les plus téléchargés et les nouveautés, une inscription à la newsletter et des emplacements publicitaires prêts à l'emploi. Rank Math gère le SEO et le site est derrière Cloudflare.",
+      impact: [
+        { value: "5", label: "Patrons Gratuits en Ligne" },
+        { value: "9", label: "Catégories de Patrons" },
+        { value: "1 clic", label: "Téléchargement PDF Gratuit" }
+      ],
+      nextTitle: "Lumina AI Dashboard",
+      nextSlug: "lumina-ai-dashboard"
+    },
+    ar: {
+      title: "Crochet Patterns Co",
+      subtitle: "مكتبة سريعة لأنماط الكروشيه المجانية، تعمل بقالب وإضافة ووردبريس صمّمتهما من الصفر.",
+      role: "مصمم ومطور WordPress",
+      tech: ["WordPress", "قالب مخصص", "إضافة مخصصة", "Rank Math SEO", "Cloudflare"],
+      deliverables: ["قالب WordPress مخصص", "تطوير إضافة مخصصة", "تصميم الويب", "تحسين الأداء", "إعداد تحسين محركات البحث"],
+      liveUrl: "https://crochetpatternsco.com",
+      challenge: "غالباً ما تكون مواقع الأنماط المجانية بطيئة ومثقلة بأكواد بناء الصفحات والإضافات، ما يضر بمن يحمّل نمطاً من هاتفه وبترتيب الموقع في محركات البحث. كان الهدف موقعاً خفيفاً يجد فيه أي شخص نمطاً حسب المستوى أو الفئة ويحمّل ملف PDF بنقرة واحدة ودون حساب.",
+      solution: "بنيت قالب WordPress مخصصاً من الصفر بكود نظيف، وكتبت إضافتي الخاصة لتشغيل مكتبة الأنماط بدلاً من تكديس إضافات خارجية. الأنماط نوع محتوى مستقل بفئاته (الأطفال والرضّع، الألعاب والدمى، الديكور الموسمي وغيرها) ومستوياته (مبتدئ، متوسط، متقدم). تعرض كل صفحة نمط بطاقة «Pattern at a glance» (مقاس الإبرة، الخيط، الحجم النهائي، الصيغة، حجم الملف)، وتحميلاً مجانياً فورياً بصيغة PDF، وفهرساً، وخطوات إرشادية، وأسئلة شائعة، وأنماطاً ذات صلة. وتضيف الصفحة الرئيسية شريط بحث وصفوفاً للأكثر تحميلاً والأحدث، واشتراكاً في النشرة البريدية ومساحات إعلانية جاهزة. يتولى Rank Math تحسين محركات البحث، والموقع خلف Cloudflare.",
+      impact: [
+        { value: "5", label: "أنماط مجانية منشورة" },
+        { value: "9", label: "فئات الأنماط" },
+        { value: "نقرة", label: "تحميل PDF مجاني" }
       ],
       nextTitle: "لوحة تحكم Lumina AI",
       nextSlug: "lumina-ai-dashboard"
@@ -661,6 +714,16 @@ const imageMap: Record<string, { hero: string; gallery: string[]; stack?: boolea
       "/projects/ansae-events.jpg"
     ],
     stack: true
+  },
+  "crochetpatternsco": {
+    hero: "/projects/crochetpatternsco-hero.jpg",
+    gallery: [
+      "/projects/crochetpatternsco-home.jpg",
+      "/projects/crochetpatternsco-pattern.jpg",
+      "/projects/crochetpatternsco-glance.jpg"
+    ],
+    stack: true,
+    darkenHero: true
   },
   "lumina-ai-dashboard": {
     hero: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80",
