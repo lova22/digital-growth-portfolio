@@ -43,6 +43,22 @@ const projects: {
     img: "/projects/sahatracker-card.jpg",
   },
   {
+    title: "Tachelhit 30",
+    slug: "azulamazigh",
+    category: "Web Dev",
+    desc: "Free trilingual platform for learning spoken Tashelhit: 48 audio lessons, a 17,000-word dictionary and Tifinagh tools.",
+    tech: ["Astro", "Cloudflare", "Multilingual SEO", "Tifinagh Tools"],
+    img: "/projects/azulamazigh-card.jpg",
+  },
+  {
+    title: "Najah Souss Échecs",
+    slug: "ansae",
+    category: "Web Dev",
+    desc: "Premium trilingual website for an Agadir chess club founded in 1987: honors, academy, events, press and shop.",
+    tech: ["WordPress", "Headless React", "Polylang", "REST API"],
+    img: "/projects/ansae-card.jpg",
+  },
+  {
     title: "Lumina AI Dashboard",
     category: "AI Solutions",
     desc: "Generative AI analytics platform for enterprise data.",

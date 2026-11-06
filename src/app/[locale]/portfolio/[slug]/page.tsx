@@ -9,6 +9,8 @@ const slugs = [
   "meryem-youssoufi",
   "pdfpro",
   "sahatracker",
+  "azulamazigh",
+  "ansae",
   "lumina-ai-dashboard",
   "riyadh-estates",
   "fintech-secureapp",

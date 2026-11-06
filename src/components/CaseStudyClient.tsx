@@ -152,8 +152,8 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "2", label: "Languages (EN + AR RTL)" },
         { value: "2", label: "Themes (Dark + Light)" }
       ],
-      nextTitle: "Lumina AI Dashboard",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "Tachelhit 30",
+      nextSlug: "azulamazigh"
     },
     fr: {
       title: "SahaTracker",
@@ -169,8 +169,8 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "2", label: "Langues (EN + AR RTL)" },
         { value: "2", label: "Thèmes (Sombre + Clair)" }
       ],
-      nextTitle: "Lumina AI Dashboard",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "Tachelhit 30",
+      nextSlug: "azulamazigh"
     },
     ar: {
       title: "SahaTracker",
@@ -185,6 +185,112 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "7", label: "شاشات" },
         { value: "2", label: "لغتان (EN + AR RTL)" },
         { value: "2", label: "وضعان (داكن + فاتح)" }
+      ],
+      nextTitle: "Tachelhit 30",
+      nextSlug: "azulamazigh"
+    }
+  },
+  "azulamazigh": {
+    en: {
+      title: "Tachelhit 30",
+      subtitle: "A free, trilingual platform for learning spoken Tashelhit, with 48 audio lessons and a 17,000-word dictionary.",
+      role: "Designer & Developer",
+      tech: ["Astro", "Cloudflare", "Multilingual (EN · FR · AR)", "Tifinagh Tools"],
+      deliverables: ["Web Development", "Web Design", "Multilingual SEO", "Responsive Design", "Cloudflare Hosting"],
+      liveUrl: "https://azulamazigh.com",
+      challenge: "Tashelhit is widely spoken in southern Morocco, yet travelers and learners have few structured, audio-based online courses, and tools for the Tifinagh script are hard to find.",
+      solution: "I built Tachelhit 30 with Astro and deployed it on Cloudflare. It offers 48 short spoken lessons with audio across four levels (Tourist Express, Beginner, Intermediate, Advanced), based on the Peace Corps Morocco Tashlheet textbook, with progress tracking and free sign-up. Learners also get an Amazigh dictionary of 17,000+ words, a Tifinagh alphabet reference, an on-screen Tifinagh keyboard and a Latin-to-Tifinagh converter, alongside tutoring and translation services. The site is available in English, French and Arabic with multilingual SEO, light and dark themes, and a fast, mobile-first experience.",
+      impact: [
+        { value: "48", label: "Spoken Lessons" },
+        { value: "17k+", label: "Dictionary Words" },
+        { value: "3", label: "Languages (EN · FR · AR)" }
+      ],
+      nextTitle: "Najah Souss Échecs",
+      nextSlug: "ansae"
+    },
+    fr: {
+      title: "Tachelhit 30",
+      subtitle: "Une plateforme gratuite et trilingue pour apprendre le tachelhit oral, avec 48 leçons audio et un dictionnaire de plus de 17 000 mots.",
+      role: "Designer & Développeur",
+      tech: ["Astro", "Cloudflare", "Multilingue (EN · FR · AR)", "Outils Tifinagh"],
+      deliverables: ["Développement Web", "Web Design", "SEO Multilingue", "Design Responsive", "Hébergement Cloudflare"],
+      liveUrl: "https://azulamazigh.com",
+      challenge: "Le tachelhit est largement parlé dans le sud du Maroc, pourtant voyageurs et apprenants disposent de peu de cours en ligne structurés et audio, et les outils pour l'écriture tifinagh sont difficiles à trouver.",
+      solution: "J'ai conçu Tachelhit 30 avec Astro et l'ai déployé sur Cloudflare. La plateforme propose 48 leçons orales courtes avec audio, réparties en quatre niveaux (Tourist Express, Débutant, Intermédiaire, Avancé), basées sur le manuel Tashlheet du Peace Corps Maroc, avec suivi de progression et inscription gratuite. Les apprenants disposent aussi d'un dictionnaire amazigh de plus de 17 000 mots, d'un abécédaire tifinagh, d'un clavier tifinagh en ligne et d'un convertisseur latin-tifinagh, ainsi que de services de tutorat et de traduction. Le site est disponible en anglais, français et arabe, avec un SEO multilingue, des thèmes clair et sombre et une expérience rapide pensée pour le mobile.",
+      impact: [
+        { value: "48", label: "Leçons Orales" },
+        { value: "17k+", label: "Mots dans le Dictionnaire" },
+        { value: "3", label: "Langues (EN · FR · AR)" }
+      ],
+      nextTitle: "Najah Souss Échecs",
+      nextSlug: "ansae"
+    },
+    ar: {
+      title: "Tachelhit 30",
+      subtitle: "منصة مجانية بثلاث لغات لتعلّم التشلحيت المنطوقة، تضم 48 درساً صوتياً وقاموساً يزيد عن 17 ألف كلمة.",
+      role: "مصمم ومطور",
+      tech: ["Astro", "Cloudflare", "متعدد اللغات (EN · FR · AR)", "أدوات تيفيناغ"],
+      deliverables: ["تطوير الويب", "تصميم الويب", "تحسين محركات البحث متعدد اللغات", "تصميم متجاوب", "استضافة Cloudflare"],
+      liveUrl: "https://azulamazigh.com",
+      challenge: "يُتحدَّث بالتشلحيت على نطاق واسع في جنوب المغرب، ومع ذلك يجد المسافرون والمتعلمون القليل من الدورات المنظمة المدعومة بالصوت عبر الإنترنت، كما يصعب العثور على أدوات لكتابة حرف تيفيناغ.",
+      solution: "بنيت Tachelhit 30 باستخدام Astro ونشرته على Cloudflare. تقدم المنصة 48 درساً منطوقاً قصيراً بالصوت موزعة على أربعة مستويات (Tourist Express والمبتدئ والمتوسط والمتقدم)، مبنية على كتاب Tashlheet الصادر عن هيئة السلام الأمريكية بالمغرب، مع تتبع للتقدم وتسجيل مجاني. كما يحصل المتعلمون على قاموس أمازيغي يضم أكثر من 17 ألف كلمة، ودليل لحروف تيفيناغ، ولوحة مفاتيح تيفيناغ على الشاشة، ومحوّل من الحروف اللاتينية إلى تيفيناغ، إلى جانب خدمات الدروس الخصوصية والترجمة. الموقع متاح بالإنجليزية والفرنسية والعربية مع تحسين متعدد اللغات لمحركات البحث، ووضعين فاتح وداكن، وتجربة سريعة مصممة للهاتف أولاً.",
+      impact: [
+        { value: "48", label: "درساً منطوقاً" },
+        { value: "17k+", label: "كلمة في القاموس" },
+        { value: "3", label: "لغات (EN · FR · AR)" }
+      ],
+      nextTitle: "نجاح سوس للشطرنج",
+      nextSlug: "ansae"
+    }
+  },
+  "ansae": {
+    en: {
+      title: "Najah Souss Échecs",
+      subtitle: "A premium trilingual website for an Agadir chess club founded in 1987, built from scratch with WordPress and a React front end.",
+      role: "Designer & Full-Stack Developer",
+      tech: ["WordPress", "Headless React", "Polylang (FR · AR · EN)", "REST API"],
+      deliverables: ["Web Design", "Web Development", "WordPress Development", "Headless React Front End", "Multilingual Setup"],
+      liveUrl: "https://ansae.org",
+      challenge: "Najah Souss Échecs, a chess club in Agadir founded in 1987 and winner of the 2025 Coupe du Trône, needed a professional website to showcase its titles, players and academy, and to attract new members, partners and sponsors in three languages.",
+      solution: "I built the site from scratch on WordPress with a custom headless React front end, in a dark, gold-accented design that matches the club's premium identity. It covers the club story, honors and Hall of Fame, a FIDE ratings table, a three-level training academy, an event calendar, a photo gallery, press coverage, news, staff, an official merchandise shop, a sponsorship page and a contact form with a simple sign-up process. Content is managed in WordPress and served in French, Arabic and English through Polylang.",
+      impact: [
+        { value: "1987", label: "Club Founded" },
+        { value: "8", label: "National Gold Medals (2025–26)" },
+        { value: "3", label: "Languages (FR · AR · EN)" }
+      ],
+      nextTitle: "Lumina AI Dashboard",
+      nextSlug: "lumina-ai-dashboard"
+    },
+    fr: {
+      title: "Najah Souss Échecs",
+      subtitle: "Un site trilingue haut de gamme pour un club d'échecs d'Agadir fondé en 1987, développé de zéro avec WordPress et un front-end React.",
+      role: "Designer & Développeur Full-Stack",
+      tech: ["WordPress", "React Headless", "Polylang (FR · AR · EN)", "API REST"],
+      deliverables: ["Web Design", "Développement Web", "Développement WordPress", "Front-end React Headless", "Mise en place multilingue"],
+      liveUrl: "https://ansae.org",
+      challenge: "Najah Souss Échecs, club d'échecs d'Agadir fondé en 1987 et vainqueur de la Coupe du Trône 2025, avait besoin d'un site professionnel pour mettre en valeur ses titres, ses joueurs et son académie, et attirer de nouveaux membres, partenaires et sponsors en trois langues.",
+      solution: "J'ai développé le site de zéro sur WordPress, avec un front-end React headless sur mesure, dans un design sombre aux accents dorés fidèle à l'identité haut de gamme du club. Il présente l'histoire du club, le palmarès et le Hall of Fame, un classement FIDE, une académie à trois niveaux, un calendrier d'événements, une galerie photo, la revue de presse, les actualités, l'équipe, une boutique officielle, une page partenariat et un formulaire de contact avec un processus d'inscription simple. Le contenu est géré dans WordPress et proposé en français, arabe et anglais grâce à Polylang.",
+      impact: [
+        { value: "1987", label: "Année de Fondation" },
+        { value: "8", label: "Médailles d'Or Nationales (2025–26)" },
+        { value: "3", label: "Langues (FR · AR · EN)" }
+      ],
+      nextTitle: "Lumina AI Dashboard",
+      nextSlug: "lumina-ai-dashboard"
+    },
+    ar: {
+      title: "نجاح سوس للشطرنج",
+      subtitle: "موقع فاخر بثلاث لغات لنادي شطرنج بأكادير تأسس سنة 1987، بُني من الصفر باستخدام WordPress وواجهة React.",
+      role: "مصمم ومطور Full-Stack",
+      tech: ["WordPress", "React Headless", "Polylang (FR · AR · EN)", "REST API"],
+      deliverables: ["تصميم الويب", "تطوير الويب", "تطوير WordPress", "واجهة React منفصلة (Headless)", "إعداد متعدد اللغات"],
+      liveUrl: "https://ansae.org",
+      challenge: "كان نادي نجاح سوس للشطرنج بأكادير، الذي تأسس سنة 1987 وفاز بكأس العرش 2025، بحاجة إلى موقع احترافي يبرز ألقابه ولاعبيه وأكاديميته ويستقطب أعضاء وشركاء ورعاة جدداً بثلاث لغات.",
+      solution: "بنيت الموقع من الصفر على WordPress مع واجهة أمامية React منفصلة (Headless) مخصصة، بتصميم داكن بلمسات ذهبية يعكس الهوية الفاخرة للنادي. يعرض الموقع قصة النادي وسجل الإنجازات وقاعة المشاهير، وجدول تصنيف FIDE، وأكاديمية تدريب بثلاثة مستويات، وتقويماً للفعاليات، ومعرض صور، وتغطية صحفية، وأخباراً، وفريق العمل، ومتجراً رسمياً، وصفحة شراكة، ونموذج اتصال مع خطوات تسجيل بسيطة. تُدار المحتويات في WordPress وتُعرض بالفرنسية والعربية والإنجليزية عبر Polylang.",
+      impact: [
+        { value: "1987", label: "سنة التأسيس" },
+        { value: "8", label: "ميداليات ذهبية وطنية (2025–26)" },
+        { value: "3", label: "لغات (FR · AR · EN)" }
       ],
       nextTitle: "لوحة تحكم Lumina AI",
       nextSlug: "lumina-ai-dashboard"
@@ -534,6 +640,25 @@ const imageMap: Record<string, { hero: string; gallery: string[]; stack?: boolea
       "/projects/sahatracker-insights.jpg",
       "/projects/sahatracker-hub.jpg",
       "/projects/sahatracker-store.jpg"
+    ],
+    stack: true
+  },
+  "azulamazigh": {
+    hero: "/projects/azulamazigh-hero.jpg",
+    gallery: [
+      "/projects/azulamazigh-levels.jpg",
+      "/projects/azulamazigh-lessons.jpg",
+      "/projects/azulamazigh-tools.jpg"
+    ],
+    stack: true,
+    darkenHero: true
+  },
+  "ansae": {
+    hero: "/projects/ansae-hero.jpg",
+    gallery: [
+      "/projects/ansae-about.jpg",
+      "/projects/ansae-academy.jpg",
+      "/projects/ansae-events.jpg"
     ],
     stack: true
   },
