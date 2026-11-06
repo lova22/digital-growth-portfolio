@@ -1,36 +1,43 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { motion, useInView, useAnimation, useSpring, useTransform } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 
-const skills = [
-  { key: "ai", level: 95 },
-  { key: "react", level: 98 },
-  { key: "uiux", level: 92 },
-  { key: "database", level: 88 },
-  { key: "animations", level: 96 },
-  { key: "seo", level: 94 },
+type Group = { id: string; title: Record<string, string>; items: string[] };
+
+const groups: Group[] = [
+  {
+    id: "web",
+    title: { en: "Website building", fr: "Création de sites web", ar: "بناء المواقع" },
+    items: ["WordPress", "Elementor Pro", "WooCommerce", "Website Design", "Website Development", "Web Hosting", "Cloudflare", "HTML", "CSS", "JavaScript", "PHP", "MySQL", "AI Vibe Coding"],
+  },
+  {
+    id: "seo",
+    title: { en: "SEO & analytics", fr: "SEO & analytique", ar: "تحسين البحث والتحليلات" },
+    items: ["SEO", "Technical SEO", "SEO Strategy", "Website Audit", "Semrush", "Ahrefs", "Google Analytics", "Google Ads"],
+  },
+  {
+    id: "design",
+    title: { en: "Design", fr: "Design", ar: "التصميم" },
+    items: ["UI/UX Design", "Figma", "Graphic Design", "Logo Design", "Adobe Photoshop", "Adobe Illustrator", "Adobe InDesign"],
+  },
+  {
+    id: "marketing",
+    title: { en: "Marketing & strategy", fr: "Marketing & stratégie", ar: "التسويق والاستراتيجية" },
+    items: ["Brand Strategy", "Business Strategy", "Content Creation", "Community Management"],
+  },
+  {
+    id: "video",
+    title: { en: "Video & audio", fr: "Vidéo & audio", ar: "الفيديو والصوت" },
+    items: ["Video Editing", "Adobe Premiere Pro", "Adobe After Effects", "Audio Editing"],
+  },
+  {
+    id: "other",
+    title: { en: "AI & office", fr: "IA & bureautique", ar: "الذكاء الاصطناعي والمكتب" },
+    items: ["Generative AI", "Microsoft Office"],
+  },
 ];
-
-function AnimatedCounter({ value, inView }: { value: number; inView: boolean }) {
-  const [displayValue, setDisplayValue] = useState(0);
-  const springValue = useSpring(0, { stiffness: 40, damping: 20 });
-
-  useEffect(() => {
-    if (inView) {
-      springValue.set(value);
-    }
-  }, [inView, springValue, value]);
-
-  useEffect(() => {
-    return springValue.on("change", (latest) => {
-      setDisplayValue(Math.floor(latest));
-    });
-  }, [springValue]);
-
-  return <span>{displayValue}%</span>;
-}
 
 // Scroll-triggered Animated Counter Component
 function ScrollCounter({ value, suffix = "", label }: { value: number; suffix?: string; label: string }) {
@@ -74,49 +81,43 @@ function ScrollCounter({ value, suffix = "", label }: { value: number; suffix?: 
         <span ref={ref}>0</span>
         {suffix}
       </div>
-      <div className="text-[10px] uppercase tracking-[0.2em] text-white/40 mt-3 font-bold">
+      <div className="text-[10px] uppercase tracking-[0.2em] text-white/60 mt-3 font-bold">
         {label}
       </div>
     </div>
   );
 }
 
-function SkillItem({ skill, index }: { skill: { key: string; level: number }; index: number }) {
-  const t = useTranslations("skills");
+function SkillGroup({ group, index, locale }: { group: Group; index: number; locale: string }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-100px" });
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const featured = index === 0;
 
   return (
-    <div ref={ref} className="group cursor-default py-5 sm:py-8">
-      <div className="flex items-end justify-between mb-5">
-        <motion.h4
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.2, delay: index * 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-lg md:text-xl font-light text-white tracking-wide group-hover:text-[var(--color-accent-gold)] transition-colors duration-500"
-        >
-          {t(`items.${skill.key}`)}
-        </motion.h4>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 1.2, delay: index * 0.2 + 0.5 }}
-          className="text-sm font-medium text-white/40 tracking-widest"
-        >
-          <AnimatedCounter value={skill.level} inView={inView} />
-        </motion.div>
-      </div>
-
-      {/* 3px Sleek Dashboard Progress */}
-      <div className="h-[3px] w-full bg-white/5 rounded-full relative overflow-hidden">
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={inView ? { scaleX: skill.level / 100 } : {}}
-          transition={{ duration: 2.2, delay: index * 0.15, ease: [0.25, 1, 0.5, 1] }}
-          className="absolute inset-0 bg-gradient-to-r from-red-500 to-amber-500 origin-left rounded-full"
-        />
-      </div>
-    </div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 24 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: (index % 2) * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className={`rounded-2xl border border-white/10 bg-white/[0.02] p-6 sm:p-7 hover:border-white/20 transition-colors duration-500 ${featured ? "sm:col-span-2" : ""}`}
+    >
+      <h3 className="flex items-center justify-between gap-3 text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-accent-gold)] mb-5">
+        <span>{group.title[locale] ?? group.title.en}</span>
+        <span className="text-white/60 font-mono tracking-normal">{String(group.items.length).padStart(2, "0")}</span>
+      </h3>
+      <ul className="flex flex-wrap gap-2" dir="ltr">
+        {group.items.map((item) => (
+          <li
+            key={item}
+            className={`px-3 py-1.5 rounded-full border text-[13px] font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors duration-300 ${
+              featured ? "border-[var(--color-accent-gold)]/30 bg-[var(--color-accent-gold)]/5" : "border-white/10 bg-white/5"
+            }`}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </motion.div>
   );
 }
 
@@ -168,17 +169,17 @@ export default function SkillsSection() {
  
             {/* 2x2 Counters Grid */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-2">
-              <ScrollCounter value={30} suffix="+" label={t("stats.tech")} />
-              <ScrollCounter value={100} suffix="%" label={t("stats.pixel")} />
+              <ScrollCounter value={38} suffix="+" label={t("stats.tech")} />
+              <ScrollCounter value={3} suffix="" label={t("stats.pixel")} />
               <ScrollCounter value={19} suffix="+" label={t("stats.exp")} />
               <ScrollCounter value={24} suffix="h" label={t("stats.response")} />
             </div>
           </div>
  
-          {/* Right Column: Skills Progress bars */}
-          <div className="flex flex-col gap-6 lg:mt-4">
-            {skills.map((skill, index) => (
-              <SkillItem key={skill.key} skill={skill} index={index} />
+          {/* Right Column: grouped skills */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:mt-4">
+            {groups.map((group, index) => (
+              <SkillGroup key={group.id} group={group} index={index} locale={locale} />
             ))}
           </div>
  

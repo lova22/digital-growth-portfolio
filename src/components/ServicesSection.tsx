@@ -130,7 +130,7 @@ function ServiceCard({
         className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 group-hover:gap-2.5"
         style={{ color, marginTop: "2rem" }}
       >
-        {locale === "en" ? "Learn more" : locale === "fr" ? "En savoir plus" : "اقرأ المزيد"}
+        {locale === "en" ? "Get a quote" : locale === "fr" ? "Demander un devis" : "اطلب عرض سعر"}
         <ArrowRight size={14} />
       </a>
     </motion.div>

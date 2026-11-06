@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Send, CheckCircle, AlertCircle, Loader2, Mail, MapPin, Link } from "lucide-react";
+import { Send, CheckCircle, AlertCircle, Loader2, Mail, MapPin, MessageCircle } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import OrbitingBadgeCTA from "@/components/OrbitingBadgeCTA";
 
@@ -13,7 +13,7 @@ export default function MegaFooter() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -35,7 +35,7 @@ export default function MegaFooter() {
         setStatus("error");
       } else {
         setStatus("success");
-        setForm({ name: "", email: "", message: "" });
+        setForm({ name: "", email: "", message: "", website: "" });
       }
     } catch {
       setErrorMsg("Network error. Please try again.");
@@ -121,6 +121,7 @@ export default function MegaFooter() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-12">
+                <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={form.website} onChange={(e) => setForm((f) => ({ ...f, website: e.target.value }))} className="absolute left-[-9999px] h-0 w-0 opacity-0" />
                 <div className="relative group">
                   <input
                     type="text"
@@ -128,7 +129,7 @@ export default function MegaFooter() {
                     value={form.name}
                     onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
                     placeholder={t("name")}
-                    className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[var(--color-accent-red)] transition-colors text-lg font-light tracking-wide peer"
+                    className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-[var(--color-accent-red)] transition-colors text-lg font-light tracking-wide peer"
                   />
                 </div>
 
@@ -139,7 +140,7 @@ export default function MegaFooter() {
                     value={form.email}
                     onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
                     placeholder={t("email")}
-                    className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[var(--color-accent-red)] transition-colors text-lg font-light tracking-wide peer"
+                    className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-[var(--color-accent-red)] transition-colors text-lg font-light tracking-wide peer"
                   />
                 </div>
 
@@ -150,7 +151,7 @@ export default function MegaFooter() {
                     value={form.message}
                     onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
                     placeholder={t("message")}
-                    className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[var(--color-accent-red)] transition-colors text-lg font-light tracking-wide resize-none peer"
+                    className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-[var(--color-accent-red)] transition-colors text-lg font-light tracking-wide resize-none peer"
                   />
                 </div>
 
@@ -171,7 +172,7 @@ export default function MegaFooter() {
                   </div>
                   
                   {/* Urgency Subtext beside circular form button */}
-                  <span className="text-xs text-white/40 tracking-[0.1em] font-medium max-w-[200px] leading-relaxed">
+                  <span className="text-xs text-white/60 tracking-[0.1em] font-medium max-w-[200px] leading-relaxed">
                     {locale === "en"
                       ? "Reply within 24h · No obligation"
                       : locale === "fr"
@@ -191,7 +192,7 @@ export default function MegaFooter() {
             className="lg:col-span-5 flex flex-col justify-start text-left lg:border-l lg:border-white/5 lg:pl-16 gap-12"
           >
             <div>
-              <h3 className="text-xs tracking-[0.25em] uppercase text-white/40 mb-6 font-semibold">
+              <h3 className="text-xs tracking-[0.25em] uppercase text-white/60 mb-6 font-semibold">
                 {locale === "en" ? "Direct Contact" : locale === "fr" ? "Contact Direct" : "الاتصال المباشر"}
               </h3>
               <ul className="space-y-6">
@@ -200,9 +201,20 @@ export default function MegaFooter() {
                     <Mail size={16} className="text-white/60 group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-white/40 uppercase tracking-widest">Email</span>
+                    <span className="block text-[10px] text-white/60 uppercase tracking-widest">Email</span>
                     <a href="mailto:rachidelaouad@gmail.com" className="text-sm font-light text-white hover:text-[var(--color-accent-red)] transition-colors">
                       rachidelaouad@gmail.com
+                    </a>
+                  </div>
+                </li>
+                <li className="flex items-center gap-4 group">
+                  <div className="w-10 h-10 bg-white/5 flex items-center justify-center border border-white/10 group-hover:border-emerald-400 transition-colors">
+                    <MessageCircle size={16} className="text-white/60 group-hover:text-white transition-colors" />
+                  </div>
+                  <div>
+                    <span className="block text-[10px] text-white/60 uppercase tracking-widest">WhatsApp</span>
+                    <a href="https://wa.me/212659402611" target="_blank" rel="noopener noreferrer" dir="ltr" className="text-sm font-light text-white hover:text-emerald-400 transition-colors">
+                      +212 659 402 611
                     </a>
                   </div>
                 </li>
@@ -211,7 +223,7 @@ export default function MegaFooter() {
                     <MapPin size={16} className="text-white/60" />
                   </div>
                   <div>
-                    <span className="block text-[10px] text-white/40 uppercase tracking-widest">HQ Location</span>
+                    <span className="block text-[10px] text-white/60 uppercase tracking-widest">HQ Location</span>
                     <span className="text-sm font-light text-white">
                       {locale === "en" ? "Agadir, Morocco" : locale === "fr" ? "Agadir, Maroc" : "أكادير، المغرب"}
                     </span>
@@ -221,7 +233,7 @@ export default function MegaFooter() {
             </div>
 
             <div>
-              <h3 className="text-xs tracking-[0.25em] uppercase text-white/40 mb-4 font-semibold">
+              <h3 className="text-xs tracking-[0.25em] uppercase text-white/60 mb-4 font-semibold">
                 {locale === "en" ? "Availability Status" : locale === "fr" ? "Statut de Disponibilité" : "حالة التوفر"}
               </h3>
               <div className="inline-flex items-center gap-3 px-4 py-2 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-[0.15em] rounded-none">
@@ -256,17 +268,16 @@ export default function MegaFooter() {
                       : "حلول رقمية متكاملة مصممة بدقة عالية ومطورة لتحقيق نمو قياسي للمشاريع."
                   }
                 </p>
-                <div className="flex items-center gap-4 text-white/50">
-                 <a href="#" aria-label="LinkedIn" className="hover:text-[var(--color-accent-red)] transition-colors"><Link size={16} /></a>
-                 <a href="#" aria-label="GitHub" className="hover:text-[var(--color-accent-red)] transition-colors"><Link size={16} /></a>
-                 <a href="#" aria-label="Twitter" className="hover:text-[var(--color-accent-red)] transition-colors"><Link size={16} /></a>
-                 <a href="#" aria-label="Dribbble" className="hover:text-[var(--color-accent-red)] transition-colors"><Link size={16} /></a>
+                <div className="flex items-center gap-5 text-xs font-bold uppercase tracking-widest text-white/60">
+                 <a href="https://wa.me/212659402611" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-emerald-400 transition-colors">WhatsApp</a>
+                 <a href="https://github.com/lova22" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-[var(--color-accent-red)] transition-colors">GitHub</a>
+                 <a href="mailto:rachidelaouad@gmail.com" aria-label="Email" className="hover:text-[var(--color-accent-red)] transition-colors">Email</a>
               </div>
             </div>
 
             {/* Col 2: Navigation Links */}
             <div>
-              <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-6 font-bold">
+              <h4 className="text-xs tracking-[0.2em] uppercase text-white/60 mb-6 font-bold">
                 {locale === "en" ? "Navigation" : locale === "fr" ? "Navigation" : "التنقل"}
               </h4>
               <ul className="space-y-4 text-xs font-semibold uppercase tracking-wider">
@@ -279,7 +290,7 @@ export default function MegaFooter() {
 
             {/* Col 3: Services List */}
             <div>
-              <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-6 font-bold">
+              <h4 className="text-xs tracking-[0.2em] uppercase text-white/60 mb-6 font-bold">
                 {locale === "en" ? "Services" : locale === "fr" ? "Expertise" : "الخدمات"}
               </h4>
               <ul className="space-y-4 text-xs font-semibold uppercase tracking-wider">
@@ -292,10 +303,11 @@ export default function MegaFooter() {
 
             {/* Col 4: Contact Info */}
             <div>
-              <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-6 font-bold">Contact</h4>
+              <h4 className="text-xs tracking-[0.2em] uppercase text-white/60 mb-6 font-bold">Contact</h4>
               <ul className="space-y-4 text-xs font-semibold uppercase tracking-wider">
                 <li><a href="mailto:rachidelaouad@gmail.com" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">rachidelaouad@gmail.com</a></li>
-                <li><span className="text-white/40 normal-case font-light">{locale === "en" ? "Agadir, Morocco" : locale === "fr" ? "Agadir, Maroc" : "أكادير، المغرب"}</span></li>
+                <li><a href="https://wa.me/212659402611" target="_blank" rel="noopener noreferrer" dir="ltr" className="text-white/60 hover:text-emerald-400 transition-colors">+212 659 402 611</a></li>
+                <li><span className="text-white/60 normal-case font-light">{locale === "en" ? "Agadir, Morocco" : locale === "fr" ? "Agadir, Maroc" : "أكادير، المغرب"}</span></li>
                 <li className="pt-2">
                   <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
                     <span className="relative flex h-1.5 w-1.5">
@@ -311,18 +323,11 @@ export default function MegaFooter() {
           </div>
 
           {/* Bottom Bar: Copyright + Legal Links */}
-          <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] tracking-widest uppercase text-white/30 font-semibold">
+          <div className="border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] tracking-widest uppercase text-white/50 font-semibold">
             <div>
               © {new Date().getFullYear()} Digital Growth. {locale === "en" ? "All rights reserved." : locale === "fr" ? "Tous droits réservés." : "جميع الحقوق محفوظة."}
             </div>
-            <div className="flex gap-6">
-              <a href="#" className="hover:text-white/60 transition-colors">
-                {locale === "en" ? "Privacy Policy" : locale === "fr" ? "Politique de confidentialité" : "سياسة الخصوصية"}
-              </a>
-              <a href="#" className="hover:text-white/60 transition-colors">
-                {locale === "en" ? "Terms of Service" : locale === "fr" ? "Mentions légales" : "الشروط والأحكام"}
-              </a>
-            </div>
+
           </div>
 
         </div>

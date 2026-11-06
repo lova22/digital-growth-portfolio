@@ -89,7 +89,7 @@ export default function TestimonialsSection() {
                 <span className="text-sm tracking-[0.2em] text-white font-bold uppercase mb-1">
                   {items[index].author}
                 </span>
-                <span className="text-xs text-white/40 tracking-[0.15em] uppercase font-medium">
+                <span className="text-xs text-white/60 tracking-[0.15em] uppercase font-medium">
                   {items[index].role}
                 </span>
               </div>

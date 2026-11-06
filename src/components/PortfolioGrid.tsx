@@ -8,7 +8,7 @@ import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 
 // -------------------------------------------------------------------
-// Premium Dummy Projects – stable high‑quality Unsplash images
+// Selected real projects
 // -------------------------------------------------------------------
 const projects: {
   title: string;
@@ -66,56 +66,12 @@ const projects: {
     tech: ["WordPress", "Custom Theme", "Custom Plugin", "Rank Math SEO"],
     img: "/projects/crochetpatternsco-card.jpg",
   },
-  {
-    title: "Lumina AI Dashboard",
-    category: "AI Solutions",
-    desc: "Generative AI analytics platform for enterprise data.",
-    tech: ["Next.js", "OpenAI API", "Supabase"],
-    img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Riyadh Estates",
-    category: "Web Dev",
-    desc: "High-end real estate portal with 3D virtual tours.",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "FinTech SecureApp",
-    category: "Mobile Apps",
-    desc: "Next‑generation mobile banking and crypto tracking.",
-    tech: ["React Native", "Node.js", "PostgreSQL"],
-    img: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Nomad Documentary",
-    category: "UI/UX & Video",
-    desc: "Cinematic motion graphics and storytelling campaign.",
-    tech: ["After Effects", "Premiere Pro", "Cinema 4D"],
-    img: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "Oasis E-Commerce",
-    category: "Web Dev",
-    desc: "High‑conversion luxury fashion storefront.",
-    tech: ["Next.js", "Stripe", "Headless CMS"],
-    img: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "GovTech Analytics",
-    category: "AI Solutions",
-    desc: "Big data visualization and SEO optimization dashboard.",
-    tech: ["Python", "React", "Google Analytics 4"],
-    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-  },
 ];
 
 const filterKeys = [
   { key: "all", value: "All" },
   { key: "web", value: "Web Dev" },
-  { key: "mobile", value: "Mobile Apps" },
   { key: "ai", value: "AI Solutions" },
-  { key: "video", value: "UI/UX & Video" },
 ];
 
 export default function PortfolioGrid() {
@@ -227,11 +183,14 @@ export default function PortfolioGrid() {
                           </h3>
                         </div>
                         <p 
-                          className="text-sm text-white/50 font-light line-clamp-2"
+                          className="text-sm text-white/70 font-light line-clamp-2"
                           style={{ lineHeight: locale === "ar" ? "1.8" : "1.6" }}
                         >
                           {proj.desc}
                         </p>
+                        <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[var(--color-accent-gold)] uppercase">
+                          {t("viewProject")} <ArrowRight size={14} className="rtl:rotate-180" />
+                        </span>
                       </div>
                     </div>
 

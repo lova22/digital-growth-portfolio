@@ -8,7 +8,8 @@ import Navbar from "@/components/Navbar";
 import LocaleHtmlSetup from "@/components/LocaleHtmlSetup";
 
 import CustomCursor from "@/components/CustomCursor";
-import RightClickGuard from "@/components/RightClickGuard";
+import MotionProvider from "@/components/MotionProvider";
+import { SITE_URL, LOCALES, DESCRIPTIONS } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,10 +24,49 @@ const tajawal = Tajawal({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Digital Growth Architect & AI Solutions",
-  description:
-    "One-man digital agency in Agadir, Morocco: web development, UI/UX, AI engineering, SEO and motion graphics. Building for clients since 2007.",
+const TITLES: Record<string, string> = {
+  en: "Web Developer & SEO Specialist in Agadir | Digital Growth",
+  fr: "Développeur Web & Spécialiste SEO à Agadir | Digital Growth",
+  ar: "مطوّر ويب وخبير SEO في أكادير | Digital Growth",
+};
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: { absolute: TITLES[locale] ?? TITLES.en },
+    description: DESCRIPTIONS[locale] ?? DESCRIPTIONS.en,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: Object.fromEntries(LOCALES.map((l) => [l, `/${l}`])),
+    },
+    openGraph: {
+      title: TITLES[locale] ?? TITLES.en,
+      description: DESCRIPTIONS[locale] ?? DESCRIPTIONS.en,
+      url: `/${locale}`,
+      locale: locale === "ar" ? "ar_MA" : locale === "fr" ? "fr_FR" : "en_US",
+    },
+  };
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Digital Growth",
+  url: SITE_URL,
+  image: `${SITE_URL}/og.png`,
+  description: DESCRIPTIONS.en,
+  email: "rachidelaouad@gmail.com",
+  telephone: "+212659402611",
+  foundingDate: "2007",
+  address: { "@type": "PostalAddress", addressLocality: "Agadir", addressCountry: "MA" },
+  areaServed: "Worldwide",
+  knowsLanguage: ["en", "fr", "ar"],
+  sameAs: ["https://github.com/lova22"],
+  knowsAbout: ["WordPress", "Next.js", "SEO", "UI/UX Design", "WooCommerce", "Generative AI"],
 };
 
 export function generateStaticParams() {
@@ -59,10 +99,12 @@ export default async function LocaleLayout({
           lang={locale}
           className={`${fontClass} gradient-bg min-h-screen`}
         >
-          <CustomCursor />
-          <RightClickGuard />
-          <Navbar />
-          <main>{children}</main>
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+          <MotionProvider>
+            <CustomCursor />
+            <Navbar />
+            <main>{children}</main>
+          </MotionProvider>
         </div>
       </NextIntlClientProvider>
     </>

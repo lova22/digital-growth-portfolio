@@ -28,8 +28,16 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+/* Reset lives in the base layer so Tailwind utilities (mb-8, px-5...) can override it */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+  }
 }
 
 html {

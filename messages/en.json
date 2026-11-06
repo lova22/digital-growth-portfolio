@@ -8,10 +8,10 @@
   },
   "hero": {
     "badge": "Available for Projects",
-    "title1": "Digital Growth",
-    "title2": "Architect",
-    "title3": "& Tech Consultant",
-    "subtitle": "I design, build, and scale premium digital experiences — from pixel-perfect interfaces to intelligent AI-powered systems.",
+    "title1": "Web Developer",
+    "title2": "& SEO Specialist",
+    "title3": "Since 2007 · Agadir, Morocco",
+    "subtitle": "WordPress, Next.js, SEO, UI/UX and AI integrations, from design to launch, delivered by one person who answers every message.",
     "cta": "Start Your Project",
     "portfolio": "View Portfolio",
     "scroll": "Scroll to explore",
@@ -19,7 +19,8 @@
       "projects": "Projects delivered",
       "clients": "Satisfied clients",
       "availability": "Available for missions"
-    }
+    },
+    "whatsapp": "WhatsApp"
   },
   "services": {
     "badge": "Services",
@@ -54,46 +55,16 @@
   },
   "skills": {
     "badge": "Expertise",
-    "heading": "Mastery &",
-    "headingSub": "Execution",
-    "desc": "Precision engineering paired with high-end aesthetic execution. Delivering bleeding-edge performance wrapped in uncompromising luxury.",
+    "heading": "Skills &",
+    "headingSub": "Tools",
+    "desc": "Everything a project needs, handled by one person: build, rank, design and promote.",
     "techStack": "Tech stack: Next.js, Vercel, Tailwind CSS, Framer Motion, Supabase.",
     "stats": {
       "tech": "Technologies",
-      "pixel": "Pixel-Perfect",
+      "pixel": "Languages: EN · FR · AR",
       "exp": "Years of experience",
       "response": "24h Response Time"
-    },
-    "items": {
-      "ai": "Generative AI Integration",
-      "react": "Next.js & React Architecture",
-      "uiux": "UI/UX Architecture",
-      "database": "Supabase & Postgres",
-      "animations": "Framer Motion & Animations",
-      "seo": "Technical SEO & Performance"
     }
-  },
-  "values": {
-    "badge": "Philosophy",
-    "heading": "CORE PHILOSOPHY",
-    "subheading": "Uncompromising standards, high-end technical execution, and tactical aesthetics that command absolute respect.",
-    "items": [
-      {
-        "num": "01",
-        "title": "Uncompromising Quality",
-        "desc": "We do not ship standard. Every pixel, every animation, and every line of code is heavily scrutinized to deliver a flawless, Awwwards-level experience."
-      },
-      {
-        "num": "02",
-        "title": "Cinematic Execution",
-        "desc": "Digital products should feel alive. We leverage heavy easing, microscopic hairlines, and tactical whitespace to craft experiences that command attention."
-      },
-      {
-        "num": "03",
-        "title": "Architectural Velocity",
-        "desc": "Speed without technical debt. By utilizing Next.js, Framer Motion, and scalable Postgres databases, we build foundations that are fast to deploy and ready to scale."
-      }
-    ]
   },
   "portfolio": {
     "badge": "Portfolio",
@@ -104,9 +75,7 @@
     "categories": {
       "all": "All",
       "web": "Web Dev",
-      "mobile": "Mobile Apps",
-      "ai": "AI Solutions",
-      "video": "UI/UX & Video"
+      "ai": "AI Solutions"
     }
   },
   "testimonials": {
@@ -141,8 +110,5 @@
     "message": "Tell me about your project",
     "send": "Send Message",
     "success": "Message sent! I'll be in touch within 24 hours."
-  },
-  "guard": {
-    "blocked": "Developer options are disabled for this experience."
   }
 }

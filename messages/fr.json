@@ -8,10 +8,10 @@
   },
   "hero": {
     "badge": "Disponible pour des Projets",
-    "title1": "Architecte de",
-    "title2": "Croissance Digitale",
-    "title3": "& Consultant Tech",
-    "subtitle": "Je conçois, développe et scale des expériences digitales premium — des interfaces pixel-perfect aux systèmes intelligents propulsés par l'IA.",
+    "title1": "Développeur Web",
+    "title2": "& Spécialiste SEO",
+    "title3": "Depuis 2007 · Agadir, Maroc",
+    "subtitle": "WordPress, Next.js, SEO, UI/UX et intégrations IA, de la conception au lancement, assurés par une seule personne qui répond à chaque message.",
     "cta": "Démarrer un Projet",
     "portfolio": "Voir le Portfolio",
     "scroll": "Défiler pour explorer",
@@ -19,7 +19,8 @@
       "projects": "Projets livrés",
       "clients": "Clients satisfaits",
       "availability": "Disponible pour missions"
-    }
+    },
+    "whatsapp": "WhatsApp"
   },
   "services": {
     "badge": "Services",
@@ -54,46 +55,16 @@
   },
   "skills": {
     "badge": "Expertise",
-    "heading": "Maîtrise &",
-    "headingSub": "Exécution",
-    "desc": "Ingénierie de précision associée à une exécution esthétique haut de gamme. Des performances de pointe enveloppées dans un luxe sans compromis.",
+    "heading": "Compétences &",
+    "headingSub": "Outils",
+    "desc": "Tout ce dont un projet a besoin, géré par une seule personne : construire, référencer, concevoir et promouvoir.",
     "techStack": "Stack technologique : Next.js, Vercel, Tailwind CSS, Framer Motion, Supabase.",
     "stats": {
       "tech": "Technologies",
-      "pixel": "Pixel-Perfect",
+      "pixel": "Langues : EN · FR · AR",
       "exp": "Ans d'expérience",
       "response": "Réponse sous 24h"
-    },
-    "items": {
-      "ai": "Intégration d'IA Générative",
-      "react": "Architecture Next.js & React",
-      "uiux": "Architecture UI/UX",
-      "database": "Supabase & Postgres",
-      "animations": "Framer Motion & Animations",
-      "seo": "SEO Technique & Performance"
     }
-  },
-  "values": {
-    "badge": "Philosophie",
-    "heading": "PHILOSOPHIE CENTRALE",
-    "subheading": "Normes intransigeantes, exécution technique haut de gamme et esthétique tactique qui imposent un respect absolu.",
-    "items": [
-      {
-        "num": "01",
-        "title": "Qualité Sans Compromis",
-        "desc": "Nous ne livrons pas de standards. Chaque pixel, chaque animation et chaque ligne de code sont minutieusement analysés pour offrir une expérience parfaite, digne d'un Awwwards."
-      },
-      {
-        "num": "02",
-        "title": "Exécution Cinématique",
-        "desc": "Les produits numériques doivent être vivants. Nous utilisons des transitions fluides, des bordures microscopiques et des espaces blancs calculés pour concevoir des expériences mémorables."
-      },
-      {
-        "num": "03",
-        "title": "Vélocité Architecturale",
-        "desc": "La vitesse sans dette technique. En utilisant Next.js, Framer Motion et des bases de données Postgres évolutives, nous construisons des fondations rapides à déployer et prêtes à croître."
-      }
-    ]
   },
   "portfolio": {
     "badge": "Réalisations",
@@ -104,9 +75,7 @@
     "categories": {
       "all": "Tous",
       "web": "Dev Web",
-      "mobile": "Apps Mobiles",
-      "ai": "Solutions IA",
-      "video": "UI/UX & Vidéo"
+      "ai": "Solutions IA"
     }
   },
   "testimonials": {
@@ -141,8 +110,5 @@
     "message": "Parlez-moi de votre projet",
     "send": "Envoyer le Message",
     "success": "Message envoyé ! Je vous répondrai dans les 24 heures."
-  },
-  "guard": {
-    "blocked": "Les options de développement sont désactivées pour cette expérience."
   }
 }

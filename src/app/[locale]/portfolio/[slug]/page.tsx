@@ -1,5 +1,7 @@
 import CaseStudyClient from "@/components/CaseStudyClient";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { PROJECT_TITLES, LOCALES } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -11,13 +13,7 @@ const slugs = [
   "sahatracker",
   "azulamazigh",
   "ansae",
-  "crochetpatternsco",
-  "lumina-ai-dashboard",
-  "riyadh-estates",
-  "fintech-secureapp",
-  "nomad-documentary",
-  "oasis-e-commerce",
-  "govtech-analytics"
+  "crochetpatternsco"
 ];
 
 // Generate static routing parameters list for build time pre-rendering
@@ -30,6 +26,19 @@ export function generateStaticParams() {
     }
   }
   return paramsList;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const title = PROJECT_TITLES[slug];
+  if (!title) return {};
+  return {
+    title: `${title} | Case Study`,
+    alternates: {
+      canonical: `/${locale}/portfolio/${slug}`,
+      languages: Object.fromEntries(LOCALES.map((l) => [l, `/${l}/portfolio/${slug}`])),
+    },
+  };
 }
 
 export default async function Page({ params }: PageProps) {

@@ -50,6 +50,11 @@ export async function POST(req: NextRequest) {
 
   const raw = body as Record<string, unknown>;
 
+  // Honeypot: bots fill the hidden field. Pretend success, store nothing.
+  if (typeof raw.website === "string" && raw.website.trim() !== "") {
+    return NextResponse.json({ ok: true }, { status: 200 });
+  }
+
   // 3. Validate & sanitize inputs (OWASP ASVS — XSS / SQLi prevention)
   const client_name = sanitize(String(raw.name ?? ""));
   const email = String(raw.email ?? "").trim().toLowerCase().slice(0, 254);

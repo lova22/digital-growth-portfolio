@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView, useScroll, useTransform, animate } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
-import { ArrowRight, Sparkles, Code2, Brain, TrendingUp } from "lucide-react";
+import { ArrowRight, MessageCircle, Sparkles, Code2, Brain, TrendingUp } from "lucide-react";
 
 // Ambient Glow
 function AmbientGlow({
@@ -168,7 +168,7 @@ export default function HeroSection() {
       }} />
 
       {/* Parallax content */}
-      <motion.div style={{ y, opacity }} className="relative z-10 section-inner w-full max-w-5xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 text-center">
+      <motion.div style={{ y, opacity }} className="relative z-10 section-inner w-full max-w-5xl mx-auto px-4 sm:px-8 md:px-16 lg:px-24 pt-28 pb-12 text-center">
         {/* Badge */}
         <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} className="flex justify-center mb-10">
           <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm ltr:tracking-[0.25em] rtl:tracking-normal">
@@ -213,6 +213,9 @@ export default function HeroSection() {
             <a href="#portfolio" id="hero-cta-secondary" className="flex items-center gap-2 px-8 py-4 rounded-full text-xs font-bold text-[var(--color-text-secondary)] hover:text-white border border-white/10 hover:border-white/30 transition-all duration-300 hover:bg-white/5 ltr:uppercase ltr:tracking-[0.2em] rtl:normal-case rtl:tracking-normal">
               {t("portfolio")}
             </a>
+            <a href="https://wa.me/212659402611" target="_blank" rel="noopener noreferrer" id="hero-cta-whatsapp" className="flex items-center gap-2 px-8 py-4 rounded-full text-xs font-bold text-emerald-300 hover:text-white border border-emerald-400/30 hover:border-emerald-400/60 transition-all duration-300 hover:bg-emerald-500/10 ltr:uppercase ltr:tracking-[0.2em] rtl:normal-case rtl:tracking-normal">
+              <MessageCircle size={14} /> {t("whatsapp")}
+            </a>
           </motion.div>
 
           {/* Stats Row Capsule */}
@@ -240,7 +243,7 @@ export default function HeroSection() {
         <div className="flex flex-col gap-12 items-center w-full mt-16">
           {/* New tech line structured as pill badges */}
           <div className="flex flex-wrap gap-4 mt-6 justify-center items-center max-w-2xl mx-auto">
-            {["WordPress", "Adobe CC", "AI Automation", "Google Analytics 4"].map((tool) => (
+            {["WordPress", "WooCommerce", "Technical SEO", "Figma", "Google Analytics", "Generative AI"].map((tool) => (
               <span 
                 key={tool} 
                 className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-semibold text-white/70 hover:text-white hover:bg-white/10 transition-colors duration-300 select-none"

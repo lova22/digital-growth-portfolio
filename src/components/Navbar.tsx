@@ -241,7 +241,7 @@ export default function Navbar() {
                 className="pt-12 mt-12 border-t border-white/10 flex flex-col gap-6"
               >
                 <div className="flex flex-col gap-4">
-                  <span className="text-xs uppercase tracking-widest text-white/40">Language</span>
+                  <span className="text-xs uppercase tracking-widest text-white/60">Language</span>
                   <div className="flex gap-4">
                     {locales.map((loc) => (
                       <button

@@ -311,8 +311,8 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "9", label: "Pattern Categories" },
         { value: "1-Click", label: "Free PDF Downloads" }
       ],
-      nextTitle: "Lumina AI Dashboard",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "Dr. Meryem Youssoufi",
+      nextSlug: "meryem-youssoufi"
     },
     fr: {
       title: "Crochet Patterns Co",
@@ -328,8 +328,8 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "9", label: "Catégories de Patrons" },
         { value: "1 clic", label: "Téléchargement PDF Gratuit" }
       ],
-      nextTitle: "Lumina AI Dashboard",
-      nextSlug: "lumina-ai-dashboard"
+      nextTitle: "Dr. Meryem Youssoufi",
+      nextSlug: "meryem-youssoufi"
     },
     ar: {
       title: "Crochet Patterns Co",
@@ -345,328 +345,10 @@ const caseStudies: Record<string, Record<string, CaseStudyContent>> = {
         { value: "9", label: "فئات الأنماط" },
         { value: "نقرة", label: "تحميل PDF مجاني" }
       ],
-      nextTitle: "لوحة تحكم Lumina AI",
-      nextSlug: "lumina-ai-dashboard"
-    }
-  },
-  "lumina-ai-dashboard": {
-    en: {
-      title: "Lumina AI Dashboard",
-      subtitle: "Generative AI analytics platform for enterprise data pipelines.",
-      client: "Lumina Analytics Corp",
-      timeline: "3 Months",
-      role: "Lead Architect & UI Designer",
-      tech: ["Next.js", "OpenAI API", "Supabase", "Tailwind CSS"],
-      challenge: "Enterprise clients were overwhelmed by raw JSON logs and tabular AI metrics. They needed a luxury visual environment to track real-time agent decisions without browser lag or high operational friction.",
-      solution: "Developed an architectural design system utilizing virtualized grid layers, real-time web socket integrations, and pre-computed vector statistics. Embedded an AI chat prompt to query complex databases in natural language.",
-      impact: [
-        { value: "+150%", label: "Conversion Rate" },
-        { value: "-40%", label: "Load Time" },
-        { value: "10k+", label: "Active Users" }
-      ],
-      nextTitle: "Riyadh Estates",
-      nextSlug: "riyadh-estates"
-    },
-    fr: {
-      title: "Lumina AI Dashboard",
-      subtitle: "Plateforme d'analyse d'IA générative pour flux de données.",
-      client: "Lumina Analytics Corp",
-      timeline: "3 Mois",
-      role: "Architecte Principal & UI Designer",
-      tech: ["Next.js", "OpenAI API", "Supabase", "Tailwind CSS"],
-      challenge: "Les clients professionnels étaient submergés par des journaux de données complexes. Ils nécessitaient une interface haut de gamme pour surveiller les agents intelligents sans latence.",
-      solution: "Conception d'une interface dynamique avec virtualisation de données massives et connecteurs temps réel. Intégration d'un copilote d'IA facilitant les requêtes complexes en langage naturel.",
-      impact: [
-        { value: "+150%", label: "Taux de Conversion" },
-        { value: "-40%", label: "Temps de Chargement" },
-        { value: "10k+", label: "Utilisateurs Actifs" }
-      ],
-      nextTitle: "Riyadh Estates",
-      nextSlug: "riyadh-estates"
-    },
-    ar: {
-      title: "لوحة تحكم Lumina AI",
-      subtitle: "منصة تحليلات الذكاء الاصطناعي التوليدي لبيانات المؤسسات المعقدة.",
-      client: "شركة لومينا للتحليلات",
-      timeline: "3 أشهر",
-      role: "مهندس رئيسي ومصمم واجهات",
-      tech: ["Next.js", "OpenAI API", "Supabase", "Tailwind CSS"],
-      challenge: "كان عملاء المؤسسات يعانون من صعوبة قراءة سجلات البيانات الضخمة والمعقدة، وكانوا بحاجة لبيئة بصرية فاخرة لمتابعة قرارات خوارزميات الذكاء الاصطناعي مباشرة وبلا أي بطء.",
-      solution: "قمنا بتطوير بنية تصميمية تعتمد على جداول افتراضية سريعة وتكامل بيانات فوري، مع دمج مساعد محادثة ذكي للاستعلام الفوري باللغة الطبيعية.",
-      impact: [
-        { value: "+150%", label: "معدل التحويل" },
-        { value: "-40%", label: "سرعة التحميل" },
-        { value: "10k+", label: "مستخدم نشط" }
-      ],
-      nextTitle: "عقارات الرياض",
-      nextSlug: "riyadh-estates"
-    }
-  },
-  "riyadh-estates": {
-    en: {
-      title: "Riyadh Estates",
-      subtitle: "High-end real estate portal with immersive virtual tours.",
-      client: "Dar Al Riyadh Estates",
-      timeline: "4 Months",
-      role: "Full-Stack Developer & 3D Designer",
-      tech: ["React", "Three.js", "Tailwind CSS", "Framer Motion"],
-      challenge: "HNW buyers in Riyadh were unable to visit listings physically, causing prolonged sales cycles and complex negotiation phases for remote clients.",
-      solution: "Engineered a custom Three.js WebGL rendering viewport enabling fully virtual 3D property walkthroughs. Paired this with dynamic interactive floor plans and private client consultation rooms.",
-      impact: [
-        { value: "+240%", label: "Virtual Tours Viewed" },
-        { value: "-35%", label: "Sales Cycle Duration" },
-        { value: "$50M+", label: "Real Estate Volume" }
-      ],
-      nextTitle: "FinTech SecureApp",
-      nextSlug: "fintech-secureapp"
-    },
-    fr: {
-      title: "Riyadh Estates",
-      subtitle: "Portail immobilier de prestige avec visites virtuelles 3D.",
-      client: "Dar Al Riyadh Estates",
-      timeline: "4 Mois",
-      role: "Développeur Full-Stack & Designer 3D",
-      tech: ["React", "Three.js", "Tailwind CSS", "Framer Motion"],
-      challenge: "Les acheteurs haut de gamme ne pouvaient pas visiter physiquement les biens de luxe, allongeant considérablement les processus d'achat.",
-      solution: "Développement d'une visionneuse interactive WebGL 3D avec Three.js. Intégration de plans interactifs et de salons virtuels sécurisés pour les consultants.",
-      impact: [
-        { value: "+240%", label: "Visites Effectuées" },
-        { value: "-35%", label: "Cycle de Vente" },
-        { value: "$50M+", label: "Volume de Transactions" }
-      ],
-      nextTitle: "FinTech SecureApp",
-      nextSlug: "fintech-secureapp"
-    },
-    ar: {
-      title: "عقارات الرياض",
-      subtitle: "بوابة عقارية فاخرة تتيح جولات افتراضية ثلاثية الأبعاد.",
-      client: "دار الرياض العقارية",
-      timeline: "4 أشهر",
-      role: "مطور تطبيقات ومصمم ثلاثي الأبعاد",
-      tech: ["React", "Three.js", "Tailwind CSS", "Framer Motion"],
-      challenge: "واجه المستثمرون صعوبة في زيارة العقارات الفاخرة ميدانياً، مما أدى لطول فترات البيع وصعوبة اتخاذ القرار للمشترين عن بعد.",
-      solution: "قمنا بتطوير محرك عرض ثلاثي الأبعاد تفاعلي بتقنية WebGL، مما يتيح للعميل استكشاف العقارات بالكامل افتراضياً مع تصفح مخططات الطوابق وحجز الاستشارات المباشرة.",
-      impact: [
-        { value: "+240%", label: "مشاهدات الجولات" },
-        { value: "-35%", label: "مدة إغلاق الصفقات" },
-        { value: "50M+$", label: "حجم العقارات المباعة" }
-      ],
-      nextTitle: "FinTech SecureApp",
-      nextSlug: "fintech-secureapp"
-    }
-  },
-  "fintech-secureapp": {
-    en: {
-      title: "FinTech SecureApp",
-      subtitle: "Next‑generation mobile crypto tracking and secure banking platform.",
-      client: "SecureBank Ltd",
-      timeline: "5 Months",
-      role: "Mobile Architect & Security Lead",
-      tech: ["React Native", "Node.js", "PostgreSQL", "Biometrics"],
-      challenge: "High net-worth crypto asset holders were anxious about mobile platform security and demanded instantaneous, end-to-end encrypted transaction tracking.",
-      solution: "Created an encrypted local database system with biometric authentication and end-to-end payload signature checking.",
-      impact: [
-        { value: "99.99%", label: "Security Uptime" },
-        { value: "1.2s", label: "Avg Transaction Time" },
-        { value: "100k+", label: "Active Downloads" }
-      ],
-      nextTitle: "Nomad Documentary",
-      nextSlug: "nomad-documentary"
-    },
-    fr: {
-      title: "FinTech SecureApp",
-      subtitle: "Application bancaire sécurisée et suivi crypto de nouvelle génération.",
-      client: "SecureBank Ltd",
-      timeline: "5 Mois",
-      role: "Architecte Mobile & Sécurité",
-      tech: ["React Native", "Node.js", "PostgreSQL", "Biometrics"],
-      challenge: "Les détenteurs de portefeuilles crypto exigeaient un environnement impénétrable combiné à un suivi de transaction instantané.",
-      solution: "Mise en place d'un protocole cryptographique de pointe avec double authentification biométrique et base locale chiffrée.",
-      impact: [
-        { value: "99.99%", label: "Taux de Disponibilité" },
-        { value: "1.2s", label: "Transaction Moyenne" },
-        { value: "100k+", label: "Téléchargements Actifs" }
-      ],
-      nextTitle: "Nomad Documentary",
-      nextSlug: "nomad-documentary"
-    },
-    ar: {
-      title: "FinTech SecureApp",
-      subtitle: "تطبيق بنكي ومحفظة رقمية مشفرة لتتبع الأصول المالية.",
-      client: "بنك سيكيور ليميتد",
-      timeline: "5 أشهر",
-      role: "مهندس أمن البرمجيات وتطبيقات الهاتف",
-      tech: ["React Native", "Node.js", "PostgreSQL", "Biometrics"],
-      challenge: "طالب مستخدمو العملات الرقمية ببيئة تصفح ومعاملات آمنة تماماً خالية من الثغرات، مع تحديث فوري وسريع للأصول المالية.",
-      solution: "صممنا نظام تشفير محلي متطور يعتمد على البصمة الحيوية مع مكاملة بروتوكولات حماية متكاملة تضمن سرية مطلقة لكافة البيانات المعالجة.",
-      impact: [
-        { value: "99.99%", label: "جاهزية النظام الأمنية" },
-        { value: "1.2ث", label: "سرعة معالجة المعاملة" },
-        { value: "100k+", label: "تحميلات نشطة" }
-      ],
-      nextTitle: "وثائقي Nomad",
-      nextSlug: "nomad-documentary"
-    }
-  },
-  "nomad-documentary": {
-    en: {
-      title: "Nomad Documentary",
-      subtitle: "Immersive storytelling campaign and cinematic motion graphics.",
-      client: "Nomad Media Initiative",
-      timeline: "2 Months",
-      role: "Creative Director & Motion Designer",
-      tech: ["After Effects", "Premiere Pro", "Cinema 4D", "WebGL"],
-      challenge: "Capturing organic user interest for an indie documentary required an unconventional, deeply atmospheric digital campaign that stood out from standard flat social cards.",
-      solution: "Produced full-frame cinematic video teasers, WebGL scroll-interactive site maps, and audio transitions triggered by the user's cursor.",
-      impact: [
-        { value: "5M+", label: "Campaign Reach" },
-        { value: "+180%", label: "Engagement Rate" },
-        { value: "12", label: "Global Awards" }
-      ],
-      nextTitle: "Oasis E-Commerce",
-      nextSlug: "oasis-e-commerce"
-    },
-    fr: {
-      title: "Nomad Documentary",
-      subtitle: "Campagne immersive et motion design cinématographique.",
-      client: "Nomad Media Initiative",
-      timeline: "2 Mois",
-      role: "Directeur Artistique & Motion Designer",
-      tech: ["After Effects", "Premiere Pro", "Cinema 4D", "WebGL"],
-      challenge: "Capter l'attention du public pour un documentaire indépendant nécessitait une expérience narrative immersive et percutante.",
-      solution: "Création de teasers cinématiques rythmés, d'une carte interactive WebGL au défilement et de transitions sonores réactives au curseur.",
-      impact: [
-        { value: "5M+", label: "Portée de Campagne" },
-        { value: "+180%", label: "Taux d'Engagement" },
-        { value: "12", label: "Prix Internationaux" }
-      ],
-      nextTitle: "Oasis E-Commerce",
-      nextSlug: "oasis-e-commerce"
-    },
-    ar: {
-      title: "وثائقي Nomad",
-      subtitle: "حملة رقمية ومؤثرات بصرية سينمائية وثائقية تفاعلية.",
-      client: "مبادرة نواميد الإعلامية",
-      timeline: "شهرين",
-      role: "المخرج الإبداعي ومصمم المؤثرات",
-      tech: ["After Effects", "Premiere Pro", "Cinema 4D", "WebGL"],
-      challenge: "تطلب جذب الجمهور لوثائقي مستقل تجربة بصرية مغايرة تماماً للحملات التقليدية لجذب انتباه المتصفحين بسرعة.",
-      solution: "صممنا إعلانات ترويجية سينمائية وخرائط تفاعلية متحركة تعتمد على التمرير، مع ربط المؤثرات البصرية والصوتية بحركة مؤشر الفأرة.",
-      impact: [
-        { value: "5M+", label: "تأثير الحملة الكلي" },
-        { value: "+180%", label: "معدل التفاعل الإيجابي" },
-        { value: "12", label: "جوائز عالمية" }
-      ],
-      nextTitle: "موقع Oasis التجاري",
-      nextSlug: "oasis-e-commerce"
-    }
-  },
-  "oasis-e-commerce": {
-    en: {
-      title: "Oasis E-Commerce",
-      subtitle: "High‑conversion fashion storefront with headless commerce architecture.",
-      client: "Oasis Luxury Apparel",
-      timeline: "3 Months",
-      role: "UX Engineer & Integrator",
-      tech: ["Next.js", "Stripe API", "Headless CMS", "Tailwind CSS"],
-      challenge: "High checkout abandonment due to slow page loads and complex form wizard interfaces on the legacy platform.",
-      solution: "Migrated infrastructure to Next.js static architecture with optimized headless Stripe API checkouts and micro-interaction animations.",
-      impact: [
-        { value: "+85%", label: "Checkout Completion" },
-        { value: "+30%", label: "Average Order Value" },
-        { value: "100k+", label: "Monthly Transactions" }
-      ],
-      nextTitle: "GovTech Analytics",
-      nextSlug: "govtech-analytics"
-    },
-    fr: {
-      title: "Oasis E-Commerce",
-      subtitle: "Boutique en ligne haut de gamme à conversion optimisée.",
-      client: "Oasis Luxury Apparel",
-      timeline: "3 Mois",
-      role: "Ingénieur UX & Développeur",
-      tech: ["Next.js", "Stripe API", "Headless CMS", "Tailwind CSS"],
-      challenge: "Des taux d'abandon importants causés par des temps de chargement trop longs sur l'ancien système de paiement.",
-      solution: "Transition vers une architecture Next.js découplée intégrant l'API Stripe optimisée et des transitions fluides à l'achat.",
-      impact: [
-        { value: "+85%", label: "Finalisation d'Achat" },
-        { value: "+30%", label: "Panier Moyen" },
-        { value: "100k+", label: "Transactions Mensuelles" }
-      ],
-      nextTitle: "GovTech Analytics",
-      nextSlug: "govtech-analytics"
-    },
-    ar: {
-      title: "موقع Oasis التجاري",
-      subtitle: "منصة تجارة إلكترونية فاخرة متكاملة عالية التحويل للمبيعات.",
-      client: "أزياء أوايسس الفاخرة",
-      timeline: "3 أشهر",
-      role: "مهندس تجربة المستخدم والمكاملة",
-      tech: ["Next.js", "Stripe API", "Headless CMS", "Tailwind CSS"],
-      challenge: "تراجع المبيعات وزيادة نسب إلغاء الطلبات بسبب بطء استجابة النماذج وبوابات الدفع على النظام القديم.",
-      solution: "قمنا بالانتقال إلى معمارية خادم ساكنة بالكامل باستخدام Next.js وربط بوابة دفع Stripe بشكل مخصص لضمان شحن وبيع فوري آمن.",
-      impact: [
-        { value: "+85%", label: "إتمام الدفع بنجاح" },
-        { value: "+30%", label: "متوسط قيمة الطلب" },
-        { value: "100k+", label: "عملية شراء شهرياً" }
-      ],
-      nextTitle: "GovTech Analytics",
-      nextSlug: "govtech-analytics"
-    }
-  },
-  "govtech-analytics": {
-    en: {
-      title: "GovTech Analytics",
-      subtitle: "High-performance public database visualizations and SEO indexing.",
-      client: "Municipal Office of Data",
-      timeline: "6 Months",
-      role: "AI Platform Engineer",
-      tech: ["Python", "React", "Google Analytics 4", "Tailwind CSS"],
-      challenge: "Public dashboard had low usability rankings and struggled to search across large dataset logs efficiently.",
-      solution: "Introduced lightning-fast indexing layers and integrated dynamic interactive SVG data tables accessible to all screen-readers.",
-      impact: [
-        { value: "100%", label: "WCAG Compliance" },
-        { value: "0.1s", label: "Instant Search return" },
-        { value: "500k+", label: "Citizens Reached" }
-      ],
-      nextTitle: "Dr. Meryem Youssoufi",
-      nextSlug: "meryem-youssoufi"
-    },
-    fr: {
-      title: "GovTech Analytics",
-      subtitle: "Visualisation de bases de données publiques à haute performance.",
-      client: "Municipal Office of Data",
-      timeline: "6 Mois",
-      role: "Ingénieur IA & Données",
-      tech: ["Python", "React", "Google Analytics 4", "Tailwind CSS"],
-      challenge: "Le portail souffrait d'un mauvais classement d'accessibilité et de temps de recherche excessivement longs.",
-      solution: "Mise en place de couches d'indexation rapides et création de tableaux interactifs SVG compatibles avec les lecteurs d'écran.",
-      impact: [
-        { value: "100%", label: "Conformité WCAG" },
-        { value: "0.1s", label: "Recherche Instantanée" },
-        { value: "500k+", label: "Citoyens Touchés" }
-      ],
-      nextTitle: "Dr. Meryem Youssoufi",
-      nextSlug: "meryem-youssoufi"
-    },
-    ar: {
-      title: "GovTech Analytics",
-      subtitle: "لوحة تحكم وتصور للبيانات الحكومية العامة عالية الأداء.",
-      client: "مكتب البيانات البلدي",
-      timeline: "6 أشهر",
-      role: "مهندس تحليلات وبنية خوادم",
-      tech: ["Python", "React", "Google Analytics 4", "Tailwind CSS"],
-      challenge: "ضعف نسب الوصول للمعلومات في الواجهة السابقة وصعوبة البحث الفوري داخل ملايين السجلات المالية العامة.",
-      solution: "بناء نظام فهرسة فائق السرعة مع تمثيل البيانات عبر رسوم بيانية تفاعلية SVG متوافقة بالكامل مع معايير الوصول العالمية.",
-      impact: [
-        { value: "100%", label: "مطابقة معايير WCAG" },
-        { value: "0.1ث", label: "زمن استرجاع البحث" },
-        { value: "500k+", label: "مواطن مستفيد" }
-      ],
       nextTitle: "د. مريم يوسفي",
       nextSlug: "meryem-youssoufi"
     }
-  }
+  },
 };
 
 const imageMap: Record<string, { hero: string; gallery: string[]; stack?: boolean; darkenHero?: boolean }> = {
@@ -725,48 +407,6 @@ const imageMap: Record<string, { hero: string; gallery: string[]; stack?: boolea
     stack: true,
     darkenHero: true
   },
-  "lumina-ai-dashboard": {
-    hero: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  "riyadh-estates": {
-    hero: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  "fintech-secureapp": {
-    hero: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  "nomad-documentary": {
-    hero: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  "oasis-e-commerce": {
-    hero: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1200&q=80"
-    ]
-  },
-  "govtech-analytics": {
-    hero: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=80"
-    ]
-  }
 };
 
 function LiveCounter({ value, label }: { value: string; label: string }) {
@@ -817,7 +457,7 @@ export default function CaseStudyClient({
   slug: string;
 }) {
   const activeLocale = ["en", "fr", "ar"].includes(locale) ? locale : "en";
-  const projectSlug = caseStudies[slug] ? slug : "lumina-ai-dashboard";
+  const projectSlug = caseStudies[slug] ? slug : "meryem-youssoufi";
 
   const data = caseStudies[projectSlug][activeLocale];
   const images = imageMap[projectSlug];
@@ -1087,7 +727,7 @@ export default function CaseStudyClient({
             </h2>
           </div>
 
-          <div className={images.stack ? (images.gallery.length > 2 ? "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto items-start" : "grid grid-cols-1 gap-8 md:gap-12 max-w-5xl mx-auto items-stretch") :"grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto items-stretch"}>
+          <div className={images.stack ? (images.gallery.length > 2 ? "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto items-start md:[&>*:last-child:nth-child(odd)]:col-span-2 md:[&>*:last-child:nth-child(odd)]:w-1/2 md:[&>*:last-child:nth-child(odd)]:justify-self-center" : "grid grid-cols-1 gap-8 md:gap-12 max-w-5xl mx-auto items-stretch") :"grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto items-stretch"}>
             {images.gallery.map((imgUrl, i) => (
               <motion.div
                 key={i}
@@ -1103,6 +743,23 @@ export default function CaseStudyClient({
                 />
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hire CTA */}
+      <section className="bg-[#0A0A0A] border-t border-white/10">
+        <div className="max-w-4xl mx-auto px-6 py-20 text-center flex flex-col items-center gap-8">
+          <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white" style={{ lineHeight: 1.3 }}>
+            {isRTL ? "تحتاج مشروعاً مثل هذا؟" : activeLocale === "fr" ? "Un projet comme celui-ci ?" : "Need something like this?"}
+          </h2>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Link href={`/${activeLocale}#contact`} className="px-8 py-4 rounded-full bg-white text-black text-xs font-bold ltr:uppercase ltr:tracking-[0.2em] hover:bg-white/90 transition-colors">
+              {isRTL ? "ابدأ مشروعك" : activeLocale === "fr" ? "Démarrer un projet" : "Start your project"}
+            </Link>
+            <a href="https://wa.me/212659402611" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-full border border-emerald-400/40 text-emerald-300 text-xs font-bold ltr:uppercase ltr:tracking-[0.2em] hover:bg-emerald-500/10 transition-colors">
+              WhatsApp
+            </a>
           </div>
         </div>
       </section>
