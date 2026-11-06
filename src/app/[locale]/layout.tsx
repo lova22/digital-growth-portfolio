@@ -26,7 +26,7 @@ const tajawal = Tajawal({
 export const metadata: Metadata = {
   title: "Digital Growth Architect & AI Solutions",
   description:
-    "Premium one-man digital agency — UI/UX, AI Engineering, SEO, and Motion Graphics.",
+    "One-man digital agency in Agadir, Morocco: web development, UI/UX, AI engineering, SEO and motion graphics. Building for clients since 2007.",
 };
 
 export function generateStaticParams() {

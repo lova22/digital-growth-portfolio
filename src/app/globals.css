@@ -205,21 +205,21 @@ body::before {
   position: relative !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
-  padding-top: 10rem !important; /* 160px spacing */
-  padding-bottom: 10rem !important; /* 160px spacing */
+  padding-top: 5rem !important; /* 80px spacing */
+  padding-bottom: 5rem !important; /* 80px spacing */
 }
 
 @media (min-width: 768px) {
   .section-container {
-    padding-top: 14rem !important; /* 224px spacing */
-    padding-bottom: 14rem !important; /* 224px spacing */
+    padding-top: 6.5rem !important; /* 104px spacing */
+    padding-bottom: 6.5rem !important; /* 104px spacing */
   }
 }
 
 @media (min-width: 1024px) {
   .section-container {
-    padding-top: 18rem !important; /* 288px spacing */
-    padding-bottom: 18rem !important; /* 288px spacing */
+    padding-top: 7.5rem !important; /* 120px spacing */
+    padding-bottom: 7.5rem !important; /* 120px spacing */
   }
 }
 

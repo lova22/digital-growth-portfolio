@@ -58,7 +58,7 @@ export default function TestimonialsSection() {
           {t("badge")}
         </span>
 
-        <div className="min-h-[450px] sm:min-h-[340px] md:min-h-[300px] flex items-center justify-center relative w-full overflow-hidden mt-24 md:mt-32">
+        <div className="min-h-[450px] sm:min-h-[340px] md:min-h-[300px] flex items-center justify-center relative w-full overflow-hidden mt-10 md:mt-14">
           <AnimatePresence mode="wait">
             <motion.div
               key={index}

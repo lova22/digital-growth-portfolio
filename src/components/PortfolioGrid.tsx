@@ -143,7 +143,7 @@ export default function PortfolioGrid() {
           initial={{ opacity: 0, y: 30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-24 md:mb-32 flex flex-col items-center w-full"
+          className="text-center mb-12 md:mb-16 flex flex-col items-center w-full"
         >
           <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm mb-8">{t("badge")}</span>
           <h2 

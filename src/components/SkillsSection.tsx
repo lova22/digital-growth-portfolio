@@ -170,7 +170,7 @@ export default function SkillsSection() {
             <div className="grid grid-cols-2 gap-4 sm:gap-6 mt-2">
               <ScrollCounter value={30} suffix="+" label={t("stats.tech")} />
               <ScrollCounter value={100} suffix="%" label={t("stats.pixel")} />
-              <ScrollCounter value={4} suffix="+" label={t("stats.exp")} />
+              <ScrollCounter value={19} suffix="+" label={t("stats.exp")} />
               <ScrollCounter value={24} suffix="h" label={t("stats.response")} />
             </div>
           </div>

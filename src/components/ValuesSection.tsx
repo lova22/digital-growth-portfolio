@@ -22,7 +22,7 @@ function ValueCard({ item, index, locale }: { item: ValueItem; index: number; lo
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1.2, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative p-6 sm:p-8 md:p-10 rounded-2xl border border-white/5 bg-white/[0.01] backdrop-blur-md overflow-hidden group hover:border-white/10 transition-all duration-500 flex flex-col justify-between min-h-[320px] md:min-h-[350px] ${
+      className={`relative p-6 sm:p-8 md:p-10 rounded-2xl border border-white/5 bg-white/[0.01] backdrop-blur-md overflow-hidden group hover:border-white/10 transition-all duration-500 flex flex-col justify-between min-h-[240px] md:min-h-[260px] ${
         index === 2 ? "md:col-span-2 lg:col-span-1" : ""
       }`}
     >
@@ -90,7 +90,7 @@ export default function ValuesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={headingInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-24 md:mb-32 flex flex-col items-center w-full"
+          className="text-center mb-12 md:mb-16 flex flex-col items-center w-full"
         >
           <span className="badge rounded-full px-5 py-2 border-white/10 bg-white/5 backdrop-blur-sm mb-8">{t("badge")}</span>
           <h2 

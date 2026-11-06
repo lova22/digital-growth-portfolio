@@ -44,7 +44,7 @@ export default function MegaFooter() {
   };
 
   return (
-    <footer id="contact" className="bg-[#0D0D0D] pt-36 md:pt-48 lg:pt-64 pb-16 md:pb-24 border-t border-white/5 relative overflow-hidden flex flex-col items-center">
+    <footer id="contact" className="bg-[#0D0D0D] pt-20 md:pt-28 lg:pt-32 pb-16 md:pb-24 border-t border-white/5 relative overflow-hidden flex flex-col items-center">
       <div className="content-wrapper">
         
         {/* Urgency Badge with pulsing green dot above the main headline */}
@@ -60,10 +60,10 @@ export default function MegaFooter() {
           </span>
           <span className="text-[10px] sm:text-xs uppercase tracking-[0.25em] text-emerald-400 font-semibold">
             {locale === "en"
-              ? "2 slots available in June 2026"
+              ? "Open for new projects"
               : locale === "fr"
-              ? "2 créneaux disponibles en Juin 2026"
-              : "2 مقاعد متاحة في يونيو 2026"}
+              ? "Ouvert à de nouveaux projets"
+              : "متاح لمشاريع جديدة"}
           </span>
         </motion.div>
 
@@ -201,8 +201,8 @@ export default function MegaFooter() {
                   </div>
                   <div>
                     <span className="block text-[10px] text-white/40 uppercase tracking-widest">Email</span>
-                    <a href="mailto:hello@digitalgrowth.agency" className="text-sm font-light text-white hover:text-[var(--color-accent-red)] transition-colors">
-                      hello@digitalgrowth.agency
+                    <a href="mailto:rachidelaouad@gmail.com" className="text-sm font-light text-white hover:text-[var(--color-accent-red)] transition-colors">
+                      rachidelaouad@gmail.com
                     </a>
                   </div>
                 </li>
@@ -213,7 +213,7 @@ export default function MegaFooter() {
                   <div>
                     <span className="block text-[10px] text-white/40 uppercase tracking-widest">HQ Location</span>
                     <span className="text-sm font-light text-white">
-                      {locale === "en" ? "Casablanca, Morocco" : locale === "fr" ? "Casablanca, Maroc" : "الدار البيضاء، المغرب"}
+                      {locale === "en" ? "Agadir, Morocco" : locale === "fr" ? "Agadir, Maroc" : "أكادير، المغرب"}
                     </span>
                   </div>
                 </li>
@@ -294,8 +294,8 @@ export default function MegaFooter() {
             <div>
               <h4 className="text-xs tracking-[0.2em] uppercase text-white/40 mb-6 font-bold">Contact</h4>
               <ul className="space-y-4 text-xs font-semibold uppercase tracking-wider">
-                <li><a href="mailto:hello@digitalgrowth.agency" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">hello@digitalgrowth.agency</a></li>
-                <li><span className="text-white/40 normal-case font-light">Casablanca, Morocco</span></li>
+                <li><a href="mailto:rachidelaouad@gmail.com" className="text-white/60 hover:text-[var(--color-accent-red)] transition-colors">rachidelaouad@gmail.com</a></li>
+                <li><span className="text-white/40 normal-case font-light">{locale === "en" ? "Agadir, Morocco" : locale === "fr" ? "Agadir, Maroc" : "أكادير، المغرب"}</span></li>
                 <li className="pt-2">
                   <div className="inline-flex items-center gap-2 px-2.5 py-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
                     <span className="relative flex h-1.5 w-1.5">
