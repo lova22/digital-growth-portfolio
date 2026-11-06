@@ -395,7 +395,8 @@ const imageMap: Record<string, { hero: string; gallery: string[]; stack?: boolea
       "/projects/ansae-academy.jpg",
       "/projects/ansae-events.jpg"
     ],
-    stack: true
+    stack: true,
+    darkenHero: true
   },
   "crochetpatternsco": {
     hero: "/projects/crochetpatternsco-hero.jpg",
